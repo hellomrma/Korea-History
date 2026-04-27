@@ -23,16 +23,16 @@ export default function EraHero({ eras }: { eras: Era[] }) {
         aria-hidden="true"
       />
       <div className="relative">
-        <p className="text-xs uppercase tracking-widest text-subtle mb-3">5000년의 시간여행: 한국사</p>
-        <h1 className="font-serif text-4xl md:text-5xl font-bold mb-3">{era.name}</h1>
-        <p className="text-sm text-subtle mb-1">
+        <p className="text-xs uppercase tracking-widest text-muted mb-3">5000년의 시간여행: 한국사</p>
+        <h1 className="font-serif text-4xl md:text-5xl mb-3">{era.name}</h1>
+        <p className="text-sm text-muted mb-1">
           {displayYear(era.period.start)} ~ {era.period.end ? displayYear(era.period.end) : '현재'}
         </p>
-        <p className="max-w-md mx-auto text-sm text-subtle mb-8 leading-relaxed">{era.summary}</p>
+        <p className="max-w-md mx-auto text-sm text-muted mb-8 leading-relaxed">{era.summary}</p>
 
         <div className="flex flex-wrap gap-2 justify-center mb-8">
           {era.tags.map((tag) => (
-            <span key={tag} className="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-xs text-subtle">
+            <span key={tag} className="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-xs text-muted">
               {tag}
             </span>
           ))}
@@ -40,7 +40,7 @@ export default function EraHero({ eras }: { eras: Era[] }) {
 
         <Link
           href={`/era/${era.slug}`}
-          className="inline-block bg-point text-white font-semibold px-6 py-2.5 rounded-full hover:bg-blue-700 transition-colors mb-10"
+          className="inline-block bg-point text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition-colors mb-10"
         >
           이 시대 탐험하기 →
         </Link>
@@ -53,10 +53,10 @@ export default function EraHero({ eras }: { eras: Era[] }) {
                   type="button"
                   onClick={() => setCurrentIdx(idx)}
                   aria-current={idx === currentIdx ? 'true' : undefined}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-lg text-xs transition-all ${
                     idx === currentIdx
-                      ? 'bg-white text-[#111111] font-bold'
-                      : 'bg-white/10 text-subtle hover:bg-white/20'
+                      ? 'bg-white text-[#111111]'
+                      : 'bg-white/10 text-muted hover:bg-white/20 hover:text-text'
                   }`}
                 >
                   {e.name}

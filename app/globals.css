@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'Shilla';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureM-Medium.woff2') format('woff2');
-  font-weight: 500;
+  font-weight: 100 900;
   font-display: swap;
 }
 
@@ -13,8 +13,8 @@
   --color-surface: #181818;
   --color-border:  #2e2e2e;
   --color-text:    #e8e8e8;
-  --color-muted:   #9a9a9a;
-  --color-subtle:  #555555;
+  --color-muted:   #a0a0a0;
+  --color-subtle:  #6e6e6e;
 
   /* Single point color */
   --color-point:   #3b82f6;
@@ -50,4 +50,10 @@
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Shilla는 단일 굵기 폰트 — 브라우저 합성 볼드 방지, 항상 weight 400으로 렌더 */
+.font-serif {
+  font-weight: 400;
+  font-synthesis: none;
 }
