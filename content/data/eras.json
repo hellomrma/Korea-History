@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "gojoseon",
+    "name": "고조선",
+    "period": { "start": -2333, "end": -108 },
+    "order": 1,
+    "color": "#6b4c2a",
+    "thumbnail": "/images/eras/gojoseon.jpg",
+    "summary": "단군왕검이 세운 우리 민족 최초의 나라",
+    "tags": ["단군", "청동기", "8조법"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "proto-three-kingdoms",
+    "name": "원삼국시대",
+    "period": { "start": -100, "end": 300 },
+    "order": 2,
+    "color": "#7a5c38",
+    "thumbnail": "/images/eras/proto-three-kingdoms.jpg",
+    "summary": "부족 연맹이 왕국으로 성장하던 전환기",
+    "tags": ["부여", "옥저", "동예", "삼한"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "three-kingdoms",
+    "name": "삼국시대",
+    "period": { "start": 300, "end": 668 },
+    "order": 3,
+    "color": "#8b6914",
+    "thumbnail": "/images/eras/three-kingdoms.jpg",
+    "summary": "고구려·백제·신라 세 나라가 한반도를 다투다",
+    "tags": ["고구려", "백제", "신라", "가야"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "unified-silla",
+    "name": "통일신라",
+    "period": { "start": 668, "end": 935 },
+    "order": 4,
+    "color": "#8b7a3a",
+    "thumbnail": "/images/eras/unified-silla.jpg",
+    "summary": "신라가 한반도를 통일하고 불교 문화를 꽃피우다",
+    "tags": ["불국사", "석굴암", "화랑도"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "balhae",
+    "name": "발해",
+    "period": { "start": 698, "end": 926 },
+    "order": 5,
+    "color": "#5a7a3a",
+    "thumbnail": "/images/eras/balhae.jpg",
+    "summary": "고구려 유민이 세운 해동성국, 북방의 강대국",
+    "tags": ["대조영", "해동성국", "고구려 계승"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "goryeo",
+    "name": "고려",
+    "period": { "start": 918, "end": 1392 },
+    "order": 6,
+    "color": "#3a6b8b",
+    "thumbnail": "/images/eras/goryeo.jpg",
+    "summary": "불교 국가 고려, 세계 최초 금속활자와 팔만대장경",
+    "tags": ["불교", "팔만대장경", "금속활자", "고려청자"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "joseon",
+    "name": "조선",
+    "period": { "start": 1392, "end": 1897 },
+    "order": 7,
+    "color": "#8b3a2a",
+    "thumbnail": "/images/eras/joseon.jpg",
+    "summary": "이성계가 세운 유교 국가, 500년의 역사와 한글 창제",
+    "tags": ["유교", "한글", "과거제도", "임진왜란"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "daehan",
+    "name": "대한제국",
+    "period": { "start": 1897, "end": 1910 },
+    "order": 8,
+    "color": "#8b5a2a",
+    "thumbnail": "/images/eras/daehan.jpg",
+    "summary": "자주 근대 국가를 향한 짧고 치열한 도전",
+    "tags": ["고종", "광무개혁", "독립"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "japanese-rule",
+    "name": "일제강점기",
+    "period": { "start": 1910, "end": 1945 },
+    "order": 9,
+    "color": "#5a4a6b",
+    "thumbnail": "/images/eras/japanese-rule.jpg",
+    "summary": "35년간의 일제 지배와 끊이지 않은 독립운동",
+    "tags": ["3.1운동", "독립운동", "유관순", "안중근"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "liberation",
+    "name": "해방과 분단",
+    "period": { "start": 1945, "end": 1950 },
+    "order": 10,
+    "color": "#4a6b5a",
+    "thumbnail": "/images/eras/liberation.jpg",
+    "summary": "광복의 기쁨과 남북 분단의 비극",
+    "tags": ["광복", "38선", "미소군정", "단독정부"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "korean-war",
+    "name": "6·25 전쟁",
+    "period": { "start": 1950, "end": 1953 },
+    "order": 11,
+    "color": "#6b3a3a",
+    "thumbnail": "/images/eras/korean-war.jpg",
+    "summary": "민족 최대의 비극, 3년간의 전쟁과 정전",
+    "tags": ["6.25", "인천상륙작전", "정전협정"],
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "modern",
+    "name": "현대 대한민국",
+    "period": { "start": 1953, "end": null },
+    "order": 12,
+    "color": "#2a5a8b",
+    "thumbnail": "/images/eras/modern.jpg",
+    "summary": "폐허에서 기적으로, 민주주의와 경제 성장의 대한민국",
+    "tags": ["한강의 기적", "민주화", "K-컬처"],
+    "difficulties": ["easy", "normal", "advanced"]
+  }
+]

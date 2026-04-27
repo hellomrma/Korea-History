@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "dangun",
+    "name": "단군왕검",
+    "era": "gojoseon",
+    "birth": -2333,
+    "death": null,
+    "role": "건국 시조",
+    "tags": ["고조선", "건국"],
+    "thumbnail": "/images/figures/dangun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "gwanggaeto",
+    "name": "광개토대왕",
+    "era": "three-kingdoms",
+    "birth": 374,
+    "death": 412,
+    "role": "왕",
+    "tags": ["고구려", "정복", "영토"],
+    "thumbnail": "/images/figures/gwanggaeto.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "wang-geon",
+    "name": "왕건",
+    "era": "goryeo",
+    "birth": 877,
+    "death": 943,
+    "role": "왕",
+    "tags": ["고려 건국", "후삼국"],
+    "thumbnail": "/images/figures/wang-geon.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "sejong",
+    "name": "세종대왕",
+    "era": "joseon",
+    "birth": 1397,
+    "death": 1450,
+    "role": "왕",
+    "tags": ["한글", "과학", "음악", "훈민정음"],
+    "thumbnail": "/images/figures/sejong.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yisunshin",
+    "name": "이순신",
+    "era": "joseon",
+    "birth": 1545,
+    "death": 1598,
+    "role": "장군",
+    "tags": ["임진왜란", "거북선", "명량"],
+    "thumbnail": "/images/figures/yisunshin.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "jang-yeong-sil",
+    "name": "장영실",
+    "era": "joseon",
+    "birth": 1390,
+    "death": 1450,
+    "role": "과학자",
+    "tags": ["앙부일구", "측우기", "자격루"],
+    "thumbnail": "/images/figures/jang-yeong-sil.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "shin-saimdang",
+    "name": "신사임당",
+    "era": "joseon",
+    "birth": 1504,
+    "death": 1551,
+    "role": "예술가·학자",
+    "tags": ["예술", "서예", "여성"],
+    "thumbnail": "/images/figures/shin-saimdang.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "ahn-junggeun",
+    "name": "안중근",
+    "era": "japanese-rule",
+    "birth": 1879,
+    "death": 1910,
+    "role": "독립운동가",
+    "tags": ["독립운동", "이토 히로부미", "하얼빈"],
+    "thumbnail": "/images/figures/ahn-junggeun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yu-gwansun",
+    "name": "유관순",
+    "era": "japanese-rule",
+    "birth": 1902,
+    "death": 1920,
+    "role": "독립운동가",
+    "tags": ["3.1운동", "독립운동", "아우내장터"],
+    "thumbnail": "/images/figures/yu-gwansun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "kim-gu",
+    "name": "김구",
+    "era": "japanese-rule",
+    "birth": 1876,
+    "death": 1949,
+    "role": "독립운동가·정치인",
+    "tags": ["임시정부", "독립운동", "한인애국단"],
+    "thumbnail": "/images/figures/kim-gu.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  }
+]
