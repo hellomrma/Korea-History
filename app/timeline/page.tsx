@@ -16,7 +16,7 @@ export default function TimelinePage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="font-serif text-3xl font-bold text-traditional-dark text-center mb-2">
+      <h1 className="font-serif text-3xl font-bold text-text text-center mb-2">
         인터랙티브 타임라인
       </h1>
       <p className="text-gray-600 text-center mb-10">

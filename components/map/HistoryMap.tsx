@@ -136,7 +136,7 @@ export default function HistoryMap({
 
   const markers = eraMarkers[selectedEra] ?? []
   const currentEra = eras.find((e) => e.slug === selectedEra)
-  const safeColor = currentEra && HEX_COLOR.test(currentEra.color) ? currentEra.color : '#d1c4a8'
+  const safeColor = currentEra && HEX_COLOR.test(currentEra.color) ? currentEra.color : '#2563eb'
 
   const eraEvents = useMemo(
     () => events.filter((e) => e.era === selectedEra),
@@ -152,8 +152,8 @@ export default function HistoryMap({
       <EraSelector eras={eras} selectedSlug={selectedEra} onChange={setSelectedEra} />
 
       {currentEra && (
-        <p className="text-center text-sm text-gray-600 mb-6">
-          <span className="font-bold" style={{ color: safeColor }}>{currentEra.name}</span>
+        <p className="text-center text-sm text-muted mb-6">
+          <span className="font-bold text-text">{currentEra.name}</span>
           {' '}— {currentEra.summary}
         </p>
       )}
@@ -194,13 +194,13 @@ export default function HistoryMap({
               ))}
             </ComposableMap>
           </div>
-          <p className="text-xs text-center text-gray-400 mt-2">마커를 클릭하면 설명이 나타납니다</p>
+          <p className="text-xs text-center text-subtle mt-2">마커를 클릭하면 설명이 나타납니다</p>
         </div>
 
         {/* 사이드패널 */}
         <div className="flex-1 min-w-0">
           {/* 탭 */}
-          <div className="flex border-b mb-4">
+          <div className="flex border-b border-border mb-4">
             {(
               [
                 { id: 'events', label: `사건 (${eraEvents.length})` },
@@ -214,8 +214,8 @@ export default function HistoryMap({
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
                   activeTab === tab.id
-                    ? 'border-traditional text-traditional-dark'
-                    : 'border-transparent text-gray-400 hover:text-gray-600'
+                    ? 'border-point text-point'
+                    : 'border-transparent text-muted hover:text-text'
                 }`}
                 aria-pressed={activeTab === tab.id}
               >
@@ -228,7 +228,7 @@ export default function HistoryMap({
           {activeTab === 'events' && (
             <div className="space-y-2 overflow-y-auto max-h-[500px] pr-1">
               {eraEvents.length === 0 ? (
-                <p className="text-gray-400 text-sm py-4 text-center">이 시대의 사건 데이터가 없습니다</p>
+                <p className="text-subtle text-sm py-4 text-center">이 시대의 사건 데이터가 없습니다</p>
               ) : (
                 eraEvents.map((ev) => {
                   const color = categoryColors[ev.category] ?? '#64748b'
@@ -236,7 +236,7 @@ export default function HistoryMap({
                   return (
                     <div
                       key={ev.id}
-                      className="bg-white rounded-xl p-3 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                      className="bg-surface rounded-xl p-3 border border-border hover:border-point hover:shadow-sm transition-all"
                     >
                       <div className="flex items-start gap-2">
                         <span
@@ -246,9 +246,9 @@ export default function HistoryMap({
                           {ev.category}
                         </span>
                         <div className="min-w-0">
-                          <p className="text-xs text-gray-400 mb-0.5">{yearLabel}</p>
-                          <p className="font-bold text-sm text-traditional-dark mb-1">{ev.title}</p>
-                          <p className="text-xs text-gray-600 leading-relaxed">{ev.summary}</p>
+                          <p className="text-xs text-subtle mb-0.5">{yearLabel}</p>
+                          <p className="font-bold text-sm text-text mb-1">{ev.title}</p>
+                          <p className="text-xs text-muted leading-relaxed">{ev.summary}</p>
                           {ev.figures.length > 0 && (
                             <div className="flex flex-wrap gap-1 mt-1.5">
                               {ev.figures.map((slug) => {
@@ -258,7 +258,7 @@ export default function HistoryMap({
                                   <Link
                                     key={slug}
                                     href={`/figure/${slug}`}
-                                    className="text-xs px-2 py-0.5 bg-amber-50 text-amber-700 rounded-full hover:bg-amber-100 transition-colors"
+                                    className="text-xs px-2 py-0.5 bg-bg border border-border text-muted rounded-full hover:border-point hover:text-point transition-colors"
                                   >
                                     {fig.name}
                                   </Link>
@@ -279,7 +279,7 @@ export default function HistoryMap({
           {activeTab === 'figures' && (
             <div className="space-y-2 overflow-y-auto max-h-[500px] pr-1">
               {eraFigures.length === 0 ? (
-                <p className="text-gray-400 text-sm py-4 text-center">이 시대의 인물 데이터가 없습니다</p>
+                <p className="text-subtle text-sm py-4 text-center">이 시대의 인물 데이터가 없습니다</p>
               ) : (
                 eraFigures.map((fig) => {
                   const birthLabel = fig.birth === null ? '?' : (fig.birth < 0 ? `기원전 ${Math.abs(fig.birth)}` : `${fig.birth}`)
@@ -288,21 +288,21 @@ export default function HistoryMap({
                     <Link
                       key={fig.slug}
                       href={`/figure/${fig.slug}`}
-                      className="flex items-center gap-3 bg-white rounded-xl p-3 shadow-sm border border-gray-100 hover:shadow-md hover:border-traditional/30 transition-all"
+                      className="flex items-center gap-3 bg-surface rounded-xl p-3 border border-border hover:border-point hover:shadow-sm transition-all"
                     >
-                      <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0 text-lg" aria-hidden="true">
+                      <div className="w-10 h-10 rounded-full bg-bg border border-border flex items-center justify-center flex-shrink-0 text-lg" aria-hidden="true">
                         👤
                       </div>
                       <div className="min-w-0">
-                        <p className="font-bold text-sm text-traditional-dark">{fig.name}</p>
-                        <p className="text-xs text-gray-500">{fig.role} · {birthLabel}~{deathLabel}</p>
+                        <p className="font-bold text-sm text-text">{fig.name}</p>
+                        <p className="text-xs text-muted">{fig.role} · {birthLabel}~{deathLabel}</p>
                         <div className="flex flex-wrap gap-1 mt-0.5">
                           {fig.tags.slice(0, 3).map((tag) => (
-                            <span key={tag} className="text-xs text-gray-400">#{tag}</span>
+                            <span key={tag} className="text-xs text-subtle">#{tag}</span>
                           ))}
                         </div>
                       </div>
-                      <span className="ml-auto text-gray-300 flex-shrink-0" aria-hidden="true">→</span>
+                      <span className="ml-auto text-subtle flex-shrink-0" aria-hidden="true">→</span>
                     </Link>
                   )
                 })
@@ -314,7 +314,7 @@ export default function HistoryMap({
           {activeTab === 'places' && (
             <div className="space-y-2 overflow-y-auto max-h-[500px] pr-1">
               {markers.length === 0 ? (
-                <p className="text-gray-400 text-sm py-4 text-center">이 시대의 장소 데이터가 없습니다</p>
+                <p className="text-subtle text-sm py-4 text-center">이 시대의 장소 데이터가 없습니다</p>
               ) : (
                 markers.map((m) => {
                   const typeIcon = { capital: '🏛', battle: '⚔️', site: '📍' }[m.type]
@@ -322,15 +322,15 @@ export default function HistoryMap({
                   return (
                     <div
                       key={m.id}
-                      className="flex items-start gap-3 bg-white rounded-xl p-3 shadow-sm border border-gray-100"
+                      className="flex items-start gap-3 bg-surface rounded-xl p-3 border border-border"
                     >
                       <span className="text-xl flex-shrink-0 mt-0.5" aria-hidden="true">{typeIcon}</span>
                       <div className="min-w-0">
                         <div className="flex items-center gap-2 mb-0.5">
-                          <p className="font-bold text-sm text-traditional-dark">{m.name}</p>
-                          <span className="text-xs text-gray-400">{typeLabel}</span>
+                          <p className="font-bold text-sm text-text">{m.name}</p>
+                          <span className="text-xs text-subtle">{typeLabel}</span>
                         </div>
-                        <p className="text-xs text-gray-600 leading-relaxed">{m.description}</p>
+                        <p className="text-xs text-muted leading-relaxed">{m.description}</p>
                       </div>
                     </div>
                   )

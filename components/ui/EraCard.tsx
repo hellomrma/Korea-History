@@ -14,18 +14,18 @@ export default function EraCard({ era }: { era: Era }) {
   return (
     <Link href={`/era/${era.slug}`} className="block group">
       <div
-        className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-traditional-bg"
+        className="rounded-xl overflow-hidden border border-border hover:border-point hover:shadow-md transition-all bg-surface"
         style={{ borderTop: `4px solid ${era.color}` }}
       >
-        <div className="p-5 bg-white">
-          <h3 className="font-serif text-lg font-bold text-traditional-dark mb-1 group-hover:text-traditional transition-colors">
+        <div className="p-5">
+          <h3 className="font-serif text-lg font-bold text-text mb-1 group-hover:text-point transition-colors">
             {era.name}
           </h3>
-          <p className="text-xs text-gray-500 mb-2">{startLabel} ~ {endLabel}</p>
-          <p className="text-sm text-gray-700 leading-relaxed">{era.summary}</p>
+          <p className="text-xs text-muted mb-2">{startLabel} ~ {endLabel}</p>
+          <p className="text-sm text-muted leading-relaxed">{era.summary}</p>
           <div className="flex flex-wrap gap-1 mt-3">
             {era.tags.map((tag) => (
-              <span key={tag} className="bg-traditional-bg text-traditional-dark text-xs px-2 py-0.5 rounded-full">
+              <span key={tag} className="bg-bg text-muted text-xs px-2 py-0.5 rounded-full border border-border">
                 {tag}
               </span>
             ))}

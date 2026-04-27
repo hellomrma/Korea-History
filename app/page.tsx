@@ -11,7 +11,7 @@ export default function HomePage() {
       <EraHero eras={eras} />
       <QuickLinks />
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="font-serif text-2xl font-bold text-traditional-dark text-center mb-8">
+        <h2 className="font-serif text-2xl font-bold text-text text-center mb-8">
           전체 시대 보기
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

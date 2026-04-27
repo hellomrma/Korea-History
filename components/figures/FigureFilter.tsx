@@ -22,7 +22,7 @@ export default function FigureFilter({
         onChange={(e) => onSearchChange(e.target.value)}
         placeholder="🔍 인물 이름 또는 태그 검색..."
         aria-label="인물 검색"
-        className="w-full border border-traditional-bg rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-traditional bg-white"
+        className="w-full border border-border rounded-xl px-4 py-3 text-sm bg-surface text-text placeholder:text-subtle focus:outline-none focus:ring-2 focus:ring-point focus:border-point"
       />
       <div role="group" aria-label="시대 필터" className="flex flex-wrap gap-2">
         <button
@@ -30,7 +30,7 @@ export default function FigureFilter({
           onClick={() => onEraChange('')}
           aria-pressed={selectedEra === ''}
           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-            selectedEra === '' ? 'bg-traditional text-white' : 'bg-traditional-bg text-traditional-dark hover:bg-traditional/20'
+            selectedEra === '' ? 'bg-point text-white' : 'bg-bg border border-border text-muted hover:border-point hover:text-point'
           }`}
         >
           전체 시대
@@ -42,7 +42,7 @@ export default function FigureFilter({
             onClick={() => onEraChange(era)}
             aria-pressed={selectedEra === era}
             className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-              selectedEra === era ? 'bg-traditional text-white' : 'bg-traditional-bg text-traditional-dark hover:bg-traditional/20'
+              selectedEra === era ? 'bg-point text-white' : 'bg-bg border border-border text-muted hover:border-point hover:text-point'
             }`}
           >
             {era}
@@ -55,7 +55,7 @@ export default function FigureFilter({
           onClick={() => onRoleChange('')}
           aria-pressed={selectedRole === ''}
           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-            selectedRole === '' ? 'bg-navy text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            selectedRole === '' ? 'bg-text text-surface' : 'bg-bg border border-border text-muted hover:border-text hover:text-text'
           }`}
         >
           전체 역할
@@ -67,7 +67,7 @@ export default function FigureFilter({
             onClick={() => onRoleChange(role)}
             aria-pressed={selectedRole === role}
             className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-              selectedRole === role ? 'bg-navy text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              selectedRole === role ? 'bg-text text-surface' : 'bg-bg border border-border text-muted hover:border-text hover:text-text'
             }`}
           >
             {role}

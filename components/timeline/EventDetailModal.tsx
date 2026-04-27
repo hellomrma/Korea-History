@@ -19,12 +19,12 @@ const importanceConfig: Record<string, { label: string; color: string }> = {
 
 function Section({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl bg-gray-50 p-4">
-      <h3 className="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+    <div className="rounded-xl bg-bg p-4 border border-border">
+      <h3 className="flex items-center gap-2 text-xs font-bold text-muted uppercase tracking-wider mb-2">
         <span aria-hidden="true">{icon}</span>
         {title}
       </h3>
-      <div className="text-sm text-gray-700 leading-relaxed">{children}</div>
+      <div className="text-sm text-text leading-relaxed">{children}</div>
     </div>
   )
 }
@@ -79,7 +79,7 @@ export default function EventDetailModal({
             {/* 닫기 버튼 */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-700 transition-colors text-sm font-bold z-10"
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-bg hover:bg-border text-muted hover:text-text transition-colors text-sm font-bold z-10"
               aria-label="닫기"
             >
               ✕
@@ -106,7 +106,7 @@ export default function EventDetailModal({
               <p className="text-sm font-semibold mb-1" style={{ color }}>{yearLabel}</p>
               <h2
                 id="modal-title"
-                className="font-serif text-2xl font-bold text-traditional-dark leading-snug"
+                className="font-serif text-2xl font-bold text-text leading-snug"
               >
                 {event.title}
               </h2>
@@ -141,7 +141,7 @@ export default function EventDetailModal({
             {/* 관련 인물 */}
             {event.figures.length > 0 && (
               <div>
-                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+                <h3 className="text-xs font-bold text-muted uppercase tracking-wider mb-3">
                   관련 인물
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -163,11 +163,11 @@ export default function EventDetailModal({
         </div>
 
         {/* 하단 액션 바 */}
-        <div className="flex-shrink-0 border-t px-6 py-3 flex justify-between items-center bg-gray-50">
-          <span className="text-xs text-gray-400">{yearLabel} · {event.era}</span>
+        <div className="flex-shrink-0 border-t border-border px-6 py-3 flex justify-between items-center bg-bg">
+          <span className="text-xs text-subtle">{yearLabel} · {event.era}</span>
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-white hover:bg-gray-100 text-gray-700 border border-gray-200 rounded-lg text-sm font-medium transition-colors"
+            className="px-4 py-2 bg-surface hover:bg-bg text-muted border border-border rounded-lg text-sm font-medium transition-colors"
           >
             닫기
           </button>

@@ -15,7 +15,7 @@ export default function MapPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
-      <h1 className="font-serif text-3xl font-bold text-traditional-dark text-center mb-2">역사 지도</h1>
+      <h1 className="font-serif text-3xl font-bold text-text text-center mb-2">역사 지도</h1>
       <p className="text-gray-600 text-center mb-8">시대를 선택해 영토, 사건, 인물, 장소를 탐색하세요</p>
       <ClientHistoryMap eras={eras} events={events} figures={figures} />
     </div>

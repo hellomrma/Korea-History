@@ -14,7 +14,7 @@ export default function EraSelector({ eras, selectedSlug, onChange }: Props) {
   return (
     <div role="group" aria-label="시대 선택" className="flex gap-2 flex-wrap justify-center mb-8">
       {sorted.map((era) => {
-        const safeColor = HEX_COLOR.test(era.color) ? era.color : '#8b3a2a'
+        const safeColor = HEX_COLOR.test(era.color) ? era.color : '#2563eb'
         return (
           <button
             key={era.slug}
@@ -23,8 +23,8 @@ export default function EraSelector({ eras, selectedSlug, onChange }: Props) {
             aria-pressed={selectedSlug === era.slug}
             className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
               selectedSlug === era.slug
-                ? 'text-white shadow-md scale-105'
-                : 'bg-traditional-bg text-traditional-dark hover:bg-traditional/10'
+                ? 'text-white shadow-sm'
+                : 'bg-bg border border-border text-muted hover:border-point hover:text-point'
             }`}
             style={selectedSlug === era.slug ? { background: safeColor } : {}}
           >

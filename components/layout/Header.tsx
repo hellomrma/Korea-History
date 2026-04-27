@@ -20,22 +20,22 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="bg-navy text-white sticky top-0 z-50 shadow-md">
+    <header className="bg-surface border-b border-border sticky top-0 z-50">
       <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="font-serif text-xl font-bold flex items-center gap-2">
+        <Link href="/" className="font-serif text-xl font-bold text-text flex items-center gap-2">
           <span aria-hidden="true">🏛</span> 한국역사
         </Link>
         <ul className="hidden md:flex gap-6 text-sm font-medium">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} className="hover:text-traditional-light transition-colors">
+              <Link href={href} className="text-muted hover:text-point transition-colors">
                 {label}
               </Link>
             </li>
           ))}
         </ul>
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 text-muted hover:text-text"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? '메뉴 닫기' : '메뉴 열기'}
           aria-expanded={menuOpen}
@@ -45,10 +45,10 @@ export default function Header() {
         </button>
       </nav>
       {menuOpen && (
-        <ul id="mobile-nav" className="md:hidden bg-navy-light px-4 pb-4 flex flex-col gap-3 text-sm">
+        <ul id="mobile-nav" className="md:hidden bg-surface border-t border-border px-4 pb-4 flex flex-col gap-3 text-sm">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} onClick={() => setMenuOpen(false)} className="block py-1">
+              <Link href={href} onClick={() => setMenuOpen(false)} className="block py-1 text-muted hover:text-point transition-colors">
                 {label}
               </Link>
             </li>

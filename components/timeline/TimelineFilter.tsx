@@ -21,8 +21,8 @@ export default function TimelineFilter({ selected, onChange }: Props) {
           aria-pressed={selected === cat}
           className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
             selected === cat
-              ? 'bg-navy text-white shadow-md'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              ? 'bg-point text-white shadow-sm'
+              : 'bg-bg border border-border text-muted hover:border-point hover:text-point'
           }`}
         >
           {cat}

@@ -13,7 +13,7 @@ export default function FiguresPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="font-serif text-3xl font-bold text-traditional-dark mb-2">인물 도감</h1>
+      <h1 className="font-serif text-3xl font-bold text-text mb-2">인물 도감</h1>
       <p className="text-gray-600 mb-8">한국 역사를 만든 위인들을 만나보세요</p>
       <FigureGrid figures={figures} eras={eras} />
     </div>
