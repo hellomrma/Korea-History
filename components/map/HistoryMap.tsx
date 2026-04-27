@@ -5,7 +5,7 @@ import EraSelector from './EraSelector'
 import LocationMarker, { type MarkerData } from './LocationMarker'
 import type { Era } from '@/types'
 
-const GEO_URL = 'https://raw.githubusercontent.com/southkorea/southkorea-maps/master/kostat/2012/json/skorea-provinces-2012-simple.json'
+const GEO_URL = '/data/korea-provinces.json'
 
 const eraMarkers: Record<string, MarkerData[]> = {
   gojoseon: [
