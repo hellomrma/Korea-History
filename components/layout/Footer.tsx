@@ -65,8 +65,7 @@ export default function Footer() {
       {/* 저작권 */}
       <div className="border-t border-border px-4 py-4">
         <p className="max-w-6xl mx-auto text-xs text-subtle text-center">
-          © {new Date().getFullYear()} 5000년의 시간여행: 한국사. All rights reserved.
-          &nbsp;·&nbsp; 콘텐츠는 AI 생성 자료로 정확성을 보장하지 않습니다.
+          {`© ${new Date().getFullYear()} 5000년의 시간여행: 한국사. All rights reserved. · 콘텐츠는 AI 생성 자료로 정확성을 보장하지 않습니다.`}
         </p>
       </div>
     </footer>
