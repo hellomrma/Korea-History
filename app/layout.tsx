@@ -18,8 +18,8 @@ const notoSerif = Noto_Serif_KR({
 })
 
 export const metadata: Metadata = {
-  title: '한국역사 — 5000년의 이야기',
-  description: '고조선부터 현대까지, 모든 연령을 위한 한국역사 학습 웹사이트',
+  title: '5000년의 시간여행: 한국사',
+  description: '고조선부터 현대까지, 5000년 한국의 시간여행 — 모든 세대를 위한 한국사 학습',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

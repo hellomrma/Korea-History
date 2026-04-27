@@ -17,7 +17,7 @@ const links = [
     href: '/figures',
     icon: '👤',
     title: '인물 도감',
-    desc: '한국 역사를 만든 인물들의 이야기',
+    desc: '5000년 한국사를 이끈 인물들의 이야기',
   },
 ]
 

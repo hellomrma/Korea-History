@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const era = getEraBySlug(slug)
   if (!era) return {}
   return {
-    title: `${era.name} — 한국역사`,
+    title: `${era.name} — 5000년의 시간여행: 한국사`,
     description: era.summary,
   }
 }

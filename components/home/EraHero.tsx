@@ -23,7 +23,7 @@ export default function EraHero({ eras }: { eras: Era[] }) {
         aria-hidden="true"
       />
       <div className="relative">
-        <p className="text-xs uppercase tracking-widest text-subtle mb-3">5,000년 한국의 역사</p>
+        <p className="text-xs uppercase tracking-widest text-subtle mb-3">5000년의 시간여행: 한국사</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold mb-3">{era.name}</h1>
         <p className="text-sm text-subtle mb-1">
           {displayYear(era.period.start)} ~ {era.period.end ? displayYear(era.period.end) : '현재'}
