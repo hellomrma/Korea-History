@@ -1,0 +1,96 @@
+<h2>디자인 방향성</h2>
+<p class="subtitle">전체적인 사이트의 분위기와 스타일을 선택해주세요</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="traditional" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f5ede0;padding:20px;border-radius:8px;font-family:serif">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+        <div style="width:36px;height:36px;background:#8b3a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:18px">韓</div>
+        <span style="font-size:18px;font-weight:bold;color:#3d1f0d">한국역사관</span>
+      </div>
+      <div style="background:#fff8f0;border-radius:6px;padding:12px;border-left:4px solid #8b3a2a">
+        <div style="font-size:12px;color:#8b3a2a;font-weight:bold;margin-bottom:4px">📜 조선시대</div>
+        <div style="font-size:13px;color:#3d1f0d;line-height:1.5">1392년 이성계가 건국한 조선은 유교를 국가 이념으로 삼아...</div>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:10px">
+        <span style="background:#8b3a2a;color:white;padding:2px 8px;border-radius:12px;font-size:11px">쉬움</span>
+        <span style="background:#c4712a;color:white;padding:2px 8px;border-radius:12px;font-size:11px">보통</span>
+        <span style="background:#4a2010;color:white;padding:2px 8px;border-radius:12px;font-size:11px">심화</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 전통 고전 스타일</h3>
+      <p>한지 느낌의 따뜻한 베이지·갈색 톤, 붓글씨 느낌 폰트, 고궁 사진 배경. 역사적 권위감과 품격 강조.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="modern" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f172a;padding:20px;border-radius:8px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+        <div style="width:36px;height:36px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;font-weight:bold">K</div>
+        <span style="font-size:18px;font-weight:bold;color:#f1f5f9">Korea History</span>
+      </div>
+      <div style="background:#1e293b;border-radius:8px;padding:12px;border:1px solid #334155">
+        <div style="font-size:11px;color:#3b82f6;font-weight:bold;margin-bottom:4px;letter-spacing:1px">JOSEON DYNASTY</div>
+        <div style="font-size:13px;color:#cbd5e1;line-height:1.5">Founded in 1392, the Joseon Dynasty shaped Korea for 500 years...</div>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:10px">
+        <span style="background:#1d4ed8;color:white;padding:2px 8px;border-radius:12px;font-size:11px">쉬움</span>
+        <span style="background:#7c3aed;color:white;padding:2px 8px;border-radius:12px;font-size:11px">보통</span>
+        <span style="background:#be185d;color:white;padding:2px 8px;border-radius:12px;font-size:11px">심화</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 모던 다크 스타일</h3>
+      <p>짙은 네이비·다크 배경에 밝은 강조색. 세련되고 현대적인 느낌. 청소년·성인 친화적.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="friendly" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fef9c3;padding:20px;border-radius:8px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+        <div style="width:36px;height:36px;background:#f59e0b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px">🏰</div>
+        <span style="font-size:18px;font-weight:bold;color:#78350f">역사 탐험대!</span>
+      </div>
+      <div style="background:white;border-radius:12px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
+        <div style="font-size:12px;color:#f59e0b;font-weight:bold;margin-bottom:4px">🌟 오늘의 이야기: 조선시대</div>
+        <div style="font-size:13px;color:#44403c;line-height:1.6">이성계 장군이 새 나라를 세웠어요! 그 이름은 바로 '조선'이에요. 어떤 나라였을까요?</div>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:10px">
+        <span style="background:#22c55e;color:white;padding:2px 8px;border-radius:12px;font-size:11px">⭐ 쉬움</span>
+        <span style="background:#f59e0b;color:white;padding:2px 8px;border-radius:12px;font-size:11px">⭐⭐ 보통</span>
+        <span style="background:#ef4444;color:white;padding:2px 8px;border-radius:12px;font-size:11px">⭐⭐⭐ 심화</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 친근한 에듀테인먼트 스타일</h3>
+      <p>밝고 따뜻한 노랑·오렌지 계열. 큰 글씨, 귀여운 아이콘, 쉬운 말투. 어린이·가족 친화적.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:linear-gradient(135deg,#f8f4ed 50%,#1e293b 50%);padding:20px;border-radius:8px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:#f5ede0;border-radius:8px;padding:10px">
+          <div style="font-size:11px;color:#8b3a2a;font-weight:bold">📜 쉬움 모드</div>
+          <div style="font-size:12px;color:#3d1f0d;margin-top:4px">이성계가 조선을 세웠어요!</div>
+          <div style="margin-top:6px;background:#8b3a2a;color:white;border-radius:8px;padding:4px 8px;font-size:11px;display:inline-block">⭐ 읽기</div>
+        </div>
+        <div style="background:#1e293b;border-radius:8px;padding:10px">
+          <div style="font-size:11px;color:#3b82f6;font-weight:bold">ADVANCED</div>
+          <div style="font-size:12px;color:#cbd5e1;margin-top:4px">위화도 회군의 정치적 함의...</div>
+          <div style="margin-top:6px;background:#3b82f6;color:white;border-radius:8px;padding:4px 8px;font-size:11px;display:inline-block">심화 읽기</div>
+        </div>
+      </div>
+      <div style="margin-top:8px;background:rgba(255,255,255,0.15);border-radius:6px;padding:8px;text-align:center">
+        <span style="font-size:12px;color:#44403c;font-weight:bold">같은 콘텐츠 · 다른 깊이</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>D. 하이브리드 스타일</h3>
+      <p>전통미와 현대감을 섞은 균형잡힌 디자인. 크림·흰색 배경 + 포인트 색상. 모든 연령에 무난.</p>
+    </div>
+  </div>
+
+</div>

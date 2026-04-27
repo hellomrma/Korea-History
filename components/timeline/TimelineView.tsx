@@ -2,12 +2,20 @@
 import { useState, useMemo } from 'react'
 import TimelineFilter from './TimelineFilter'
 import TimelineCard from './TimelineCard'
+import EventDetailModal from './EventDetailModal'
 import type { HistoryEvent } from '@/types'
 
 type Category = HistoryEvent['category'] | '전체'
 
-export default function TimelineView({ events }: { events: HistoryEvent[] }) {
+export default function TimelineView({
+  events,
+  figureMap,
+}: {
+  events: HistoryEvent[]
+  figureMap: Record<string, string>
+}) {
   const [category, setCategory] = useState<Category>('전체')
+  const [selectedEvent, setSelectedEvent] = useState<HistoryEvent | null>(null)
 
   const filtered = useMemo(() => {
     if (category === '전체') return events
@@ -26,12 +34,21 @@ export default function TimelineView({ events }: { events: HistoryEvent[] }) {
               key={event.id}
               event={event}
               side={idx % 2 === 0 ? 'left' : 'right'}
+              onClick={() => setSelectedEvent(event)}
             />
           ))}
         </div>
       </div>
       {filtered.length === 0 && (
         <p className="text-center text-gray-500 py-16">해당 카테고리의 사건이 없습니다.</p>
+      )}
+
+      {selectedEvent && (
+        <EventDetailModal
+          event={selectedEvent}
+          figureMap={figureMap}
+          onClose={() => setSelectedEvent(null)}
+        />
       )}
     </>
   )

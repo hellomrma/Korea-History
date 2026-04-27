@@ -1,6 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic'
-import type { Era } from '@/types'
+import type { Era, HistoryEvent, Figure } from '@/types'
 
 const HistoryMap = dynamic(() => import('./HistoryMap'), {
   ssr: false,
@@ -11,6 +11,14 @@ const HistoryMap = dynamic(() => import('./HistoryMap'), {
   ),
 })
 
-export default function ClientHistoryMap({ eras }: { eras: Era[] }) {
-  return <HistoryMap eras={eras} />
+export default function ClientHistoryMap({
+  eras,
+  events,
+  figures,
+}: {
+  eras: Era[]
+  events: HistoryEvent[]
+  figures: Figure[]
+}) {
+  return <HistoryMap eras={eras} events={events} figures={figures} />
 }

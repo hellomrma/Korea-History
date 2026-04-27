@@ -13,9 +13,11 @@ const categoryColors: Record<string, string> = {
 export default function TimelineCard({
   event,
   side,
+  onClick,
 }: {
   event: HistoryEvent
   side: 'left' | 'right'
+  onClick: () => void
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
@@ -45,14 +47,20 @@ export default function TimelineCard({
     >
       {/* 카드 */}
       <div className={`flex-1 ${side === 'right' ? 'text-right' : ''}`}>
-        <div
-          className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow border-l-4"
+        <button
+          type="button"
+          onClick={onClick}
+          className="w-full text-left bg-white rounded-xl p-4 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all border-l-4 group"
           style={{ borderColor: color }}
+          aria-label={`${event.title} 상세 보기`}
         >
           <p className="text-xs font-bold mb-1" style={{ color }}>{yearLabel} · {event.category}</p>
           <h3 className="font-serif font-bold text-traditional-dark text-base mb-1">{event.title}</h3>
-          <p className="text-sm text-gray-600 leading-relaxed">{event.summary}</p>
-        </div>
+          <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{event.summary}</p>
+          <p className="text-xs mt-2 font-medium opacity-0 group-hover:opacity-100 transition-opacity" style={{ color }}>
+            자세히 보기 →
+          </p>
+        </button>
       </div>
 
       {/* 중앙 점 */}
