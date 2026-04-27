@@ -22,9 +22,14 @@ export default function Header() {
   return (
     <header className="bg-surface border-b border-border sticky top-0 z-50">
       <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="text-[10px] font-sans text-muted tracking-widest uppercase">5000년의 시간여행</span>
-          <span className="font-serif text-lg font-bold text-text">한국사</span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-9 h-9 rounded-lg bg-point flex items-center justify-center flex-shrink-0 group-hover:bg-blue-700 transition-colors">
+            <span className="font-serif text-white text-base font-bold leading-none">史</span>
+          </div>
+          <div className="flex flex-col leading-tight">
+            <span className="font-serif text-[17px] font-bold text-text tracking-tight leading-snug">한국사</span>
+            <span className="text-[10px] text-muted tracking-widest">5000년의 시간여행</span>
+          </div>
         </Link>
         <ul className="hidden md:flex gap-6 text-sm font-medium">
           {navLinks.map(({ href, label }) => (
