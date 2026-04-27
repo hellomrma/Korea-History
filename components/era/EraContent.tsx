@@ -1,21 +1,27 @@
 'use client'
-import { useState } from 'react'
 import { MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { DifficultyContext } from '@/lib/difficulty-context'
+import { DifficultyProvider, useDifficulty } from '@/lib/difficulty-context'
 import LevelSelector from '@/components/ui/LevelSelector'
-import { getMDXComponents } from '@/components/mdx/mdx-components'
-import type { Difficulty } from '@/types'
+import { MDX_COMPONENTS } from '@/components/mdx/mdx-components'
 
-export default function EraContent({ mdxSource }: { mdxSource: MDXRemoteSerializeResult }) {
-  const [difficulty, setDifficulty] = useState<Difficulty>('easy')
+function EraContentInner({ mdxSource }: { mdxSource: MDXRemoteSerializeResult }) {
+  const { difficulty, setDifficulty } = useDifficulty()
   return (
-    <DifficultyContext.Provider value={{ difficulty, setDifficulty }}>
+    <>
       <div className="mb-6">
         <LevelSelector selected={difficulty} onChange={setDifficulty} />
       </div>
       <article className="prose prose-stone max-w-none mt-6">
-        <MDXRemote {...mdxSource} components={getMDXComponents()} />
+        <MDXRemote {...mdxSource} components={MDX_COMPONENTS} />
       </article>
-    </DifficultyContext.Provider>
+    </>
+  )
+}
+
+export default function EraContent({ mdxSource }: { mdxSource: MDXRemoteSerializeResult }) {
+  return (
+    <DifficultyProvider>
+      <EraContentInner mdxSource={mdxSource} />
+    </DifficultyProvider>
   )
 }

@@ -13,7 +13,6 @@ const roleIcons: Record<string, string> = {
 
 export default function FigureCard({ figure }: { figure: Figure }) {
   const icon = roleIcons[figure.role] ?? '👤'
-  const deathLabel = figure.death ? String(figure.death) : '미상'
 
   return (
     <Link href={`/figure/${figure.slug}`} className="block group">
