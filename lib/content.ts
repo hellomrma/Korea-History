@@ -10,8 +10,13 @@ export async function getMDXContent(type: 'eras' | 'figures', slug: string) {
   if (!fs.existsSync(filePath)) return null
   const raw = fs.readFileSync(filePath, 'utf-8')
   const { content, data } = matter(raw)
-  const mdxSource = await serialize(content, { scope: data })
-  return { mdxSource, frontmatter: data }
+  try {
+    const mdxSource = await serialize(content, { scope: data })
+    return { mdxSource, frontmatter: data }
+  } catch (err) {
+    console.error(`[getMDXContent] Failed to serialize ${type}/${slug}:`, err)
+    return null
+  }
 }
 
 export function getAvailableSlugs(type: 'eras' | 'figures'): string[] {

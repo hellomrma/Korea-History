@@ -1,7 +1,6 @@
 'use client'
-import { useContext } from 'react'
 import type { Difficulty } from '@/types'
-import { DifficultyContext } from '@/lib/difficulty-context'
+import { useDifficulty } from '@/lib/difficulty-context'
 
 export default function Level({
   difficulty,
@@ -10,7 +9,7 @@ export default function Level({
   difficulty: Difficulty
   children: React.ReactNode
 }) {
-  const selected = useContext(DifficultyContext)
+  const { difficulty: selected } = useDifficulty()
   if (selected !== difficulty) return null
   return <div className="level-content">{children}</div>
 }
