@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     domains: [],
     unoptimized: true,
   },
+  allowedDevOrigins: ['10.100.94.94'],
 }
 
 export default nextConfig
