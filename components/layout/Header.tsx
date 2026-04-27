@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const navLinks = [
   { href: '/timeline', label: '타임라인' },
@@ -10,11 +10,20 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
   return (
     <header className="bg-navy text-white sticky top-0 z-50 shadow-md">
       <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="font-serif text-xl font-bold flex items-center gap-2">
-          🏛 한국역사
+          <span aria-hidden="true">🏛</span> 한국역사
         </Link>
         <ul className="hidden md:flex gap-6 text-sm font-medium">
           {navLinks.map(({ href, label }) => (
@@ -28,13 +37,15 @@ export default function Header() {
         <button
           className="md:hidden p-2"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="메뉴 열기"
+          aria-label={menuOpen ? '메뉴 닫기' : '메뉴 열기'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
         >
           ☰
         </button>
       </nav>
       {menuOpen && (
-        <ul className="md:hidden bg-navy-light px-4 pb-4 flex flex-col gap-3 text-sm">
+        <ul id="mobile-nav" className="md:hidden bg-navy-light px-4 pb-4 flex flex-col gap-3 text-sm">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <Link href={href} onClick={() => setMenuOpen(false)} className="block py-1">
