@@ -7,7 +7,7 @@ interface DifficultyContextValue {
   setDifficulty: (d: Difficulty) => void
 }
 
-const DifficultyContext = createContext<DifficultyContextValue>({
+export const DifficultyContext = createContext<DifficultyContextValue>({
   difficulty: 'easy',
   setDifficulty: () => {},
 })
