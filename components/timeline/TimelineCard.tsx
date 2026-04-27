@@ -50,13 +50,13 @@ export default function TimelineCard({
         <button
           type="button"
           onClick={onClick}
-          className="w-full text-left bg-white rounded-xl p-4 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all border-l-4 group"
+          className="w-full text-left bg-surface rounded-xl p-4 border border-border hover:border-opacity-0 hover:-translate-y-0.5 active:translate-y-0 transition-all border-l-4 group"
           style={{ borderColor: color }}
           aria-label={`${event.title} 상세 보기`}
         >
           <p className="text-xs font-bold mb-1" style={{ color }}>{yearLabel} · {event.category}</p>
           <h3 className="font-serif font-bold text-text text-base mb-1">{event.title}</h3>
-          <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{event.summary}</p>
+          <p className="text-sm text-muted leading-relaxed line-clamp-3">{event.summary}</p>
           <p className="text-xs mt-2 font-medium opacity-0 group-hover:opacity-100 transition-opacity" style={{ color }}>
             자세히 보기 →
           </p>
@@ -65,7 +65,7 @@ export default function TimelineCard({
 
       {/* 중앙 점 */}
       <div
-        className="w-4 h-4 rounded-full flex-shrink-0 z-10 ring-4 ring-white shadow"
+        className="w-4 h-4 rounded-full flex-shrink-0 z-10 ring-4 ring-bg shadow"
         style={{ background: color }}
         aria-hidden="true"
       />

@@ -14,7 +14,7 @@ export default function EraHero({ eras }: { eras: Era[] }) {
 
   return (
     <section
-      className="relative bg-text text-surface text-center px-4 py-20 era-transition"
+      className="relative bg-[#080808] text-text text-center px-4 py-20 era-transition"
       aria-label={`현재 선택된 시대: ${era.name}`}
     >
       <div
@@ -55,7 +55,7 @@ export default function EraHero({ eras }: { eras: Era[] }) {
                   aria-current={idx === currentIdx ? 'true' : undefined}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                     idx === currentIdx
-                      ? 'bg-white text-text font-bold'
+                      ? 'bg-white text-[#111111] font-bold'
                       : 'bg-white/10 text-subtle hover:bg-white/20'
                   }`}
                 >

@@ -83,7 +83,7 @@ export default async function FigurePage({ params }: { params: Promise<{ slug: s
       {content ? (
         <ClientFigureContent mdxSource={content.mdxSource} />
       ) : (
-        <div className="text-center py-12 text-gray-500 bg-bg rounded-xl">
+        <div className="text-center py-12 text-muted bg-bg rounded-xl">
           <p className="text-lg mb-2" aria-hidden="true">📝</p>
           <p>이 인물의 콘텐츠를 준비 중입니다.</p>
         </div>

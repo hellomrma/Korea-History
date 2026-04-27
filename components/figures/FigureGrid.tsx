@@ -38,7 +38,7 @@ export default function FigureGrid({ figures, eras }: { figures: Figure[]; eras:
         onSearchChange={setSearch}
       />
       {filtered.length === 0 ? (
-        <p className="text-center text-gray-500 py-12">검색 결과가 없습니다.</p>
+        <p className="text-center text-muted py-12">검색 결과가 없습니다.</p>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
           {filtered.map((fig) => <FigureCard key={fig.slug} figure={fig} />)}

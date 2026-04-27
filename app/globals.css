@@ -1,23 +1,30 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Shilla';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureM-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
 @theme {
-  /* Neutral scale */
-  --color-bg:      #f8f8f8;
-  --color-surface: #ffffff;
-  --color-border:  #e4e4e4;
-  --color-text:    #111111;
-  --color-muted:   #6b6b6b;
-  --color-subtle:  #a3a3a3;
+  /* Dark theme */
+  --color-bg:      #0d0d0d;
+  --color-surface: #181818;
+  --color-border:  #2e2e2e;
+  --color-text:    #e8e8e8;
+  --color-muted:   #9a9a9a;
+  --color-subtle:  #555555;
 
   /* Single point color */
-  --color-point:   #2563eb;
+  --color-point:   #3b82f6;
 
-  /* Difficulty indicators (keep functional) */
-  --color-difficulty-easy:     #16a34a;
-  --color-difficulty-normal:   #d97706;
-  --color-difficulty-advanced: #dc2626;
+  /* Difficulty indicators */
+  --color-difficulty-easy:     #22c55e;
+  --color-difficulty-normal:   #f59e0b;
+  --color-difficulty-advanced: #f87171;
 
-  --font-serif: 'Noto Serif KR', serif;
+  --font-serif: 'Shilla', 'Noto Serif KR', serif;
   --font-sans:  'Noto Sans KR', sans-serif;
 }
 

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_KR, Noto_Serif_KR } from 'next/font/google'
+import { Noto_Sans_KR } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -10,12 +10,6 @@ const notoSans = Noto_Sans_KR({
   display: 'swap',
   weight: ['400', '500', '700'],
 })
-const notoSerif = Noto_Serif_KR({
-  subsets: ['latin'],
-  variable: '--font-serif',
-  display: 'swap',
-  weight: ['400', '700'],
-})
 
 export const metadata: Metadata = {
   title: '5000년의 시간여행: 한국사',
@@ -24,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={`${notoSans.variable} ${notoSerif.variable}`}>
+    <html lang="ko" className={notoSans.variable}>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

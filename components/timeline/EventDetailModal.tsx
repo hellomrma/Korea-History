@@ -69,7 +69,7 @@ export default function EventDetailModal({
       />
 
       {/* 모달 본체 */}
-      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[92vh] flex flex-col overflow-hidden">
+      <div className="relative bg-surface rounded-2xl shadow-2xl w-full max-w-2xl max-h-[92vh] flex flex-col overflow-hidden border border-border">
         {/* 상단 색상 바 */}
         <div className="h-1.5 flex-shrink-0" style={{ background: color }} />
 
@@ -150,7 +150,7 @@ export default function EventDetailModal({
                       key={slug}
                       href={`/figure/${slug}`}
                       onClick={onClose}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-800 rounded-full text-sm font-medium hover:bg-amber-100 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-bg border border-border text-muted rounded-full text-sm font-medium hover:border-point hover:text-point transition-colors"
                     >
                       <span aria-hidden="true">👤</span>
                       {figureMap[slug] ?? slug}

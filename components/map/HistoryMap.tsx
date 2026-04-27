@@ -162,7 +162,7 @@ export default function HistoryMap({
       <div className="flex flex-col lg:flex-row gap-4">
         {/* 지도 */}
         <div className="flex-shrink-0 lg:w-[420px]">
-          <div className="bg-blue-50 rounded-2xl overflow-hidden shadow-inner">
+          <div className="bg-[#0f1520] rounded-2xl overflow-hidden shadow-inner">
             <ComposableMap
               projection="geoMercator"
               projectionConfig={{ scale: 2800, center: [127.8, 36.2] }}
