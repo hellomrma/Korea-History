@@ -11,10 +11,22 @@ const categoryColors: Record<string, string> = {
   '인물': '#f59e0b',
 }
 
-const importanceLabel: Record<string, string> = {
-  high: '중요도 높음',
-  medium: '중요도 보통',
-  low: '중요도 낮음',
+const importanceConfig: Record<string, { label: string; color: string }> = {
+  high:   { label: '핵심 사건', color: '#ef4444' },
+  medium: { label: '주요 사건', color: '#f59e0b' },
+  low:    { label: '참고 사건', color: '#94a3b8' },
+}
+
+function Section({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
+  return (
+    <div className="rounded-xl bg-gray-50 p-4">
+      <h3 className="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+        <span aria-hidden="true">{icon}</span>
+        {title}
+      </h3>
+      <div className="text-sm text-gray-700 leading-relaxed">{children}</div>
+    </div>
+  )
 }
 
 export default function EventDetailModal({
@@ -27,6 +39,7 @@ export default function EventDetailModal({
   onClose: () => void
 }) {
   const color = categoryColors[event.category] ?? '#64748b'
+  const imp = importanceConfig[event.importance] ?? importanceConfig.low
   const yearLabel = event.year < 0
     ? `기원전 ${Math.abs(event.year)}년`
     : `${event.year}년`
@@ -56,75 +69,108 @@ export default function EventDetailModal({
       />
 
       {/* 모달 본체 */}
-      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
-        {/* 헤더 색상 바 */}
-        <div className="h-1.5 rounded-t-2xl" style={{ background: color }} />
+      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[92vh] flex flex-col overflow-hidden">
+        {/* 상단 색상 바 */}
+        <div className="h-1.5 flex-shrink-0" style={{ background: color }} />
 
-        <div className="p-6">
-          {/* 닫기 버튼 */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-700 transition-colors text-sm font-bold"
-            aria-label="닫기"
-          >
-            ✕
-          </button>
-
-          {/* 메타 정보 */}
-          <div className="flex items-center gap-2 mb-3 flex-wrap">
-            <span
-              className="text-xs font-bold px-2.5 py-1 rounded-full text-white"
-              style={{ background: color }}
-            >
-              {event.category}
-            </span>
-            <span className="text-xs text-gray-400">{importanceLabel[event.importance]}</span>
-          </div>
-
-          {/* 연도 + 제목 */}
-          <p className="text-sm font-semibold mb-1" style={{ color }}>{yearLabel}</p>
-          <h2
-            id="modal-title"
-            className="font-serif text-2xl font-bold text-traditional-dark mb-4 leading-tight"
-          >
-            {event.title}
-          </h2>
-
-          {/* 본문 */}
-          <p className="text-gray-700 leading-relaxed text-base mb-6">{event.summary}</p>
-
-          {/* 관련 인물 */}
-          {event.figures.length > 0 && (
-            <div className="border-t pt-4 mb-4">
-              <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
-                관련 인물
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {event.figures.map((slug) => (
-                  <Link
-                    key={slug}
-                    href={`/figure/${slug}`}
-                    onClick={onClose}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-800 rounded-full text-sm font-medium hover:bg-amber-100 transition-colors"
-                  >
-                    <span aria-hidden="true">👤</span>
-                    {figureMap[slug] ?? slug}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* 하단 액션 */}
-          <div className="border-t pt-4 flex justify-between items-center">
-            <span className="text-xs text-gray-400">{event.era} 시대</span>
+        {/* 스크롤 영역 */}
+        <div className="overflow-y-auto flex-1">
+          <div className="p-6 space-y-5">
+            {/* 닫기 버튼 */}
             <button
               onClick={onClose}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-medium transition-colors"
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-700 transition-colors text-sm font-bold z-10"
+              aria-label="닫기"
             >
-              닫기
+              ✕
             </button>
+
+            {/* 뱃지 행 */}
+            <div className="flex items-center gap-2 flex-wrap pr-10">
+              <span
+                className="text-xs font-bold px-2.5 py-1 rounded-full text-white"
+                style={{ background: color }}
+              >
+                {event.category}
+              </span>
+              <span
+                className="text-xs font-bold px-2.5 py-1 rounded-full"
+                style={{ background: imp.color + '20', color: imp.color }}
+              >
+                {imp.label}
+              </span>
+            </div>
+
+            {/* 연도 + 제목 */}
+            <div>
+              <p className="text-sm font-semibold mb-1" style={{ color }}>{yearLabel}</p>
+              <h2
+                id="modal-title"
+                className="font-serif text-2xl font-bold text-traditional-dark leading-snug"
+              >
+                {event.title}
+              </h2>
+            </div>
+
+            {/* 개요 */}
+            <Section icon="📋" title="개요">
+              {event.summary}
+            </Section>
+
+            {/* 배경 */}
+            {event.background && (
+              <Section icon="🔍" title="배경 및 원인">
+                {event.background}
+              </Section>
+            )}
+
+            {/* 전개 과정 */}
+            {event.process && (
+              <Section icon="⚙️" title="전개 과정">
+                {event.process}
+              </Section>
+            )}
+
+            {/* 역사적 의의 */}
+            {event.significance && (
+              <Section icon="⭐" title="역사적 의의 및 영향">
+                {event.significance}
+              </Section>
+            )}
+
+            {/* 관련 인물 */}
+            {event.figures.length > 0 && (
+              <div>
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+                  관련 인물
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {event.figures.map((slug) => (
+                    <Link
+                      key={slug}
+                      href={`/figure/${slug}`}
+                      onClick={onClose}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-800 rounded-full text-sm font-medium hover:bg-amber-100 transition-colors"
+                    >
+                      <span aria-hidden="true">👤</span>
+                      {figureMap[slug] ?? slug}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
+        </div>
+
+        {/* 하단 액션 바 */}
+        <div className="flex-shrink-0 border-t px-6 py-3 flex justify-between items-center bg-gray-50">
+          <span className="text-xs text-gray-400">{yearLabel} · {event.era}</span>
+          <button
+            onClick={onClose}
+            className="px-4 py-2 bg-white hover:bg-gray-100 text-gray-700 border border-gray-200 rounded-lg text-sm font-medium transition-colors"
+          >
+            닫기
+          </button>
         </div>
       </div>
     </div>

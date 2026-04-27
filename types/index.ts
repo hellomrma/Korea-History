@@ -33,4 +33,7 @@ export interface HistoryEvent {
   category: '정치' | '문화' | '전쟁' | '과학' | '인물'
   importance: 'high' | 'medium' | 'low'
   summary: string
+  background?: string
+  process?: string
+  significance?: string
 }
