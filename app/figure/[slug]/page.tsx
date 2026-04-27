@@ -3,11 +3,20 @@ import Link from 'next/link'
 import { getFigureBySlug, getAllFigures } from '@/lib/figures'
 import { getEraBySlug } from '@/lib/eras'
 import { getMDXContent } from '@/lib/content'
+import { ROLE_ICONS } from '@/lib/roleIcons'
 import ClientFigureContent from '@/components/figure/ClientFigureContent'
 import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
   return getAllFigures().map((f) => ({ slug: f.slug }))
+}
+
+function formatYear(year: number): string {
+  return year < 0 ? `기원전 ${Math.abs(year)}년` : `${year}년`
+}
+
+function formatDeath(death: number | null): string {
+  return death === null ? '미상' : formatYear(death)
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -16,18 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!figure) return {}
   return {
     title: `${figure.name} — 한국역사`,
-    description: `${figure.name} (${figure.birth}~${figure.death ?? '미상'}) — ${figure.role}`,
+    description: `${figure.name} (${formatYear(figure.birth)}~${formatDeath(figure.death)}) — ${figure.role}`,
   }
-}
-
-const roleIcons: Record<string, string> = {
-  '왕': '👑',
-  '장군': '⚔️',
-  '과학자': '🔬',
-  '예술가·학자': '🎨',
-  '독립운동가': '🏅',
-  '독립운동가·정치인': '🏅',
-  '건국 시조': '🏛',
 }
 
 const HEX_COLOR = /^#[0-9a-fA-F]{6}$/
@@ -39,16 +38,9 @@ export default async function FigurePage({ params }: { params: Promise<{ slug: s
 
   const era = getEraBySlug(figure.era)
   const content = await getMDXContent('figures', slug)
-  const icon = roleIcons[figure.role] ?? '👤'
-  const birthLabel = figure.birth < 0
-    ? `기원전 ${Math.abs(figure.birth)}년`
-    : `${figure.birth}년`
-  const deathLabel = figure.death === null
-    ? '미상'
-    : figure.death < 0
-      ? `기원전 ${Math.abs(figure.death)}년`
-      : `${figure.death}년`
-
+  const icon = ROLE_ICONS[figure.role] ?? '👤'
+  const birthLabel = formatYear(figure.birth)
+  const deathLabel = formatDeath(figure.death)
   const safeEraColor = era && HEX_COLOR.test(era.color) ? era.color : '#8b3a2a'
 
   return (
@@ -65,8 +57,8 @@ export default async function FigurePage({ params }: { params: Promise<{ slug: s
           {icon}
         </div>
         <h1 className="font-serif text-3xl font-bold text-center mb-1">{figure.name}</h1>
-        <p className="text-center opacity-80 text-sm mb-1">{figure.role}</p>
-        <p className="text-center opacity-70 text-sm">{birthLabel} ~ {deathLabel}</p>
+        <p className="text-center opacity-[0.8] text-sm mb-1">{figure.role}</p>
+        <p className="text-center opacity-[0.7] text-sm">{birthLabel} ~ {deathLabel}</p>
         {era && (
           <p className="text-center mt-2">
             <Link
@@ -98,6 +90,7 @@ export default async function FigurePage({ params }: { params: Promise<{ slug: s
       <div className="flex gap-4 mt-12">
         <Link
           href="/figures"
+          aria-label="인물 도감으로 돌아가기"
           className="flex-1 bg-traditional-bg rounded-xl p-4 hover:shadow-md transition-shadow text-center"
         >
           <p className="text-xs text-gray-500 mb-1">
@@ -108,6 +101,7 @@ export default async function FigurePage({ params }: { params: Promise<{ slug: s
         {era && (
           <Link
             href={`/era/${era.slug}`}
+            aria-label={`${era.name} 시대 보기`}
             className="flex-1 bg-traditional-bg rounded-xl p-4 hover:shadow-md transition-shadow text-center"
           >
             <p className="text-xs text-gray-500 mb-1">시대 보기</p>

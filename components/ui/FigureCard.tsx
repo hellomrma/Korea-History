@@ -1,18 +1,9 @@
 import Link from 'next/link'
 import type { Figure } from '@/types'
-
-const roleIcons: Record<string, string> = {
-  '왕': '👑',
-  '장군': '⚔️',
-  '과학자': '🔬',
-  '예술가·학자': '🎨',
-  '독립운동가': '🏅',
-  '독립운동가·정치인': '🏅',
-  '건국 시조': '🏛',
-}
+import { ROLE_ICONS } from '@/lib/roleIcons'
 
 export default function FigureCard({ figure }: { figure: Figure }) {
-  const icon = roleIcons[figure.role] ?? '👤'
+  const icon = ROLE_ICONS[figure.role] ?? '👤'
 
   return (
     <Link href={`/figure/${figure.slug}`} className="block group">

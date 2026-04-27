@@ -9,8 +9,8 @@ export default function FigureGrid({ figures, eras }: { figures: Figure[]; eras:
   const [selectedEra, setSelectedEra] = useState('')
   const [selectedRole, setSelectedRole] = useState('')
 
-  const eraNames = eras.map((e) => e.name)
-  const roles = [...new Set(figures.map((f) => f.role))]
+  const eraNames = useMemo(() => eras.map((e) => e.name), [eras])
+  const roles = useMemo(() => [...new Set(figures.map((f) => f.role))], [figures])
 
   const filtered = useMemo(() => {
     return figures.filter((f) => {
