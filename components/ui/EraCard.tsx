@@ -2,10 +2,14 @@ import Link from 'next/link'
 import type { Era } from '@/types'
 
 export default function EraCard({ era }: { era: Era }) {
-  const endLabel = era.period.end ? String(era.period.end) : '현재'
   const startLabel = era.period.start < 0
     ? `기원전 ${Math.abs(era.period.start)}년`
     : `${era.period.start}년`
+  const endLabel = era.period.end === null
+    ? '현재'
+    : era.period.end < 0
+      ? `기원전 ${Math.abs(era.period.end)}년`
+      : `${era.period.end}년`
 
   return (
     <Link href={`/era/${era.slug}`} className="block group">

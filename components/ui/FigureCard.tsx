@@ -28,7 +28,9 @@ export default function FigureCard({ figure }: { figure: Figure }) {
         <h3 className="font-serif font-bold text-traditional-dark group-hover:text-traditional transition-colors">
           {figure.name}
         </h3>
-        <p className="text-xs text-gray-500 mt-1">{figure.birth}년 ~ {deathLabel}년</p>
+        <p className="text-xs text-gray-500 mt-1">
+          {figure.birth}년 ~ {figure.death !== null ? `${figure.death}년` : '미상'}
+        </p>
         <p className="text-xs text-traditional mt-1 font-medium">{figure.role}</p>
         <div className="flex flex-wrap justify-center gap-1 mt-3">
           {figure.tags.slice(0, 3).map((tag) => (

@@ -14,10 +14,11 @@ interface Props {
 
 export default function LevelSelector({ selected, onChange }: Props) {
   return (
-    <div className="flex gap-2 p-1 bg-traditional-bg rounded-xl inline-flex" role="group" aria-label="콘텐츠 난이도 선택">
+    <div className="inline-flex gap-2 p-1 bg-traditional-bg rounded-xl" role="group" aria-label="콘텐츠 난이도 선택">
       {levels.map(({ value, label, stars }) => (
         <button
           key={value}
+          type="button"
           onClick={() => onChange(value)}
           aria-pressed={selected === value}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
