@@ -1,0 +1,38 @@
+'use client'
+import { useState, useMemo } from 'react'
+import TimelineFilter from './TimelineFilter'
+import TimelineCard from './TimelineCard'
+import type { HistoryEvent } from '@/types'
+
+type Category = HistoryEvent['category'] | '전체'
+
+export default function TimelineView({ events }: { events: HistoryEvent[] }) {
+  const [category, setCategory] = useState<Category>('전체')
+
+  const filtered = useMemo(() => {
+    if (category === '전체') return events
+    return events.filter((e) => e.category === category)
+  }, [events, category])
+
+  return (
+    <>
+      <TimelineFilter selected={category} onChange={setCategory} />
+      <div className="relative">
+        {/* 중앙 세로선 */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2" aria-hidden="true" />
+        <div className="space-y-8 py-4">
+          {filtered.map((event, idx) => (
+            <TimelineCard
+              key={event.id}
+              event={event}
+              side={idx % 2 === 0 ? 'left' : 'right'}
+            />
+          ))}
+        </div>
+      </div>
+      {filtered.length === 0 && (
+        <p className="text-center text-gray-500 py-16">해당 카테고리의 사건이 없습니다.</p>
+      )}
+    </>
+  )
+}
