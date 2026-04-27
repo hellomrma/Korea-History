@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f8f4ed;
+  --color-traditional: #8b3a2a;
+  --color-traditional-dark: #3d1f0d;
+  --color-traditional-light: #c4712a;
+  --color-traditional-bg: #f5ede0;
+  --color-navy: #1e293b;
+  --color-navy-light: #334155;
+  --color-difficulty-easy: #22c55e;
+  --color-difficulty-normal: #f59e0b;
+  --color-difficulty-advanced: #ef4444;
+  --font-serif: 'Noto Serif KR', serif;
+  --font-sans: 'Noto Sans KR', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-traditional-dark font-sans;
+  }
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .era-transition {
+    @apply transition-all duration-500 ease-in-out;
+  }
+}
