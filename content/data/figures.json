@@ -6,8 +6,52 @@
     "birth": -2333,
     "death": null,
     "role": "건국 시조",
-    "tags": ["고조선", "건국"],
+    "tags": ["고조선", "건국", "홍익인간"],
     "thumbnail": "/images/figures/dangun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "wiman",
+    "name": "위만",
+    "era": "gojoseon",
+    "birth": -195,
+    "death": -180,
+    "role": "왕",
+    "tags": ["위만조선", "고조선", "이주민"],
+    "thumbnail": "/images/figures/wiman.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "jumong",
+    "name": "주몽(동명성왕)",
+    "era": "proto-three-kingdoms",
+    "birth": -58,
+    "death": -19,
+    "role": "건국 시조",
+    "tags": ["고구려 건국", "동명성왕", "삼국"],
+    "thumbnail": "/images/figures/jumong.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "onjo",
+    "name": "온조왕",
+    "era": "proto-three-kingdoms",
+    "birth": -60,
+    "death": 28,
+    "role": "건국 시조",
+    "tags": ["백제 건국", "위례성", "삼국"],
+    "thumbnail": "/images/figures/onjo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "bak-hyeokgeose",
+    "name": "박혁거세",
+    "era": "proto-three-kingdoms",
+    "birth": -69,
+    "death": 4,
+    "role": "건국 시조",
+    "tags": ["신라 건국", "경주", "삼국"],
+    "thumbnail": "/images/figures/bak-hyeokgeose.jpg",
     "difficulties": ["easy", "normal", "advanced"]
   },
   {
@@ -22,6 +66,138 @@
     "difficulties": ["easy", "normal", "advanced"]
   },
   {
+    "slug": "jangsu",
+    "name": "장수왕",
+    "era": "three-kingdoms",
+    "birth": 394,
+    "death": 491,
+    "role": "왕",
+    "tags": ["고구려", "남진정책", "광개토대왕비"],
+    "thumbnail": "/images/figures/jangsu.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "eulji-mundeok",
+    "name": "을지문덕",
+    "era": "three-kingdoms",
+    "birth": null,
+    "death": null,
+    "role": "장군",
+    "tags": ["살수대첩", "고구려", "수나라"],
+    "thumbnail": "/images/figures/eulji-mundeok.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yeon-gaesomun",
+    "name": "연개소문",
+    "era": "three-kingdoms",
+    "birth": null,
+    "death": 666,
+    "role": "무신·정치가",
+    "tags": ["고구려", "대막리지", "당나라"],
+    "thumbnail": "/images/figures/yeon-gaesomun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "queen-seondeok",
+    "name": "선덕여왕",
+    "era": "three-kingdoms",
+    "birth": 594,
+    "death": 647,
+    "role": "왕",
+    "tags": ["신라", "첫 여왕", "첨성대"],
+    "thumbnail": "/images/figures/queen-seondeok.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "kim-yushin",
+    "name": "김유신",
+    "era": "three-kingdoms",
+    "birth": 595,
+    "death": 673,
+    "role": "장군",
+    "tags": ["삼국통일", "신라", "나당연합"],
+    "thumbnail": "/images/figures/kim-yushin.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "kim-chunchoo",
+    "name": "무열왕(김춘추)",
+    "era": "three-kingdoms",
+    "birth": 604,
+    "death": 661,
+    "role": "왕",
+    "tags": ["신라", "삼국통일", "나당동맹"],
+    "thumbnail": "/images/figures/kim-chunchoo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "gyebaek",
+    "name": "계백",
+    "era": "three-kingdoms",
+    "birth": null,
+    "death": 660,
+    "role": "장군",
+    "tags": ["백제", "황산벌 전투", "충절"],
+    "thumbnail": "/images/figures/gyebaek.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "uijawang",
+    "name": "의자왕",
+    "era": "three-kingdoms",
+    "birth": 615,
+    "death": 660,
+    "role": "왕",
+    "tags": ["백제", "백제 멸망", "해동증자"],
+    "thumbnail": "/images/figures/uijawang.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "wonhyo",
+    "name": "원효",
+    "era": "unified-silla",
+    "birth": 617,
+    "death": 686,
+    "role": "승려·학자",
+    "tags": ["불교", "화쟁사상", "통일신라"],
+    "thumbnail": "/images/figures/wonhyo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "jang-bogo",
+    "name": "장보고",
+    "era": "unified-silla",
+    "birth": null,
+    "death": 846,
+    "role": "무역상·군인",
+    "tags": ["청해진", "해상무역", "통일신라"],
+    "thumbnail": "/images/figures/jang-bogo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "choe-chiwon",
+    "name": "최치원",
+    "era": "unified-silla",
+    "birth": 857,
+    "death": null,
+    "role": "학자·문인",
+    "tags": ["당나라 유학", "계원필경", "통일신라"],
+    "thumbnail": "/images/figures/choe-chiwon.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "daejoyeong",
+    "name": "대조영",
+    "era": "balhae",
+    "birth": null,
+    "death": 719,
+    "role": "건국 시조",
+    "tags": ["발해 건국", "고구려 유민", "해동성국"],
+    "thumbnail": "/images/figures/daejoyeong.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
     "slug": "wang-geon",
     "name": "왕건",
     "era": "goryeo",
@@ -30,6 +206,138 @@
     "role": "왕",
     "tags": ["고려 건국", "후삼국"],
     "thumbnail": "/images/figures/wang-geon.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "seo-hui",
+    "name": "서희",
+    "era": "goryeo",
+    "birth": 942,
+    "death": 998,
+    "role": "문신·외교관",
+    "tags": ["외교담판", "거란", "강동 6주"],
+    "thumbnail": "/images/figures/seo-hui.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "gang-gamchan",
+    "name": "강감찬",
+    "era": "goryeo",
+    "birth": 948,
+    "death": 1031,
+    "role": "장군",
+    "tags": ["귀주대첩", "거란", "고려"],
+    "thumbnail": "/images/figures/gang-gamchan.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "choe-chungheon",
+    "name": "최충헌",
+    "era": "goryeo",
+    "birth": 1149,
+    "death": 1219,
+    "role": "무신·권신",
+    "tags": ["무신정권", "고려", "교정도감"],
+    "thumbnail": "/images/figures/choe-chungheon.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "gongminwang",
+    "name": "공민왕",
+    "era": "goryeo",
+    "birth": 1330,
+    "death": 1374,
+    "role": "왕",
+    "tags": ["반원 개혁", "고려", "노국대장공주"],
+    "thumbnail": "/images/figures/gongminwang.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "mun-ikjeom",
+    "name": "문익점",
+    "era": "goryeo",
+    "birth": 1329,
+    "death": 1398,
+    "role": "문신·발명가",
+    "tags": ["목화", "고려", "원나라"],
+    "thumbnail": "/images/figures/mun-ikjeom.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "choe-museon",
+    "name": "최무선",
+    "era": "goryeo",
+    "birth": 1325,
+    "death": 1395,
+    "role": "발명가·장군",
+    "tags": ["화약", "진포대첩", "고려"],
+    "thumbnail": "/images/figures/choe-museon.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "ilyeon",
+    "name": "일연",
+    "era": "goryeo",
+    "birth": 1206,
+    "death": 1289,
+    "role": "승려·학자",
+    "tags": ["삼국유사", "고려", "불교"],
+    "thumbnail": "/images/figures/ilyeon.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "jeong-mongju",
+    "name": "정몽주",
+    "era": "goryeo",
+    "birth": 1337,
+    "death": 1392,
+    "role": "문신·학자",
+    "tags": ["고려 충신", "성리학", "선죽교"],
+    "thumbnail": "/images/figures/jeong-mongju.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "taejo-joseon",
+    "name": "태조 이성계",
+    "era": "joseon",
+    "birth": 1335,
+    "death": 1408,
+    "role": "왕·건국 시조",
+    "tags": ["조선 건국", "위화도 회군", "한양 천도"],
+    "thumbnail": "/images/figures/taejo-joseon.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "jeong-dojeon",
+    "name": "정도전",
+    "era": "joseon",
+    "birth": 1342,
+    "death": 1398,
+    "role": "문신·학자",
+    "tags": ["조선 설계", "성리학", "경복궁"],
+    "thumbnail": "/images/figures/jeong-dojeon.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "taejong",
+    "name": "태종 이방원",
+    "era": "joseon",
+    "birth": 1367,
+    "death": 1422,
+    "role": "왕",
+    "tags": ["왕자의 난", "조선", "왕권 강화"],
+    "thumbnail": "/images/figures/taejong.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "hwang-hui",
+    "name": "황희",
+    "era": "joseon",
+    "birth": 1363,
+    "death": 1452,
+    "role": "문신",
+    "tags": ["청백리", "세종", "재상"],
+    "thumbnail": "/images/figures/hwang-hui.jpg",
     "difficulties": ["easy", "normal", "advanced"]
   },
   {
@@ -44,17 +352,6 @@
     "difficulties": ["easy", "normal", "advanced"]
   },
   {
-    "slug": "yisunshin",
-    "name": "이순신",
-    "era": "joseon",
-    "birth": 1545,
-    "death": 1598,
-    "role": "장군",
-    "tags": ["임진왜란", "거북선", "명량"],
-    "thumbnail": "/images/figures/yisunshin.jpg",
-    "difficulties": ["easy", "normal", "advanced"]
-  },
-  {
     "slug": "jang-yeong-sil",
     "name": "장영실",
     "era": "joseon",
@@ -63,6 +360,50 @@
     "role": "과학자",
     "tags": ["앙부일구", "측우기", "자격루"],
     "thumbnail": "/images/figures/jang-yeong-sil.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "kim-jongseo",
+    "name": "김종서",
+    "era": "joseon",
+    "birth": 1383,
+    "death": 1453,
+    "role": "문신·장군",
+    "tags": ["육진 개척", "조선", "계유정난"],
+    "thumbnail": "/images/figures/kim-jongseo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "sejo",
+    "name": "세조",
+    "era": "joseon",
+    "birth": 1417,
+    "death": 1468,
+    "role": "왕",
+    "tags": ["계유정난", "왕권 강화", "『경국대전』"],
+    "thumbnail": "/images/figures/sejo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "seongjong",
+    "name": "성종",
+    "era": "joseon",
+    "birth": 1457,
+    "death": 1494,
+    "role": "왕",
+    "tags": ["경국대전", "조선 전성기", "홍문관"],
+    "thumbnail": "/images/figures/seongjong.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yeonsangun",
+    "name": "연산군",
+    "era": "joseon",
+    "birth": 1476,
+    "death": 1506,
+    "role": "왕",
+    "tags": ["무오사화", "갑자사화", "폭군"],
+    "thumbnail": "/images/figures/yeonsangun.jpg",
     "difficulties": ["easy", "normal", "advanced"]
   },
   {
@@ -77,6 +418,204 @@
     "difficulties": ["easy", "normal", "advanced"]
   },
   {
+    "slug": "yi-hwang",
+    "name": "이황(퇴계)",
+    "era": "joseon",
+    "birth": 1501,
+    "death": 1570,
+    "role": "학자",
+    "tags": ["성리학", "퇴계학", "도산서원"],
+    "thumbnail": "/images/figures/yi-hwang.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yi-yi",
+    "name": "이이(율곡)",
+    "era": "joseon",
+    "birth": 1536,
+    "death": 1584,
+    "role": "학자",
+    "tags": ["성리학", "율곡학", "동호문답"],
+    "thumbnail": "/images/figures/yi-yi.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "seonjoo",
+    "name": "선조",
+    "era": "joseon",
+    "birth": 1552,
+    "death": 1608,
+    "role": "왕",
+    "tags": ["임진왜란", "조선", "붕당정치"],
+    "thumbnail": "/images/figures/seonjoo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "gwon-yul",
+    "name": "권율",
+    "era": "joseon",
+    "birth": 1537,
+    "death": 1599,
+    "role": "장군",
+    "tags": ["행주대첩", "임진왜란", "조선"],
+    "thumbnail": "/images/figures/gwon-yul.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "gwak-jaeu",
+    "name": "곽재우",
+    "era": "joseon",
+    "birth": 1552,
+    "death": 1617,
+    "role": "의병장",
+    "tags": ["임진왜란", "홍의장군", "의병"],
+    "thumbnail": "/images/figures/gwak-jaeu.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "heo-jun",
+    "name": "허준",
+    "era": "joseon",
+    "birth": 1539,
+    "death": 1615,
+    "role": "의관·학자",
+    "tags": ["동의보감", "의학", "조선"],
+    "thumbnail": "/images/figures/heo-jun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yisunshin",
+    "name": "이순신",
+    "era": "joseon",
+    "birth": 1545,
+    "death": 1598,
+    "role": "장군",
+    "tags": ["임진왜란", "거북선", "명량"],
+    "thumbnail": "/images/figures/yisunshin.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "gwanghaegun",
+    "name": "광해군",
+    "era": "joseon",
+    "birth": 1575,
+    "death": 1641,
+    "role": "왕",
+    "tags": ["중립외교", "대동법", "인조반정"],
+    "thumbnail": "/images/figures/gwanghaegun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "injo",
+    "name": "인조",
+    "era": "joseon",
+    "birth": 1595,
+    "death": 1649,
+    "role": "왕",
+    "tags": ["병자호란", "삼전도 굴욕", "인조반정"],
+    "thumbnail": "/images/figures/injo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yeongjo",
+    "name": "영조",
+    "era": "joseon",
+    "birth": 1694,
+    "death": 1776,
+    "role": "왕",
+    "tags": ["탕평책", "균역법", "사도세자"],
+    "thumbnail": "/images/figures/yeongjo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "jeongjo",
+    "name": "정조",
+    "era": "joseon",
+    "birth": 1752,
+    "death": 1800,
+    "role": "왕",
+    "tags": ["규장각", "수원 화성", "실학 장려"],
+    "thumbnail": "/images/figures/jeongjo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "jeong-yakyong",
+    "name": "정약용(다산)",
+    "era": "joseon",
+    "birth": 1762,
+    "death": 1836,
+    "role": "실학자",
+    "tags": ["실학", "목민심서", "거중기"],
+    "thumbnail": "/images/figures/jeong-yakyong.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "hong-gyeongnae",
+    "name": "홍경래",
+    "era": "joseon",
+    "birth": 1780,
+    "death": 1812,
+    "role": "반란 지도자",
+    "tags": ["홍경래의 난", "평안도", "조선 후기"],
+    "thumbnail": "/images/figures/hong-gyeongnae.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "kim-jeonghui",
+    "name": "김정희(추사)",
+    "era": "joseon",
+    "birth": 1786,
+    "death": 1856,
+    "role": "학자·예술가",
+    "tags": ["추사체", "금석학", "세한도"],
+    "thumbnail": "/images/figures/kim-jeonghui.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "heungseon-daewongun",
+    "name": "흥선대원군",
+    "era": "joseon",
+    "birth": 1820,
+    "death": 1898,
+    "role": "정치가",
+    "tags": ["쇄국정책", "경복궁 중건", "서원 철폐"],
+    "thumbnail": "/images/figures/heungseon-daewongun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "gojong",
+    "name": "고종",
+    "era": "daehan",
+    "birth": 1852,
+    "death": 1919,
+    "role": "왕·황제",
+    "tags": ["대한제국", "광무개혁", "을사조약"],
+    "thumbnail": "/images/figures/gojong.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "empress-myeongseong",
+    "name": "명성황후",
+    "era": "daehan",
+    "birth": 1851,
+    "death": 1895,
+    "role": "왕비·황후",
+    "tags": ["을미사변", "대한제국", "외교"],
+    "thumbnail": "/images/figures/empress-myeongseong.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "jeon-bongjun",
+    "name": "전봉준",
+    "era": "daehan",
+    "birth": 1855,
+    "death": 1895,
+    "role": "농민 지도자",
+    "tags": ["동학농민운동", "갑오농민전쟁", "녹두장군"],
+    "thumbnail": "/images/figures/jeon-bongjun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
     "slug": "ahn-junggeun",
     "name": "안중근",
     "era": "japanese-rule",
@@ -85,6 +624,39 @@
     "role": "독립운동가",
     "tags": ["독립운동", "이토 히로부미", "하얼빈"],
     "thumbnail": "/images/figures/ahn-junggeun.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "son-byeonghi",
+    "name": "손병희",
+    "era": "japanese-rule",
+    "birth": 1861,
+    "death": 1922,
+    "role": "독립운동가·종교 지도자",
+    "tags": ["3.1운동", "천도교", "독립선언"],
+    "thumbnail": "/images/figures/son-byeonghi.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "hong-beomdo",
+    "name": "홍범도",
+    "era": "japanese-rule",
+    "birth": 1868,
+    "death": 1943,
+    "role": "독립운동가·장군",
+    "tags": ["봉오동 전투", "독립군", "포수"],
+    "thumbnail": "/images/figures/hong-beomdo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "kim-jwajin",
+    "name": "김좌진",
+    "era": "japanese-rule",
+    "birth": 1889,
+    "death": 1930,
+    "role": "독립운동가·장군",
+    "tags": ["청산리 대첩", "독립군", "북로군정서"],
+    "thumbnail": "/images/figures/kim-jwajin.jpg",
     "difficulties": ["easy", "normal", "advanced"]
   },
   {
@@ -99,6 +671,61 @@
     "difficulties": ["easy", "normal", "advanced"]
   },
   {
+    "slug": "an-changho",
+    "name": "안창호",
+    "era": "japanese-rule",
+    "birth": 1878,
+    "death": 1938,
+    "role": "독립운동가·교육가",
+    "tags": ["흥사단", "임시정부", "민족 계몽"],
+    "thumbnail": "/images/figures/an-changho.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yi-bongchang",
+    "name": "이봉창",
+    "era": "japanese-rule",
+    "birth": 1900,
+    "death": 1932,
+    "role": "독립운동가",
+    "tags": ["한인애국단", "의거", "도쿄"],
+    "thumbnail": "/images/figures/yi-bongchang.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yun-bonggil",
+    "name": "윤봉길",
+    "era": "japanese-rule",
+    "birth": 1908,
+    "death": 1932,
+    "role": "독립운동가",
+    "tags": ["한인애국단", "홍커우 의거", "상하이"],
+    "thumbnail": "/images/figures/yun-bonggil.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yun-dongjoo",
+    "name": "윤동주",
+    "era": "japanese-rule",
+    "birth": 1917,
+    "death": 1945,
+    "role": "시인",
+    "tags": ["저항시", "하늘과 바람과 별과 시", "후쿠오카"],
+    "thumbnail": "/images/figures/yun-dongjoo.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yi-yuksa",
+    "name": "이육사",
+    "era": "japanese-rule",
+    "birth": 1904,
+    "death": 1944,
+    "role": "시인·독립운동가",
+    "tags": ["저항시", "광야", "청포도"],
+    "thumbnail": "/images/figures/yi-yuksa.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
     "slug": "kim-gu",
     "name": "김구",
     "era": "japanese-rule",
@@ -107,6 +734,61 @@
     "role": "독립운동가·정치인",
     "tags": ["임시정부", "독립운동", "한인애국단"],
     "thumbnail": "/images/figures/kim-gu.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yeo-unhyeong",
+    "name": "여운형",
+    "era": "liberation",
+    "birth": 1886,
+    "death": 1947,
+    "role": "정치인·독립운동가",
+    "tags": ["건국준비위원회", "해방", "좌우합작"],
+    "thumbnail": "/images/figures/yeo-unhyeong.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "yi-seungman",
+    "name": "이승만",
+    "era": "liberation",
+    "birth": 1875,
+    "death": 1965,
+    "role": "정치인",
+    "tags": ["초대 대통령", "대한민국 건국", "4.19혁명"],
+    "thumbnail": "/images/figures/yi-seungman.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "park-jeonghee",
+    "name": "박정희",
+    "era": "modern",
+    "birth": 1917,
+    "death": 1979,
+    "role": "정치인",
+    "tags": ["경제개발", "유신체제", "5.16쿠데타"],
+    "thumbnail": "/images/figures/park-jeonghee.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "jeon-taeil",
+    "name": "전태일",
+    "era": "modern",
+    "birth": 1948,
+    "death": 1970,
+    "role": "노동운동가",
+    "tags": ["노동운동", "분신", "근로기준법"],
+    "thumbnail": "/images/figures/jeon-taeil.jpg",
+    "difficulties": ["easy", "normal", "advanced"]
+  },
+  {
+    "slug": "kim-daejung",
+    "name": "김대중",
+    "era": "modern",
+    "birth": 1924,
+    "death": 2009,
+    "role": "정치인",
+    "tags": ["민주화운동", "햇볕정책", "노벨평화상"],
+    "thumbnail": "/images/figures/kim-daejung.jpg",
     "difficulties": ["easy", "normal", "advanced"]
   }
 ]
