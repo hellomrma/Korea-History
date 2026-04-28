@@ -1,5 +1,5 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import TimelineFilter from './TimelineFilter'
 import TimelineCard from './TimelineCard'
 import EventDetailModal from './EventDetailModal'
@@ -21,6 +21,26 @@ export default function TimelineView({
     if (category === '전체') return events
     return events.filter((e) => e.category === category)
   }, [events, category])
+
+  // Open modal when URL hash matches an event id (e.g. from global search)
+  useEffect(() => {
+    const openFromHash = () => {
+      const hash = decodeURIComponent(window.location.hash.replace(/^#/, ''))
+      if (!hash) return
+      const event = events.find((e) => e.id === hash)
+      if (event) setSelectedEvent(event)
+    }
+    openFromHash()
+    window.addEventListener('hashchange', openFromHash)
+    return () => window.removeEventListener('hashchange', openFromHash)
+  }, [events])
+
+  const closeModal = () => {
+    setSelectedEvent(null)
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search)
+    }
+  }
 
   return (
     <>
@@ -47,7 +67,7 @@ export default function TimelineView({
         <EventDetailModal
           event={selectedEvent}
           figureMap={figureMap}
-          onClose={() => setSelectedEvent(null)}
+          onClose={closeModal}
         />
       )}
     </>
