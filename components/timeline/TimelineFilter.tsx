@@ -12,17 +12,17 @@ interface Props {
 
 export default function TimelineFilter({ selected, onChange }: Props) {
   return (
-    <div role="group" aria-label="카테고리 필터" className="flex gap-2 flex-wrap justify-center mb-10">
+    <div role="group" aria-label="카테고리 필터" className="flex gap-1.5 flex-wrap mb-12">
       {categories.map((cat) => (
         <button
           key={cat}
           type="button"
           onClick={() => onChange(cat)}
           aria-pressed={selected === cat}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+          className={`px-3 py-1 text-xs border transition-colors ${
             selected === cat
-              ? 'bg-point text-white shadow-sm'
-              : 'bg-bg border border-border text-muted hover:border-point hover:text-point'
+              ? 'bg-text text-bg border-text'
+              : 'bg-bg text-muted border-border hover:text-text hover:border-text'
           }`}
         >
           {cat}

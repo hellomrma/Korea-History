@@ -1,39 +1,35 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Shilla';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureM-Medium.woff2') format('woff2');
-  font-weight: 100 900;
-  font-display: swap;
-}
-
 @theme {
-  /* Dark theme */
-  --color-bg:      #0d0d0d;
-  --color-surface: #181818;
-  --color-border:  #2e2e2e;
-  --color-text:    #e8e8e8;
-  --color-muted:   #a0a0a0;
-  --color-subtle:  #6e6e6e;
+  /* Light editorial theme */
+  --color-bg:      #ffffff;
+  --color-surface: #fafafa;
+  --color-border:  #e5e5e5;
+  --color-text:    #0a0a0a;
+  --color-muted:   #525252;
+  --color-subtle:  #737373;
 
-  /* Single point color */
-  --color-point:   #3b82f6;
+  /* Single point color (links / accents) */
+  --color-point:   #1d4ed8;
 
   /* Difficulty indicators */
-  --color-difficulty-easy:     #22c55e;
-  --color-difficulty-normal:   #f59e0b;
-  --color-difficulty-advanced: #f87171;
+  --color-difficulty-easy:     #16a34a;
+  --color-difficulty-normal:   #d97706;
+  --color-difficulty-advanced: #dc2626;
 
-  --font-serif: 'Shilla', 'Noto Serif KR', serif;
-  --font-sans:  'Noto Sans KR', sans-serif;
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', sans-serif;
+  --font-serif: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-bg text-text font-sans;
+    @apply bg-bg text-text font-sans antialiased;
+    font-feature-settings: "ss03", "ss04";
+    letter-spacing: -0.01em;
   }
-  h1, h2, h3 {
-    @apply font-serif;
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
   }
 }
 
@@ -50,10 +46,4 @@
     transition: none !important;
     animation: none !important;
   }
-}
-
-/* Shilla는 단일 굵기 폰트 — 브라우저 합성 볼드 방지, 항상 weight 400으로 렌더 */
-.font-serif {
-  font-weight: 400;
-  font-synthesis: none;
 }

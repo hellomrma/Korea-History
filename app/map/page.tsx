@@ -14,9 +14,12 @@ export default function MapPage() {
   const figures = getAllFigures()
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
-      <h1 className="font-serif text-3xl font-bold text-text text-center mb-2">역사 지도</h1>
-      <p className="text-muted text-center mb-8">시대를 선택해 5000년 한국사의 영토·사건·인물·장소를 탐색하세요</p>
+    <div className="max-w-5xl mx-auto px-6 py-20">
+      <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">Map</p>
+      <h1 className="text-4xl md:text-5xl font-semibold text-text tracking-tight mb-4">역사 지도</h1>
+      <p className="text-base text-muted mb-16 max-w-xl leading-relaxed">
+        시대를 선택해 5000년 한국사의 영토·사건·인물·장소를 탐색하세요.
+      </p>
       <ClientHistoryMap eras={eras} events={events} figures={figures} />
     </div>
   )

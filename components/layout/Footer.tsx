@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* 브랜드 */}
         <div>
-          <p className="font-serif text-base font-bold text-text mb-1">5000년의 시간여행: 한국사</p>
+          <p className="text-base font-semibold text-text mb-1 tracking-tight">5000년의 시간여행: 한국사</p>
           <p className="text-xs text-muted leading-relaxed">
             고조선부터 현대까지, 5000년 한국의 이야기를<br />모든 세대와 함께합니다.
           </p>

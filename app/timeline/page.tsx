@@ -15,12 +15,13 @@ export default function TimelinePage() {
   )
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="font-serif text-3xl font-bold text-text text-center mb-2">
+    <div className="max-w-4xl mx-auto px-6 py-20">
+      <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">Timeline</p>
+      <h1 className="text-4xl md:text-5xl font-semibold text-text tracking-tight mb-4">
         인터랙티브 타임라인
       </h1>
-      <p className="text-muted text-center mb-10">
-        5000년 한국사의 흐름을 한눈에 — 사건 카드를 클릭하면 자세한 내용을 볼 수 있습니다
+      <p className="text-base text-muted mb-16 max-w-xl leading-relaxed">
+        5000년 한국사의 흐름을 한눈에 — 사건 카드를 클릭하면 자세한 내용을 볼 수 있습니다.
       </p>
       <TimelineView events={events} figureMap={figureMap} />
     </div>

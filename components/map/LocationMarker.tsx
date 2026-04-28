@@ -10,9 +10,9 @@ interface MarkerData {
 }
 
 const typeConfig = {
-  capital: { icon: '🏛', color: '#2563eb' },
-  battle:  { icon: '⚔️', color: '#ef4444' },
-  site:    { icon: '📍', color: '#6b6b6b' },
+  capital: { icon: '🏛', color: '#1d4ed8' },
+  battle:  { icon: '⚔️', color: '#dc2626' },
+  site:    { icon: '📍', color: '#525252' },
 }
 
 export default function LocationMarker({ marker }: { marker: MarkerData }) {

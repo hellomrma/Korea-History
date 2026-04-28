@@ -7,15 +7,15 @@ type MDXComponents = Record<string, React.ComponentType<any>>
 export const MDX_COMPONENTS: MDXComponents = {
   Level,
   DifficultyBadge,
-  h1: (props) => <h1 className="font-serif text-3xl font-bold text-text mt-8 mb-4" {...props} />,
-  h2: (props) => <h2 className="font-serif text-2xl font-bold text-point mt-6 mb-3" {...props} />,
-  h3: (props) => <h3 className="font-serif text-xl font-semibold text-text mt-4 mb-2" {...props} />,
-  p:  (props) => <p className="leading-relaxed text-text mb-4" {...props} />,
-  ul: (props) => <ul className="list-disc list-inside mb-4 space-y-1 text-text" {...props} />,
-  li: (props) => <li className="leading-relaxed" {...props} />,
-  strong: (props) => <strong className="font-bold text-text" {...props} />,
+  h1: (props) => <h1 className="text-3xl font-semibold text-text tracking-tight mt-12 mb-5" {...props} />,
+  h2: (props) => <h2 className="text-2xl font-semibold text-text tracking-tight mt-10 mb-4" {...props} />,
+  h3: (props) => <h3 className="text-xl font-semibold text-text tracking-tight mt-6 mb-3" {...props} />,
+  p:  (props) => <p className="leading-[1.85] text-text mb-5" {...props} />,
+  ul: (props) => <ul className="list-disc list-inside mb-5 space-y-1.5 text-text" {...props} />,
+  li: (props) => <li className="leading-[1.85]" {...props} />,
+  strong: (props) => <strong className="font-semibold text-text" {...props} />,
   blockquote: (props) => (
-    <blockquote className="border-l-4 border-point pl-4 italic text-muted my-4" {...props} />
+    <blockquote className="border-l-2 border-text pl-5 my-6 text-muted" {...props} />
   ),
 }
 

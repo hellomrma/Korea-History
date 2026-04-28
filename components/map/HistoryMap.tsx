@@ -152,17 +152,17 @@ export default function HistoryMap({
       <EraSelector eras={eras} selectedSlug={selectedEra} onChange={setSelectedEra} />
 
       {currentEra && (
-        <p className="text-center text-sm text-muted mb-6">
-          <span className="font-bold text-text">{currentEra.name}</span>
+        <p className="text-sm text-muted mb-8 max-w-2xl leading-relaxed">
+          <span className="font-semibold text-text">{currentEra.name}</span>
           {' '}— {currentEra.summary}
         </p>
       )}
 
       {/* 지도 + 사이드패널 */}
-      <div className="flex flex-col lg:flex-row gap-4">
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* 지도 */}
         <div className="flex-shrink-0 lg:w-[420px]">
-          <div className="bg-[#0f1520] rounded-2xl overflow-hidden shadow-inner">
+          <div className="bg-surface border border-border overflow-hidden">
             <ComposableMap
               projection="geoMercator"
               projectionConfig={{ scale: 2800, center: [127.8, 36.2] }}
@@ -176,11 +176,12 @@ export default function HistoryMap({
                       key={geo.rsmKey}
                       geography={geo}
                       fill={safeColor}
-                      stroke="#fff"
-                      strokeWidth={0.5}
+                      fillOpacity={0.18}
+                      stroke={safeColor}
+                      strokeWidth={0.6}
                       style={{
                         default: { outline: 'none' },
-                        hover: { outline: 'none', opacity: 0.8 },
+                        hover: { outline: 'none', fillOpacity: 0.3 },
                         pressed: { outline: 'none' },
                       }}
                     />
@@ -194,13 +195,13 @@ export default function HistoryMap({
               ))}
             </ComposableMap>
           </div>
-          <p className="text-xs text-center text-subtle mt-2">마커를 클릭하면 설명이 나타납니다</p>
+          <p className="text-xs text-subtle mt-3">마커를 클릭하면 설명이 나타납니다</p>
         </div>
 
         {/* 사이드패널 */}
         <div className="flex-1 min-w-0">
           {/* 탭 */}
-          <div className="flex border-b border-border mb-4">
+          <div className="flex border-b border-border mb-6">
             {(
               [
                 { id: 'events', label: `사건 (${eraEvents.length})` },
@@ -212,9 +213,9 @@ export default function HistoryMap({
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
+                className={`px-1 mr-6 py-3 text-sm border-b-2 transition-colors -mb-px ${
                   activeTab === tab.id
-                    ? 'border-point text-point'
+                    ? 'border-text text-text'
                     : 'border-transparent text-muted hover:text-text'
                 }`}
                 aria-pressed={activeTab === tab.id}
@@ -226,115 +227,98 @@ export default function HistoryMap({
 
           {/* 사건 탭 */}
           {activeTab === 'events' && (
-            <div className="space-y-2 overflow-y-auto max-h-[500px] pr-1">
+            <div className="overflow-y-auto max-h-[500px] pr-1">
               {eraEvents.length === 0 ? (
-                <p className="text-subtle text-sm py-4 text-center">이 시대의 사건 데이터가 없습니다</p>
+                <p className="text-subtle text-sm py-4">이 시대의 사건 데이터가 없습니다</p>
               ) : (
-                eraEvents.map((ev) => {
-                  const color = categoryColors[ev.category] ?? '#64748b'
-                  const yearLabel = ev.year < 0 ? `기원전 ${Math.abs(ev.year)}년` : `${ev.year}년`
-                  return (
-                    <div
-                      key={ev.id}
-                      className="bg-surface rounded-xl p-3 border border-border hover:border-point hover:shadow-sm transition-all"
-                    >
-                      <div className="flex items-start gap-2">
-                        <span
-                          className="flex-shrink-0 text-xs font-bold px-2 py-0.5 rounded-full text-white mt-0.5"
-                          style={{ background: color }}
-                        >
-                          {ev.category}
-                        </span>
-                        <div className="min-w-0">
-                          <p className="text-xs text-subtle mb-0.5">{yearLabel}</p>
-                          <p className="font-bold text-sm text-text mb-1">{ev.title}</p>
-                          <p className="text-xs text-muted leading-relaxed">{ev.summary}</p>
-                          {ev.figures.length > 0 && (
-                            <div className="flex flex-wrap gap-1 mt-1.5">
-                              {ev.figures.map((slug) => {
-                                const fig = figures.find((f) => f.slug === slug)
-                                if (!fig) return null
-                                return (
-                                  <Link
-                                    key={slug}
-                                    href={`/figure/${slug}`}
-                                    className="text-xs px-2 py-0.5 bg-bg border border-border text-muted rounded-full hover:border-point hover:text-point transition-colors"
-                                  >
-                                    {fig.name}
-                                  </Link>
-                                )
-                              })}
-                            </div>
-                          )}
+                <div className="divide-y divide-border">
+                  {eraEvents.map((ev) => {
+                    const yearLabel = ev.year < 0 ? `기원전 ${Math.abs(ev.year)}년` : `${ev.year}년`
+                    return (
+                      <div key={ev.id} className="py-4">
+                        <div className="flex items-baseline gap-3 mb-1.5">
+                          <span className="text-xs text-subtle border border-border px-1.5 py-0.5">
+                            {ev.category}
+                          </span>
+                          <p className="text-xs text-muted tabular-nums">{yearLabel}</p>
                         </div>
+                        <p className="text-sm font-semibold text-text tracking-tight mb-1">{ev.title}</p>
+                        <p className="text-xs text-muted leading-relaxed">{ev.summary}</p>
+                        {ev.figures.length > 0 && (
+                          <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2">
+                            {ev.figures.map((slug) => {
+                              const fig = figures.find((f) => f.slug === slug)
+                              if (!fig) return null
+                              return (
+                                <Link
+                                  key={slug}
+                                  href={`/figure/${slug}`}
+                                  className="text-xs text-text border-b border-text pb-px hover:text-point hover:border-point transition-colors"
+                                >
+                                  {fig.name}
+                                </Link>
+                              )
+                            })}
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  )
-                })
+                    )
+                  })}
+                </div>
               )}
             </div>
           )}
 
           {/* 인물 탭 */}
           {activeTab === 'figures' && (
-            <div className="space-y-2 overflow-y-auto max-h-[500px] pr-1">
+            <div className="overflow-y-auto max-h-[500px] pr-1">
               {eraFigures.length === 0 ? (
-                <p className="text-subtle text-sm py-4 text-center">이 시대의 인물 데이터가 없습니다</p>
+                <p className="text-subtle text-sm py-4">이 시대의 인물 데이터가 없습니다</p>
               ) : (
-                eraFigures.map((fig) => {
-                  const birthLabel = fig.birth === null ? '?' : (fig.birth < 0 ? `기원전 ${Math.abs(fig.birth)}` : `${fig.birth}`)
-                  const deathLabel = fig.death === null ? '미상' : (fig.death < 0 ? `기원전 ${Math.abs(fig.death)}` : `${fig.death}`)
-                  return (
-                    <Link
-                      key={fig.slug}
-                      href={`/figure/${fig.slug}`}
-                      className="flex items-center gap-3 bg-surface rounded-xl p-3 border border-border hover:border-point hover:shadow-sm transition-all"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-bg border border-border flex items-center justify-center flex-shrink-0 text-lg" aria-hidden="true">
-                        👤
-                      </div>
-                      <div className="min-w-0">
-                        <p className="font-bold text-sm text-text">{fig.name}</p>
-                        <p className="text-xs text-muted">{fig.role} · {birthLabel}~{deathLabel}</p>
-                        <div className="flex flex-wrap gap-1 mt-0.5">
+                <div className="divide-y divide-border">
+                  {eraFigures.map((fig) => {
+                    const birthLabel = fig.birth === null ? '?' : (fig.birth < 0 ? `기원전 ${Math.abs(fig.birth)}` : `${fig.birth}`)
+                    const deathLabel = fig.death === null ? '미상' : (fig.death < 0 ? `기원전 ${Math.abs(fig.death)}` : `${fig.death}`)
+                    return (
+                      <Link
+                        key={fig.slug}
+                        href={`/figure/${fig.slug}`}
+                        className="block py-4 group"
+                      >
+                        <p className="text-xs text-muted tabular-nums mb-1">{birthLabel}~{deathLabel}</p>
+                        <p className="text-sm font-semibold text-text tracking-tight group-hover:text-point transition-colors">{fig.name}</p>
+                        <p className="text-xs text-muted">{fig.role}</p>
+                        <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-1.5">
                           {fig.tags.slice(0, 3).map((tag) => (
                             <span key={tag} className="text-xs text-subtle">#{tag}</span>
                           ))}
                         </div>
-                      </div>
-                      <span className="ml-auto text-subtle flex-shrink-0" aria-hidden="true">→</span>
-                    </Link>
-                  )
-                })
+                      </Link>
+                    )
+                  })}
+                </div>
               )}
             </div>
           )}
 
           {/* 장소 탭 */}
           {activeTab === 'places' && (
-            <div className="space-y-2 overflow-y-auto max-h-[500px] pr-1">
+            <div className="overflow-y-auto max-h-[500px] pr-1">
               {markers.length === 0 ? (
-                <p className="text-subtle text-sm py-4 text-center">이 시대의 장소 데이터가 없습니다</p>
+                <p className="text-subtle text-sm py-4">이 시대의 장소 데이터가 없습니다</p>
               ) : (
-                markers.map((m) => {
-                  const typeIcon = { capital: '🏛', battle: '⚔️', site: '📍' }[m.type]
-                  const typeLabel = { capital: '수도·왕도', battle: '전쟁·전투', site: '유적·유물' }[m.type]
-                  return (
-                    <div
-                      key={m.id}
-                      className="flex items-start gap-3 bg-surface rounded-xl p-3 border border-border"
-                    >
-                      <span className="text-xl flex-shrink-0 mt-0.5" aria-hidden="true">{typeIcon}</span>
-                      <div className="min-w-0">
-                        <div className="flex items-center gap-2 mb-0.5">
-                          <p className="font-bold text-sm text-text">{m.name}</p>
-                          <span className="text-xs text-subtle">{typeLabel}</span>
-                        </div>
+                <div className="divide-y divide-border">
+                  {markers.map((m) => {
+                    const typeLabel = { capital: '수도·왕도', battle: '전쟁·전투', site: '유적·유물' }[m.type]
+                    return (
+                      <div key={m.id} className="py-4">
+                        <p className="text-xs text-subtle mb-1">{typeLabel}</p>
+                        <p className="text-sm font-semibold text-text tracking-tight mb-1">{m.name}</p>
                         <p className="text-xs text-muted leading-relaxed">{m.description}</p>
                       </div>
-                    </div>
-                  )
-                })
+                    )
+                  })}
+                </div>
               )}
             </div>
           )}

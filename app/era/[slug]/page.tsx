@@ -22,8 +22,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-const HEX_COLOR = /^#[0-9a-fA-F]{6}$/
-
 export default async function EraPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const era = getEraBySlug(slug)
@@ -42,76 +40,61 @@ export default async function EraPage({ params }: { params: Promise<{ slug: stri
       ? `기원전 ${Math.abs(era.period.end)}년`
       : `${era.period.end}년`
 
-  const safeColor = HEX_COLOR.test(era.color) ? era.color : '#2563eb'
-
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
-      {/* Era header */}
-      <div
-        className="rounded-2xl p-8 text-white mb-8 relative overflow-hidden"
-        style={{ background: '#111111' }}
-      >
-        <div className="absolute inset-0 opacity-30" style={{ background: `radial-gradient(ellipse at 70% 30%, ${safeColor}, transparent 70%)` }} aria-hidden="true" />
-        <div className="relative">
-        <p className="text-xs uppercase tracking-widest opacity-70 mb-1">시대</p>
-        <h1 className="font-serif text-3xl font-bold mb-2">{era.name}</h1>
-        <p className="opacity-[0.85] text-sm">{startLabel} ~ {endLabel}</p>
-        <p className="mt-3 opacity-90 leading-relaxed">{era.summary}</p>
-        <div className="flex flex-wrap gap-2 mt-4">
+    <div className="max-w-3xl mx-auto px-6 py-20">
+      <header className="border-b border-border pb-12 mb-12">
+        <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">시대</p>
+        <h1 className="text-5xl md:text-6xl font-semibold text-text tracking-tight leading-[1.05] mb-5">
+          {era.name}
+        </h1>
+        <p className="text-sm text-muted tabular-nums mb-5">{startLabel} — {endLabel}</p>
+        <p className="text-base md:text-lg text-muted leading-relaxed mb-6 max-w-2xl">{era.summary}</p>
+        <div className="flex flex-wrap gap-x-2 gap-y-1">
           {era.tags.map((tag) => (
-            <span key={tag} className="bg-white/20 px-3 py-0.5 rounded-full text-xs">{tag}</span>
+            <span key={tag} className="text-xs text-subtle border border-border px-2 py-0.5">{tag}</span>
           ))}
         </div>
-        </div>
-      </div>
+      </header>
 
-      {/* MDX content with difficulty selector */}
       {content ? (
         <ClientEraContent mdxSource={content.mdxSource} />
       ) : (
-        <div className="text-center py-12 text-muted bg-bg rounded-xl">
-          <p className="text-lg mb-2" aria-hidden="true">📝</p>
+        <div className="py-16 text-center text-muted border border-border">
           <p>이 시대의 콘텐츠를 준비 중입니다.</p>
         </div>
       )}
 
-      {/* Related figures */}
       {figures.length > 0 && (
-        <section className="mt-12">
-          <h2 className="font-serif text-xl font-bold text-text mb-5">이 시대의 인물</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <section className="mt-20">
+          <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">이 시대의 인물</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
             {figures.map((fig) => <FigureCard key={fig.slug} figure={fig} />)}
           </div>
         </section>
       )}
 
-      {/* Previous/next era navigation */}
-      <div className="flex justify-between mt-12 gap-4">
+      <nav className="flex justify-between mt-20 gap-6 pt-10 border-t border-border">
         {prev ? (
           <Link
             href={`/era/${prev.slug}`}
             aria-label={`이전 시대: ${prev.name}`}
-            className="flex-1 bg-bg border border-border rounded-xl p-4 hover:border-point hover:shadow-sm transition-all group"
+            className="flex-1 group"
           >
-            <p className="text-xs text-muted mb-1">
-              <span aria-hidden="true">←</span> 이전 시대
-            </p>
-            <p className="font-serif font-bold text-text group-hover:text-point transition-colors">{prev.name}</p>
+            <p className="text-xs text-subtle mb-2"><span aria-hidden="true">←</span> 이전 시대</p>
+            <p className="text-base font-semibold text-text tracking-tight group-hover:text-point transition-colors">{prev.name}</p>
           </Link>
         ) : <div className="flex-1" />}
         {next ? (
           <Link
             href={`/era/${next.slug}`}
             aria-label={`다음 시대: ${next.name}`}
-            className="flex-1 bg-bg border border-border rounded-xl p-4 hover:border-point hover:shadow-sm transition-all text-right group"
+            className="flex-1 text-right group"
           >
-            <p className="text-xs text-muted mb-1">
-              다음 시대 <span aria-hidden="true">→</span>
-            </p>
-            <p className="font-serif font-bold text-text group-hover:text-point transition-colors">{next.name}</p>
+            <p className="text-xs text-subtle mb-2">다음 시대 <span aria-hidden="true">→</span></p>
+            <p className="text-base font-semibold text-text tracking-tight group-hover:text-point transition-colors">{next.name}</p>
           </Link>
         ) : <div className="flex-1" />}
-      </div>
+      </nav>
     </div>
   )
 }

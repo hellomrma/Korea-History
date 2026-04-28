@@ -1,10 +1,10 @@
 'use client'
 import type { Difficulty } from '@/types'
 
-const levels: { value: Difficulty; label: string; stars: string }[] = [
-  { value: 'easy',     label: '쉬움', stars: '⭐' },
-  { value: 'normal',   label: '보통', stars: '⭐⭐' },
-  { value: 'advanced', label: '심화', stars: '⭐⭐⭐' },
+const levels: { value: Difficulty; label: string }[] = [
+  { value: 'easy',     label: '쉬움' },
+  { value: 'normal',   label: '보통' },
+  { value: 'advanced', label: '심화' },
 ]
 
 interface Props {
@@ -14,20 +14,20 @@ interface Props {
 
 export default function LevelSelector({ selected, onChange }: Props) {
   return (
-    <div className="inline-flex gap-1 p-1 bg-bg border border-border rounded-xl" role="group" aria-label="콘텐츠 난이도 선택">
-      {levels.map(({ value, label, stars }) => (
+    <div className="inline-flex border border-border" role="group" aria-label="콘텐츠 난이도 선택">
+      {levels.map(({ value, label }, idx) => (
         <button
           key={value}
           type="button"
           onClick={() => onChange(value)}
           aria-pressed={selected === value}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+          className={`px-4 py-2 text-sm transition-colors ${idx > 0 ? 'border-l border-border' : ''} ${
             selected === value
-              ? 'bg-text text-surface shadow-sm'
-              : 'text-muted hover:text-text hover:bg-surface'
+              ? 'bg-text text-bg'
+              : 'text-muted hover:text-text bg-bg'
           }`}
         >
-          <span aria-hidden="true">{stars}</span> {label}
+          {label}
         </button>
       ))}
     </div>

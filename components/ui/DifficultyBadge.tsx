@@ -1,16 +1,17 @@
 import type { Difficulty } from '@/types'
 
-const config: Record<Difficulty, { label: string; className: string; stars: string }> = {
-  easy:     { label: '쉬움',  className: 'bg-difficulty-easy text-white',     stars: '⭐' },
-  normal:   { label: '보통',  className: 'bg-difficulty-normal text-white',   stars: '⭐⭐' },
-  advanced: { label: '심화',  className: 'bg-difficulty-advanced text-white', stars: '⭐⭐⭐' },
+const config: Record<Difficulty, { label: string; colorClass: string }> = {
+  easy:     { label: '쉬움', colorClass: 'text-difficulty-easy' },
+  normal:   { label: '보통', colorClass: 'text-difficulty-normal' },
+  advanced: { label: '심화', colorClass: 'text-difficulty-advanced' },
 }
 
 export default function DifficultyBadge({ level }: { level: Difficulty }) {
-  const { label, className, stars } = config[level]
+  const { label, colorClass } = config[level]
   return (
-    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${className}`}>
-      <span aria-hidden="true">{stars}</span> {label}
+    <span className={`inline-flex items-center gap-1.5 text-xs ${colorClass}`}>
+      <span aria-hidden="true" className="inline-block w-1.5 h-1.5 rounded-full bg-current" />
+      {label}
     </span>
   )
 }

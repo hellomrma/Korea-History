@@ -12,9 +12,12 @@ export default function FiguresPage() {
   const eras = getAllEras().sort((a, b) => a.order - b.order)
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="font-serif text-3xl font-bold text-text mb-2">인물 도감</h1>
-      <p className="text-muted mb-8">5000년 한국사를 이끈 인물들을 만나보세요</p>
+    <div className="max-w-6xl mx-auto px-6 py-20">
+      <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">Figures</p>
+      <h1 className="text-4xl md:text-5xl font-semibold text-text tracking-tight mb-4">인물 도감</h1>
+      <p className="text-base text-muted mb-16 max-w-xl leading-relaxed">
+        5000년 한국사를 이끈 인물들을 만나보세요.
+      </p>
       <FigureGrid figures={figures} eras={eras} />
     </div>
   )

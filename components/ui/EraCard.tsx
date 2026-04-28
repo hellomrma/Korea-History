@@ -12,25 +12,18 @@ export default function EraCard({ era }: { era: Era }) {
       : `${era.period.end}년`
 
   return (
-    <Link href={`/era/${era.slug}`} className="block group">
-      <div
-        className="rounded-xl overflow-hidden border border-border hover:border-point hover:shadow-md transition-all bg-surface"
-        style={{ borderTop: `4px solid ${era.color}` }}
-      >
-        <div className="p-5">
-          <h3 className="font-serif text-lg font-bold text-text mb-1 group-hover:text-point transition-colors">
-            {era.name}
-          </h3>
-          <p className="text-xs text-muted mb-2">{startLabel} ~ {endLabel}</p>
-          <p className="text-sm text-muted leading-relaxed">{era.summary}</p>
-          <div className="flex flex-wrap gap-1 mt-3">
-            {era.tags.map((tag) => (
-              <span key={tag} className="bg-bg text-muted text-xs px-2 py-0.5 rounded-full border border-border">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
+    <Link href={`/era/${era.slug}`} className="group block border-t border-text pt-5">
+      <p className="text-xs text-subtle tabular-nums mb-2">{startLabel} — {endLabel}</p>
+      <h3 className="text-xl font-semibold text-text tracking-tight mb-3 group-hover:text-point transition-colors">
+        {era.name}
+      </h3>
+      <p className="text-sm text-muted leading-relaxed mb-4">{era.summary}</p>
+      <div className="flex flex-wrap gap-x-2 gap-y-1">
+        {era.tags.map((tag) => (
+          <span key={tag} className="text-xs text-subtle border border-border px-2 py-0.5">
+            {tag}
+          </span>
+        ))}
       </div>
     </Link>
   )

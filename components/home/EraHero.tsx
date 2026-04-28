@@ -14,25 +14,26 @@ export default function EraHero({ eras }: { eras: Era[] }) {
 
   return (
     <section
-      className="relative bg-[#080808] text-text text-center px-4 py-20 era-transition"
+      className="bg-bg border-b border-border era-transition"
       aria-label={`현재 선택된 시대: ${era.name}`}
     >
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{ background: `radial-gradient(ellipse at 60% 40%, ${era.color}, transparent 70%)` }}
-        aria-hidden="true"
-      />
-      <div className="relative">
-        <p className="text-xs uppercase tracking-widest text-muted mb-3">5000년의 시간여행: 한국사</p>
-        <h1 className="font-serif text-4xl md:text-5xl mb-3">{era.name}</h1>
-        <p className="text-sm text-muted mb-1">
-          {displayYear(era.period.start)} ~ {era.period.end ? displayYear(era.period.end) : '현재'}
+      <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
+        <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">
+          5000년의 시간여행 · 한국사
         </p>
-        <p className="max-w-md mx-auto text-sm text-muted mb-8 leading-relaxed">{era.summary}</p>
+        <h1 className="text-5xl md:text-7xl font-semibold text-text tracking-tight leading-[1.05] mb-6">
+          {era.name}
+        </h1>
+        <p className="text-sm text-muted mb-3 tracking-tight">
+          {displayYear(era.period.start)} — {era.period.end ? displayYear(era.period.end) : '현재'}
+        </p>
+        <p className="max-w-2xl text-base md:text-lg text-muted mb-8 leading-relaxed">
+          {era.summary}
+        </p>
 
-        <div className="flex flex-wrap gap-2 justify-center mb-8">
+        <div className="flex flex-wrap gap-x-2 gap-y-1 mb-10">
           {era.tags.map((tag) => (
-            <span key={tag} className="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-xs text-muted">
+            <span key={tag} className="text-xs text-subtle border border-border px-2 py-0.5">
               {tag}
             </span>
           ))}
@@ -40,32 +41,33 @@ export default function EraHero({ eras }: { eras: Era[] }) {
 
         <Link
           href={`/era/${era.slug}`}
-          className="inline-block bg-point text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition-colors mb-10"
+          className="inline-flex items-center gap-2 text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point transition-colors"
         >
-          이 시대 탐험하기 →
+          이 시대 탐험하기
+          <span aria-hidden="true">→</span>
         </Link>
-
-        <nav aria-label="시대 선택">
-          <ul className="flex gap-2 flex-wrap justify-center max-w-2xl mx-auto list-none p-0 m-0">
-            {sorted.map((e, idx) => (
-              <li key={e.slug}>
-                <button
-                  type="button"
-                  onClick={() => setCurrentIdx(idx)}
-                  aria-current={idx === currentIdx ? 'true' : undefined}
-                  className={`px-3 py-1.5 rounded-lg text-xs transition-all ${
-                    idx === currentIdx
-                      ? 'bg-white text-[#111111]'
-                      : 'bg-white/10 text-muted hover:bg-white/20 hover:text-text'
-                  }`}
-                >
-                  {e.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
+
+      <nav aria-label="시대 선택" className="border-t border-border">
+        <ul className="max-w-6xl mx-auto px-6 py-4 flex gap-1 flex-wrap list-none">
+          {sorted.map((e, idx) => (
+            <li key={e.slug}>
+              <button
+                type="button"
+                onClick={() => setCurrentIdx(idx)}
+                aria-current={idx === currentIdx ? 'true' : undefined}
+                className={`px-3 py-1.5 text-xs transition-colors ${
+                  idx === currentIdx
+                    ? 'bg-text text-bg'
+                    : 'text-muted hover:text-text'
+                }`}
+              >
+                {e.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </section>
   )
 }

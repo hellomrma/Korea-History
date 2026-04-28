@@ -20,28 +20,23 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="bg-surface border-b border-border sticky top-0 z-50">
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-lg bg-point flex items-center justify-center flex-shrink-0 group-hover:bg-blue-700 transition-colors">
-            <span className="font-serif text-white text-base font-bold leading-none">史</span>
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="font-serif text-[17px] font-bold text-text tracking-tight leading-snug">한국사</span>
-            <span className="text-[10px] text-muted tracking-widest">5000년의 시간여행</span>
-          </div>
+    <header className="bg-bg border-b border-border sticky top-0 z-50">
+      <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <Link href="/" className="flex items-baseline gap-3 group">
+          <span className="text-[19px] font-semibold text-text tracking-tight">한국사</span>
+          <span className="hidden sm:inline text-[11px] text-subtle tracking-[0.18em] uppercase">5000 Years</span>
         </Link>
-        <ul className="hidden md:flex gap-6 text-sm font-medium">
+        <ul className="hidden md:flex gap-8 text-sm">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} className="text-muted hover:text-point transition-colors">
+              <Link href={href} className="text-muted hover:text-text transition-colors">
                 {label}
               </Link>
             </li>
           ))}
         </ul>
         <button
-          className="md:hidden p-2 text-muted hover:text-text"
+          className="md:hidden p-1 text-muted hover:text-text"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? '메뉴 닫기' : '메뉴 열기'}
           aria-expanded={menuOpen}
@@ -51,10 +46,10 @@ export default function Header() {
         </button>
       </nav>
       {menuOpen && (
-        <ul id="mobile-nav" className="md:hidden bg-surface border-t border-border px-4 pb-4 flex flex-col gap-3 text-sm">
+        <ul id="mobile-nav" className="md:hidden bg-bg border-t border-border px-6 pb-5 pt-2 flex flex-col gap-3 text-sm">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} onClick={() => setMenuOpen(false)} className="block py-1 text-muted hover:text-point transition-colors">
+              <Link href={href} onClick={() => setMenuOpen(false)} className="block py-1 text-muted hover:text-text transition-colors">
                 {label}
               </Link>
             </li>
