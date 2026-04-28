@@ -5,6 +5,8 @@ import { getFiguresByEra } from '@/lib/figures'
 import { getMDXContent } from '@/lib/content'
 import ClientEraContent from '@/components/era/ClientEraContent'
 import FigureCard from '@/components/ui/FigureCard'
+import JsonLd from '@/components/seo/JsonLd'
+import { eraArticleSchema, breadcrumbSchema } from '@/lib/jsonld'
 import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
@@ -43,6 +45,16 @@ export default async function EraPage({ params }: { params: Promise<{ slug: stri
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-20">
+      <JsonLd
+        data={[
+          eraArticleSchema(era),
+          breadcrumbSchema([
+            { name: '홈', url: '/' },
+            { name: '시대', url: '/' },
+            { name: era.name, url: `/era/${era.slug}` },
+          ]),
+        ]}
+      />
       <header className="border-b border-border pb-12 mb-12">
         <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">시대</p>
         <h1 className="text-5xl md:text-6xl font-semibold text-text tracking-tight leading-[1.05] mb-5">

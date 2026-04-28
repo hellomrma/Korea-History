@@ -4,6 +4,8 @@ import { getFigureBySlug, getAllFigures } from '@/lib/figures'
 import { getEraBySlug } from '@/lib/eras'
 import { getMDXContent } from '@/lib/content'
 import ClientFigureContent from '@/components/figure/ClientFigureContent'
+import JsonLd from '@/components/seo/JsonLd'
+import { figurePersonSchema, breadcrumbSchema } from '@/lib/jsonld'
 import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
@@ -41,6 +43,16 @@ export default async function FigurePage({ params }: { params: Promise<{ slug: s
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-20">
+      <JsonLd
+        data={[
+          figurePersonSchema(figure, era?.name),
+          breadcrumbSchema([
+            { name: '홈', url: '/' },
+            { name: '인물 도감', url: '/figures' },
+            { name: figure.name, url: `/figure/${figure.slug}` },
+          ]),
+        ]}
+      />
       <header className="border-b border-border pb-12 mb-12">
         <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">인물</p>
         <h1 className="text-5xl md:text-6xl font-semibold text-text tracking-tight leading-[1.05] mb-5">

@@ -6,6 +6,8 @@ import { getAllEras } from '@/lib/eras'
 import { getAllFigures } from '@/lib/figures'
 import { getAllEvents } from '@/lib/events'
 import { buildSearchIndex } from '@/lib/search'
+import JsonLd from '@/components/seo/JsonLd'
+import { websiteSchema, organizationSchema } from '@/lib/jsonld'
 
 const SITE_URL = 'https://korea-history.playgrounder.dev'
 const SITE_NAME = '5000년의 시간여행: 한국사'
@@ -45,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body className="min-h-screen flex flex-col">
+        <JsonLd data={[websiteSchema(), organizationSchema()]} />
         <Header searchItems={searchItems} />
         <main className="flex-1">{children}</main>
         <Footer />
