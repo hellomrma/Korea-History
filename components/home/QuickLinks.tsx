@@ -24,7 +24,10 @@ const links = [
 export default function QuickLinks() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 border-b border-border">
-      <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-8">Sections</p>
+      <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-3">Sections</p>
+      <h2 className="text-3xl md:text-4xl font-semibold text-text tracking-tight mb-12">
+        역사를 탐험하는 방법
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-12">
         {links.map(({ href, kicker, title, desc }) => (
           <Link key={href} href={href} className="group block border-t border-text pt-5">

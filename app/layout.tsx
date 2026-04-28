@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_NAME, template: `%s — ${SITE_NAME}` },
   description: SITE_DESC,
+  authors: [{ name: 'hellomrma' }],
+  creator: 'hellomrma',
+  publisher: 'hellomrma',
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
@@ -28,6 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_NAME,
     description: SITE_DESC,
+    creator: '@hellomrma',
   },
 }
 

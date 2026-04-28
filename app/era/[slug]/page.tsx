@@ -67,7 +67,10 @@ export default async function EraPage({ params }: { params: Promise<{ slug: stri
 
       {figures.length > 0 && (
         <section className="mt-20">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">이 시대의 인물</p>
+          <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-3">Figures</p>
+          <h2 className="text-2xl md:text-3xl font-semibold text-text tracking-tight mb-10">
+            이 시대의 인물
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
             {figures.map((fig) => <FigureCard key={fig.slug} figure={fig} />)}
           </div>
