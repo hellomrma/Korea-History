@@ -23,8 +23,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const figure = getFigureBySlug(slug)
   if (!figure) return {}
   return {
-    title: `${figure.name} — 5000년의 시간여행: 한국사`,
+    title: figure.name,
     description: `${figure.name} (${formatYear(figure.birth)}~${formatDeath(figure.death)}) — ${figure.role}`,
+    alternates: { canonical: `/figure/${slug}` },
   }
 }
 

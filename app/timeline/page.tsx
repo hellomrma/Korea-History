@@ -4,8 +4,9 @@ import { getAllFigures } from '@/lib/figures'
 import TimelineView from '@/components/timeline/TimelineView'
 
 export const metadata = {
-  title: '인터랙티브 타임라인 — 5000년의 시간여행: 한국사',
+  title: '인터랙티브 타임라인',
   description: '고조선부터 현대까지, 5000년 한국사의 주요 사건을 시간 순으로 탐험하세요',
+  alternates: { canonical: '/timeline' },
 }
 
 export default function TimelinePage() {

@@ -4,8 +4,9 @@ import { getAllFigures } from '@/lib/figures'
 import ClientHistoryMap from '@/components/map/ClientHistoryMap'
 
 export const metadata = {
-  title: '역사 지도 — 5000년의 시간여행: 한국사',
+  title: '역사 지도',
   description: '시대별 영토 변화와 주요 사건·인물·장소를 지도로 한눈에 확인하세요',
+  alternates: { canonical: '/map' },
 }
 
 export default function MapPage() {

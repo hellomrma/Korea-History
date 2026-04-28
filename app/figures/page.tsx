@@ -3,8 +3,9 @@ import { getAllEras } from '@/lib/eras'
 import FigureGrid from '@/components/figures/FigureGrid'
 
 export const metadata = {
-  title: '인물 도감 — 5000년의 시간여행: 한국사',
+  title: '인물 도감',
   description: '고조선부터 현대까지, 5000년 한국사를 만든 인물들을 만나보세요',
+  alternates: { canonical: '/figures' },
 }
 
 export default function FiguresPage() {
