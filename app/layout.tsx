@@ -2,6 +2,10 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { getAllEras } from '@/lib/eras'
+import { getAllFigures } from '@/lib/figures'
+import { getAllEvents } from '@/lib/events'
+import { buildSearchIndex } from '@/lib/search'
 
 export const metadata: Metadata = {
   title: '5000년의 시간여행: 한국사',
@@ -9,10 +13,16 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const searchItems = buildSearchIndex({
+    eras: getAllEras(),
+    figures: getAllFigures(),
+    events: getAllEvents(),
+  })
+
   return (
     <html lang="ko">
       <body className="min-h-screen flex flex-col">
-        <Header />
+        <Header searchItems={searchItems} />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
