@@ -1,5 +1,6 @@
 'use client'
 import { useState, useMemo, useEffect } from 'react'
+import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import TimelineFilter from './TimelineFilter'
 import TimelineCard from './TimelineCard'
 import EventDetailModal from './EventDetailModal'
@@ -16,29 +17,33 @@ export default function TimelineView({
 }) {
   const [category, setCategory] = useState<Category>('전체')
   const [selectedEvent, setSelectedEvent] = useState<HistoryEvent | null>(null)
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
 
   const filtered = useMemo(() => {
     if (category === '전체') return events
     return events.filter((e) => e.category === category)
   }, [events, category])
 
-  // Open modal when URL hash matches an event id (e.g. from global search)
+  // Sync modal with ?event= query param (e.g. from global search)
+  const eventParam = searchParams.get('event')
   useEffect(() => {
-    const openFromHash = () => {
-      const hash = decodeURIComponent(window.location.hash.replace(/^#/, ''))
-      if (!hash) return
-      const event = events.find((e) => e.id === hash)
-      if (event) setSelectedEvent(event)
+    if (!eventParam) {
+      setSelectedEvent(null)
+      return
     }
-    openFromHash()
-    window.addEventListener('hashchange', openFromHash)
-    return () => window.removeEventListener('hashchange', openFromHash)
-  }, [events])
+    const event = events.find((e) => e.id === eventParam)
+    if (event) setSelectedEvent(event)
+  }, [eventParam, events])
 
   const closeModal = () => {
     setSelectedEvent(null)
-    if (window.location.hash) {
-      history.replaceState(null, '', window.location.pathname + window.location.search)
+    if (eventParam) {
+      const params = new URLSearchParams(searchParams.toString())
+      params.delete('event')
+      const qs = params.toString()
+      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false })
     }
   }
 

@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { getAllEvents } from '@/lib/events'
 import { getAllFigures } from '@/lib/figures'
 import TimelineView from '@/components/timeline/TimelineView'
@@ -23,7 +24,9 @@ export default function TimelinePage() {
       <p className="text-base text-muted mb-16 max-w-xl leading-relaxed">
         5000년 한국사의 흐름을 한눈에 — 사건 카드를 클릭하면 자세한 내용을 볼 수 있습니다.
       </p>
-      <TimelineView events={events} figureMap={figureMap} />
+      <Suspense fallback={null}>
+        <TimelineView events={events} figureMap={figureMap} />
+      </Suspense>
     </div>
   )
 }

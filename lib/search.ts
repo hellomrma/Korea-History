@@ -62,7 +62,7 @@ export function buildSearchIndex({
       title: ev.title,
       subtitle: `${yearLabel(ev.year)} · ${ev.category}`,
       meta: eraName,
-      href: `/timeline#${encodeURIComponent(ev.id)}`,
+      href: `/timeline?event=${encodeURIComponent(ev.id)}`,
       haystack: [ev.title, ev.summary, ev.category, eraName, yearLabel(ev.year)].join(' ').toLowerCase(),
     }
   })
