@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "WebFetch(domain:aibl.day)",
+      "Bash(curl -sL https://aibl.day/ -o /tmp/aibl.html)",
+      "Read(//tmp/**)",
+      "Bash(rtk pnpm *)",
+      "Bash(rtk git *)",
+      "Bash(grep -oE '\\\\{\"@context\":\"https://schema.org\",\"@type\":\"Person\"[^}]*\\\\}' D:/github/Korea-History/.next/server/app/figure/sejong.html)"
+    ]
+  }
+}
