@@ -1,8 +1,10 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  /* Light editorial theme */
+  /* Light editorial theme (default) */
   --color-bg:      #ffffff;
   --color-surface: #fafafa;
   --color-border:  #e5e5e5;
@@ -23,6 +25,27 @@
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+
+    --color-bg:      #0a0a0a;
+    --color-surface: #141414;
+    --color-border:  #262626;
+    --color-text:    #fafafa;
+    --color-muted:   #a3a3a3;
+    --color-subtle:  #737373;
+
+    --color-point:   #60a5fa;
+
+    --color-difficulty-easy:     #22c55e;
+    --color-difficulty-normal:   #f59e0b;
+    --color-difficulty-advanced: #f87171;
+  }
+
   body {
     @apply bg-bg text-text font-sans antialiased;
     font-feature-settings: "ss03", "ss04";

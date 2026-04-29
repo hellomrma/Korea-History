@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import GlobalSearch from '@/components/search/GlobalSearch'
+import ThemeToggle from '@/components/theme/ThemeToggle'
 import type { SearchItem } from '@/lib/search'
 
 const navLinks = [
@@ -39,6 +40,7 @@ export default function Header({ searchItems }: { searchItems: SearchItem[] }) {
             ))}
           </ul>
           <GlobalSearch items={searchItems} />
+          <ThemeToggle />
           <button
             className="md:hidden p-1 text-muted hover:text-text"
             onClick={() => setMenuOpen(!menuOpen)}

@@ -13,6 +13,8 @@ const SITE_URL = 'https://korea-history.playgrounder.dev'
 const SITE_NAME = '5000년의 시간여행: 한국사'
 const SITE_DESC = '고조선부터 현대까지, 5000년 한국의 시간여행 — 모든 세대를 위한 한국사 학습'
 
+const NO_FLASH_THEME_SCRIPT = `(function(){try{var m=localStorage.getItem('theme')||'light';var d=m==='dark'||(m==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_NAME, template: `%s — ${SITE_NAME}` },
@@ -45,7 +47,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   })
 
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: NO_FLASH_THEME_SCRIPT }} />
+      </head>
       <body className="min-h-screen flex flex-col">
         <JsonLd data={[websiteSchema(), organizationSchema()]} />
         <Header searchItems={searchItems} />
