@@ -14,7 +14,7 @@ export default function EraHero({ eras }: { eras: Era[] }) {
 
   return (
     <section
-      className="bg-bg border-b border-border era-transition"
+      className="bg-bg border-b border-border"
       aria-label={`현재 선택된 시대: ${era.name}`}
     >
       <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
@@ -41,7 +41,7 @@ export default function EraHero({ eras }: { eras: Era[] }) {
 
         <Link
           href={`/era/${era.slug}`}
-          className="inline-flex items-center gap-2 text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point"
         >
           이 시대 탐험하기
           <span aria-hidden="true">→</span>
@@ -56,7 +56,7 @@ export default function EraHero({ eras }: { eras: Era[] }) {
                 type="button"
                 onClick={() => setCurrentIdx(idx)}
                 aria-current={idx === currentIdx ? 'true' : undefined}
-                className={`px-3 py-1.5 text-xs transition-colors ${
+                className={`px-3 py-1.5 text-xs ${
                   idx === currentIdx
                     ? 'bg-text text-bg'
                     : 'text-muted hover:text-text'

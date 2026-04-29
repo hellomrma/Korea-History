@@ -97,7 +97,7 @@ export default function GlobalSearch({ items }: { items: SearchItem[] }) {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="검색 열기"
-        className="inline-flex items-center gap-2 text-xs text-muted hover:text-text border border-border px-3 py-1.5 transition-colors"
+        className="inline-flex items-center gap-2 text-xs text-muted hover:text-text border border-border px-3 py-1.5"
       >
         <span aria-hidden="true">⌕</span>
         <span className="hidden sm:inline">검색</span>
@@ -134,7 +134,7 @@ export default function GlobalSearch({ items }: { items: SearchItem[] }) {
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="검색 닫기"
-                className="text-xs text-subtle border border-border px-2 py-0.5 hover:text-text hover:border-text transition-colors"
+                className="text-xs text-subtle border border-border px-2 py-0.5 hover:text-text hover:border-text"
               >
                 ESC
               </button>
@@ -167,7 +167,7 @@ export default function GlobalSearch({ items }: { items: SearchItem[] }) {
                                 data-idx={idx}
                                 onMouseEnter={() => setActiveIdx(idx)}
                                 onClick={() => navigate(item)}
-                                className={`w-full text-left px-5 py-3 transition-colors ${
+                                className={`w-full text-left px-5 py-3 ${
                                   active ? 'bg-surface' : 'hover:bg-surface'
                                 }`}
                               >

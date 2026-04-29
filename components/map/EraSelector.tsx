@@ -19,7 +19,7 @@ export default function EraSelector({ eras, selectedSlug, onChange }: Props) {
             type="button"
             onClick={() => onChange(era.slug)}
             aria-pressed={active}
-            className={`px-3 py-1 text-xs border transition-colors ${
+            className={`px-3 py-1 text-xs border ${
               active
                 ? 'bg-text text-bg border-text'
                 : 'bg-bg text-muted border-border hover:text-text hover:border-text'

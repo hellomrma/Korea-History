@@ -59,7 +59,7 @@ export default function EventDetailModal({
           <div className="p-8 space-y-6">
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-subtle hover:text-text transition-colors text-base z-10"
+              className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-subtle hover:text-text text-base z-10"
               aria-label="닫기"
             >
               ✕
@@ -98,7 +98,7 @@ export default function EventDetailModal({
                       key={slug}
                       href={`/figure/${slug}`}
                       onClick={onClose}
-                      className="text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point transition-colors"
+                      className="text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point"
                     >
                       {figureMap[slug] ?? slug}
                     </Link>
@@ -113,7 +113,7 @@ export default function EventDetailModal({
           <span className="text-xs text-subtle">{yearLabel} · {event.era}</span>
           <button
             onClick={onClose}
-            className="text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point transition-colors"
+            className="text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point"
           >
             닫기
           </button>

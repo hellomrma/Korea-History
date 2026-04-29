@@ -64,7 +64,7 @@ export default async function FigurePage({ params }: { params: Promise<{ slug: s
           <p className="mb-5">
             <Link
               href={`/era/${era.slug}`}
-              className="text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point transition-colors"
+              className="text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point"
             >
               {era.name}
             </Link>
@@ -88,12 +88,12 @@ export default async function FigurePage({ params }: { params: Promise<{ slug: s
       <nav className="flex gap-6 mt-20 pt-10 border-t border-border">
         <Link href="/figures" aria-label="인물 도감으로 돌아가기" className="flex-1 group">
           <p className="text-xs text-subtle mb-2"><span aria-hidden="true">←</span> 인물 도감으로</p>
-          <p className="text-base font-semibold text-text tracking-tight group-hover:text-point transition-colors">전체 인물 목록</p>
+          <p className="text-base font-semibold text-text tracking-tight group-hover:text-point">전체 인물 목록</p>
         </Link>
         {era && (
           <Link href={`/era/${era.slug}`} aria-label={`${era.name} 시대 보기`} className="flex-1 text-right group">
             <p className="text-xs text-subtle mb-2">시대 보기</p>
-            <p className="text-base font-semibold text-text tracking-tight group-hover:text-point transition-colors">{era.name}</p>
+            <p className="text-base font-semibold text-text tracking-tight group-hover:text-point">{era.name}</p>
           </Link>
         )}
       </nav>

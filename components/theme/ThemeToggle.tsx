@@ -48,7 +48,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={cycle}
-      className="text-muted hover:text-text transition-colors p-1 -m-1 inline-flex items-center justify-center"
+      className="text-muted hover:text-text p-1 -m-1 inline-flex items-center justify-center"
       aria-label={label}
       title={label}
     >

@@ -16,7 +16,7 @@
 | **Tight + Wide Tracking 대비** | 제목은 좁게 `tracking-tight` (-0.02em), 키커(eyebrow)는 넓게 `tracking-[0.22em]`. 이 대비가 에디토리얼 인상의 핵심. |
 | **No Gradient, No Rounded Card** | 라운드는 점/뱃지에만. 카드·태그·탭은 모두 직각. 그라디언트 사용 안 함. |
 | **Hover-only Accent** | 파란색은 정적 상태에서 절대 사용하지 않고, 호버/포커스 상태에서만 등장. |
-| **Reduced Motion 존중** | `prefers-reduced-motion` 시 모든 transition/animation 비활성화. |
+| **No Transitions** | 호버/액티브 상태 변화는 즉시 일어난다. CSS transition·duration·animation 미사용. 잔잔한 페이드는 인지를 흐릴 뿐, 에디토리얼 톤에는 칼같은 즉시 전환이 더 어울린다. |
 
 ---
 
@@ -142,7 +142,7 @@
     {startLabel} — {endLabel}
   </p>
   <h3 className="text-xl font-semibold text-text tracking-tight mb-3
-                 group-hover:text-point transition-colors">
+                 group-hover:text-point">
     {title}
   </h3>
   <p className="text-sm text-muted leading-relaxed mb-4">{summary}</p>
@@ -173,13 +173,13 @@
 ```tsx
 <Link className="inline-flex items-center gap-2 text-sm text-text
                  border-b border-text pb-0.5
-                 hover:text-point hover:border-point transition-colors">
+                 hover:text-point hover:border-point">
   탐험하기
   <span aria-hidden="true">→</span>
 </Link>
 ```
 - **버튼 디자인 없음** — 모든 CTA는 텍스트 + 하단 1px border 형태.
-- 호버 시 텍스트와 보더 둘 다 `point`로 전환.
+- 호버 시 텍스트와 보더 둘 다 `point`로 즉시 전환 (페이드 없음).
 
 ### 탭 / 토글 (시대 선택)
 ```tsx
@@ -198,8 +198,9 @@
 - 모서리 없음(`rounded` 안 씀), 회색 보더, 배경 투명.
 
 ### 트랜지션
-- 색상 전환만: `transition-colors`. 일반적으로 200~300ms.
-- 시대 전환 같은 큰 인터랙션: `.era-transition` 유틸리티 = `transition-all duration-500 ease-in-out`.
+- **사용하지 않는다.** `transition-*`, `duration-*`, `ease-*`, `animate-*` 클래스 모두 금지.
+- 호버/액티브 등 상태 변화는 즉시 반영. 페이드/슬라이드 등 잔잔한 모션은 가독성을 떨어뜨리므로 도입하지 않는다.
+- 인터섹션 옵저버 기반 페이드인 같은 "은근한 등장" 패턴도 사용 안 함 — 스크롤 시 콘텐츠는 즉시 보인다.
 
 ---
 
@@ -258,18 +259,9 @@ blockquote: 'border-l-2 border-text pl-5 my-6 text-muted'
 
 ---
 
-## 10. 접근성 / 모션
+## 10. 접근성
 
-```css
-@media (prefers-reduced-motion: reduce) {
-  .era-transition,
-  [class*="transition"],
-  [class*="duration"] {
-    transition: none !important;
-    animation: none !important;
-  }
-}
-```
+- 모션이 0이므로 `prefers-reduced-motion` 가드가 별도로 필요 없다 — 시스템 모션 감소 설정 사용자도 그대로 동일한 경험을 받는다.
 - 모든 인터랙티브 요소는 `aria-label` / `aria-current` / `aria-expanded` 명시.
 - 카드 링크는 `group` + `group-hover` 패턴으로 자식 요소 일괄 색 전환.
 - 검정 위 흰 글자 반전(액티브 탭) 외에는 텍스트 대비를 충분히 확보(text-muted = #525252 = AA 통과).

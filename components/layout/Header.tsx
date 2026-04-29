@@ -33,7 +33,7 @@ export default function Header({ searchItems }: { searchItems: SearchItem[] }) {
           <ul className="hidden md:flex gap-8 text-sm">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
-                <Link href={href} className="text-muted hover:text-text transition-colors">
+                <Link href={href} className="text-muted hover:text-text">
                   {label}
                 </Link>
               </li>
@@ -56,7 +56,7 @@ export default function Header({ searchItems }: { searchItems: SearchItem[] }) {
         <ul id="mobile-nav" className="md:hidden bg-bg border-t border-border px-6 pb-5 pt-2 flex flex-col gap-3 text-sm">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} onClick={() => setMenuOpen(false)} className="block py-1 text-muted hover:text-text transition-colors">
+              <Link href={href} onClick={() => setMenuOpen(false)} className="block py-1 text-muted hover:text-text">
                 {label}
               </Link>
             </li>

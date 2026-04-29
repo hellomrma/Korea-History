@@ -7,7 +7,7 @@ export default function FigureCard({ figure }: { figure: Figure }) {
       <p className="text-xs text-subtle tabular-nums mb-2">
         {figure.birth}년 — {figure.death !== null ? `${figure.death}년` : '미상'}
       </p>
-      <h3 className="text-lg font-semibold text-text tracking-tight mb-1 group-hover:text-point transition-colors">
+      <h3 className="text-lg font-semibold text-text tracking-tight mb-1 group-hover:text-point">
         {figure.name}
       </h3>
       <p className="text-xs text-muted mb-3">{figure.role}</p>

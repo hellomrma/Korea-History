@@ -19,7 +19,7 @@ export default function TimelineFilter({ selected, onChange }: Props) {
           type="button"
           onClick={() => onChange(cat)}
           aria-pressed={selected === cat}
-          className={`px-3 py-1 text-xs border transition-colors ${
+          className={`px-3 py-1 text-xs border ${
             selected === cat
               ? 'bg-text text-bg border-text'
               : 'bg-bg text-muted border-border hover:text-text hover:border-text'

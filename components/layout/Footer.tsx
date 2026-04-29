@@ -41,7 +41,7 @@ export default function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-muted hover:text-point transition-colors"
+                  className="text-xs text-muted hover:text-point"
                 >
                   {label} ↗
                 </a>

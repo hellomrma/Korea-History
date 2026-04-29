@@ -11,7 +11,7 @@ interface Props {
 }
 
 function chipClass(active: boolean): string {
-  return `px-3 py-1 text-xs transition-colors border ${
+  return `px-3 py-1 text-xs border ${
     active
       ? 'bg-text text-bg border-text'
       : 'bg-bg text-muted border-border hover:text-text hover:border-text'
@@ -30,7 +30,7 @@ export default function FigureFilter({
         onChange={(e) => onSearchChange(e.target.value)}
         placeholder="인물 이름 또는 태그 검색"
         aria-label="인물 검색"
-        className="w-full border-b border-border px-1 py-3 text-base bg-transparent text-text placeholder:text-subtle focus:outline-none focus:border-text transition-colors"
+        className="w-full border-b border-border px-1 py-3 text-base bg-transparent text-text placeholder:text-subtle focus:outline-none focus:border-text"
       />
       <div role="group" aria-label="시대 필터" className="flex flex-wrap gap-1.5">
         <button type="button" onClick={() => onEraChange('')} aria-pressed={selectedEra === ''} className={chipClass(selectedEra === '')}>

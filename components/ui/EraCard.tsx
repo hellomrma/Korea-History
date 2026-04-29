@@ -14,7 +14,7 @@ export default function EraCard({ era }: { era: Era }) {
   return (
     <Link href={`/era/${era.slug}`} className="group block border-t border-text pt-5">
       <p className="text-xs text-subtle tabular-nums mb-2">{startLabel} — {endLabel}</p>
-      <h3 className="text-xl font-semibold text-text tracking-tight mb-3 group-hover:text-point transition-colors">
+      <h3 className="text-xl font-semibold text-text tracking-tight mb-3 group-hover:text-point">
         {era.name}
       </h3>
       <p className="text-sm text-muted leading-relaxed mb-4">{era.summary}</p>

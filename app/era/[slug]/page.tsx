@@ -97,7 +97,7 @@ export default async function EraPage({ params }: { params: Promise<{ slug: stri
             className="flex-1 group"
           >
             <p className="text-xs text-subtle mb-2"><span aria-hidden="true">←</span> 이전 시대</p>
-            <p className="text-base font-semibold text-text tracking-tight group-hover:text-point transition-colors">{prev.name}</p>
+            <p className="text-base font-semibold text-text tracking-tight group-hover:text-point">{prev.name}</p>
           </Link>
         ) : <div className="flex-1" />}
         {next ? (
@@ -107,7 +107,7 @@ export default async function EraPage({ params }: { params: Promise<{ slug: stri
             className="flex-1 text-right group"
           >
             <p className="text-xs text-subtle mb-2">다음 시대 <span aria-hidden="true">→</span></p>
-            <p className="text-base font-semibold text-text tracking-tight group-hover:text-point transition-colors">{next.name}</p>
+            <p className="text-base font-semibold text-text tracking-tight group-hover:text-point">{next.name}</p>
           </Link>
         ) : <div className="flex-1" />}
       </nav>

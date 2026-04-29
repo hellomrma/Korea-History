@@ -213,7 +213,7 @@ export default function HistoryMap({
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-1 mr-6 py-3 text-sm border-b-2 transition-colors -mb-px ${
+                className={`px-1 mr-6 py-3 text-sm border-b-2 -mb-px ${
                   activeTab === tab.id
                     ? 'border-text text-text'
                     : 'border-transparent text-muted hover:text-text'
@@ -253,7 +253,7 @@ export default function HistoryMap({
                                 <Link
                                   key={slug}
                                   href={`/figure/${slug}`}
-                                  className="text-xs text-text border-b border-text pb-px hover:text-point hover:border-point transition-colors"
+                                  className="text-xs text-text border-b border-text pb-px hover:text-point hover:border-point"
                                 >
                                   {fig.name}
                                 </Link>
@@ -286,7 +286,7 @@ export default function HistoryMap({
                         className="block py-4 group"
                       >
                         <p className="text-xs text-muted tabular-nums mb-1">{birthLabel}~{deathLabel}</p>
-                        <p className="text-sm font-semibold text-text tracking-tight group-hover:text-point transition-colors">{fig.name}</p>
+                        <p className="text-sm font-semibold text-text tracking-tight group-hover:text-point">{fig.name}</p>
                         <p className="text-xs text-muted">{fig.role}</p>
                         <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-1.5">
                           {fig.tags.slice(0, 3).map((tag) => (
