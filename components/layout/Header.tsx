@@ -1,9 +1,8 @@
 'use client'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import GlobalSearch from '@/components/search/GlobalSearch'
+import { useRouter } from 'next/navigation'
 import ThemeToggle from '@/components/theme/ThemeToggle'
-import type { SearchItem } from '@/lib/search'
 
 const navLinks = [
   { href: '/timeline', label: '타임라인' },
@@ -11,19 +10,26 @@ const navLinks = [
   { href: '/figures', label: '인물도감' },
 ]
 
-export default function Header({ searchItems }: { searchItems: SearchItem[] }) {
+export default function Header() {
+  const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setMenuOpen(false)
+      const isMac = navigator.platform.toUpperCase().includes('MAC')
+      const cmdK = (isMac ? e.metaKey : e.ctrlKey) && e.key.toLowerCase() === 'k'
+      if (cmdK) {
+        e.preventDefault()
+        router.push('/search')
+      }
     }
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [])
+  }, [router])
 
   return (
-    <header className="bg-bg border-b border-border sticky top-0 z-50">
+    <header data-app-header className="bg-bg border-b border-border sticky top-0 z-50">
       <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="flex items-baseline gap-3 group">
           <span className="text-[19px] font-semibold text-text tracking-tight">한국사</span>
@@ -39,7 +45,15 @@ export default function Header({ searchItems }: { searchItems: SearchItem[] }) {
               </li>
             ))}
           </ul>
-          <GlobalSearch items={searchItems} />
+          <Link
+            href="/search"
+            aria-label="검색"
+            className="inline-flex items-center gap-2 text-xs text-muted hover:text-text border border-border px-3 py-1.5"
+          >
+            <span aria-hidden="true">⌕</span>
+            <span className="hidden sm:inline">검색</span>
+            <span className="hidden md:inline text-subtle border-l border-border pl-2 ml-1 tabular-nums">⌘K</span>
+          </Link>
           <ThemeToggle />
           <button
             className="md:hidden p-1 text-muted hover:text-text"

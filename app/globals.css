@@ -54,4 +54,9 @@
   h1, h2, h3, h4 {
     letter-spacing: -0.02em;
   }
+
+  /* Hide site chrome inside native app WebView (UA contains "KoreaHistoryApp") */
+  .native-app [data-app-header] {
+    display: none;
+  }
 }
