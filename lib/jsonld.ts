@@ -1,8 +1,8 @@
 import type { Era, Figure } from '@/types'
 
 export const SITE_URL = 'https://korea-history.playgrounder.dev'
-export const SITE_NAME = '5000년의 시간여행: 한국사'
-export const PUBLISHER = 'hellomrma'
+export const SITE_NAME = 'K-History Explorer'
+export const PUBLISHER = '가나다라마박사'
 
 const publisher = {
   '@type': 'Organization',

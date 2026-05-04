@@ -9,7 +9,7 @@ import { websiteSchema, organizationSchema } from '@/lib/jsonld'
 const GA_MEASUREMENT_ID = 'G-MCDRXC7JJ8'
 
 const SITE_URL = 'https://korea-history.playgrounder.dev'
-const SITE_NAME = '5000년의 시간여행: 한국사'
+const SITE_NAME = 'K-History Explorer'
 const SITE_DESC = '고조선부터 현대까지, 5000년 한국의 시간여행 — 모든 세대를 위한 한국사 학습'
 
 const NO_FLASH_THEME_SCRIPT = `(function(){try{var m=localStorage.getItem('theme')||'light';var d=m==='dark'||(m==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_NAME, template: `%s — ${SITE_NAME}` },
   description: SITE_DESC,
-  authors: [{ name: 'hellomrma' }],
-  creator: 'hellomrma',
-  publisher: 'hellomrma',
+  authors: [{ name: '가나다라마박사' }],
+  creator: '가나다라마박사',
+  publisher: '가나다라마박사',
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_NAME,
     description: SITE_DESC,
-    creator: '@hellomrma',
   },
 }
 

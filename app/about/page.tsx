@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '사이트 소개',
-  description: '5000년의 시간여행: 한국사 — 사이트 소개와 참조 자료',
+  description: 'K-History Explorer — 사이트 소개와 참조 자료',
 }
 
 const REFERENCES = [
@@ -30,7 +30,7 @@ export default function AboutPage() {
 
       <section className="border-t border-border pt-8 mb-12">
         <h2 className="text-xs font-bold text-text uppercase tracking-wider mb-4">
-          5000년의 시간여행: 한국사
+          K-History Explorer
         </h2>
         <p className="text-sm text-muted leading-relaxed">
           고조선부터 현대까지, 5000년 한국의 이야기를 모든 세대와 함께합니다.

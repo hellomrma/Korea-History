@@ -32,8 +32,8 @@ export default function Header() {
     <header data-native-hide className="bg-bg border-b border-border sticky top-0 z-50">
       <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="flex items-baseline gap-3 group">
-          <span className="text-[19px] font-semibold text-text tracking-tight">한국사</span>
-          <span className="hidden sm:inline text-[11px] text-subtle tracking-[0.18em] uppercase">5000 Years</span>
+          <span className="text-[19px] font-semibold text-text tracking-tight">K-History</span>
+          <span className="hidden sm:inline text-[11px] text-subtle tracking-[0.18em] uppercase">Explorer</span>
         </Link>
         <div className="flex items-center gap-6">
           <ul className="hidden md:flex gap-8 text-sm">

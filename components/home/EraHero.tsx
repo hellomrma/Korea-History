@@ -19,7 +19,7 @@ export default function EraHero({ eras }: { eras: Era[] }) {
     >
       <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
         <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-6">
-          5000년의 시간여행 · 한국사
+          K-History Explorer
         </p>
         <h1 className="text-5xl md:text-7xl font-semibold text-text tracking-tight leading-[1.05] mb-6">
           {era.name}

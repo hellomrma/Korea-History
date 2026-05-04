@@ -3,9 +3,9 @@ import Link from 'next/link'
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-surface border-t border-border mt-16">
-      {/* AI 면책 — 웹 전용 (네이티브 앱에서는 숨김) */}
-      <div data-native-hide className="bg-bg border-b border-border px-4 py-3">
+    <footer data-native-hide className="bg-surface border-t border-border mt-16">
+      {/* AI 면책 */}
+      <div className="bg-bg border-b border-border px-4 py-3">
         <p className="max-w-6xl mx-auto text-xs text-muted flex items-start gap-2">
           <span className="flex-shrink-0 text-sm" aria-hidden="true">⚠️</span>
           <span>
@@ -19,12 +19,12 @@ export default function Footer() {
         </p>
       </div>
 
-      {/* 저작권 — 항상 노출 */}
+      {/* 저작권 */}
       <div className="px-4 py-4">
         <p className="max-w-6xl mx-auto text-xs text-subtle flex items-center justify-center gap-2 flex-wrap">
-          <span>© {year} 5000년의 시간여행: 한국사</span>
-          <span data-native-hide aria-hidden="true">·</span>
-          <Link data-native-hide href="/about" className="hover:text-text">
+          <span>© {year} 가나다라마박사</span>
+          <span aria-hidden="true">·</span>
+          <Link href="/about" className="hover:text-text">
             소개
           </Link>
         </p>
