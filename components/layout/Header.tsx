@@ -29,7 +29,7 @@ export default function Header() {
   }, [router])
 
   return (
-    <header data-app-header className="bg-bg border-b border-border sticky top-0 z-50">
+    <header data-native-hide className="bg-bg border-b border-border sticky top-0 z-50">
       <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="flex items-baseline gap-3 group">
           <span className="text-[19px] font-semibold text-text tracking-tight">한국사</span>

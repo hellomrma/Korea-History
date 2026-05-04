@@ -55,8 +55,8 @@
     letter-spacing: -0.02em;
   }
 
-  /* Hide site chrome inside native app WebView (UA contains "KoreaHistoryApp") */
-  .native-app [data-app-header] {
+  /* Hide elements inside native app WebView (UA contains "KoreaHistoryApp") */
+  .native-app [data-native-hide] {
     display: none;
   }
 
