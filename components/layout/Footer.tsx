@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer data-native-hide className="bg-surface border-t border-border mt-16">
+    <footer data-native-hide className="bg-surface border-t border-border">
       {/* AI 면책 */}
       <div className="bg-bg border-b border-border px-4 py-3">
         <p className="max-w-6xl mx-auto text-xs text-muted flex items-start gap-2">
