@@ -59,4 +59,11 @@
   .native-app [data-app-header] {
     display: none;
   }
+
+  /* Tighten first section's top padding when site header is hidden */
+  .native-app main > *:first-child.py-20,
+  .native-app main > *:first-child.py-12,
+  .native-app main > *:first-child .pt-20 {
+    padding-top: 2rem;
+  }
 }
