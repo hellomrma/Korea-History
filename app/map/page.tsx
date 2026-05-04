@@ -10,9 +10,9 @@ export const metadata = {
 }
 
 export default function MapPage() {
-  const eras = getAllEras().filter((e) => e.slug !== 'modern')
-  const events = getAllEvents().filter((ev) => ev.era !== 'modern')
-  const figures = getAllFigures().filter((f) => f.era !== 'modern')
+  const eras = getAllEras()
+  const events = getAllEvents()
+  const figures = getAllFigures()
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-20">

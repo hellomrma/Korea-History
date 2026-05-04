@@ -11,7 +11,7 @@
 - [역사 지도](https://korea-history.playgrounder.dev/map): 시대별 영토와 수도·전투지·유적 마커
 - [인물 도감](https://korea-history.playgrounder.dev/figures): 시대·역할·태그·이름 검색이 가능한 인물 그리드
 
-## 시대 (12개)
+## 시대 (11개)
 
 - /era/gojoseon — 고조선
 - /era/proto-three-kingdoms — 원삼국
@@ -24,7 +24,6 @@
 - /era/japanese-rule — 일제강점기
 - /era/liberation — 광복·분단
 - /era/korean-war — 한국전쟁
-- /era/modern — 현대
 
 ## 콘텐츠 구조
 

@@ -1,8 +1,9 @@
 import erasData from '@/content/data/eras.json'
 import type { Era } from '@/types'
+import { isExcludedEra } from './exclusions'
 
 export function getAllEras(): Era[] {
-  return erasData as Era[]
+  return (erasData as Era[]).filter((era) => !isExcludedEra(era.slug))
 }
 
 export function getEraBySlug(slug: string): Era | undefined {
