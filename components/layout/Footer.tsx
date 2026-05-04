@@ -9,7 +9,7 @@ export default function Footer() {
         <p className="max-w-6xl mx-auto text-xs text-muted flex items-start gap-2">
           <span className="flex-shrink-0 text-sm" aria-hidden="true">⚠️</span>
           <span>
-            이 사이트의 콘텐츠는 <strong className="text-text">AI를 통해 수집·생성된 자료</strong>로
+            이 서비스의 콘텐츠는 <strong className="text-text">AI를 통해 수집·생성된 자료</strong>로
             정확성을 보장하지 않습니다. 자세한 내용은{' '}
             <Link href="/about" className="underline hover:text-point">
               K-History Explorer 소개

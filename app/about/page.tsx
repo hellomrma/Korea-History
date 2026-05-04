@@ -42,7 +42,7 @@ export default function AboutPage() {
           AI 콘텐츠 안내
         </h2>
         <p className="text-sm text-muted leading-relaxed">
-          이 사이트의 콘텐츠는{' '}
+          이 서비스의 콘텐츠는{' '}
           <strong className="text-text">AI(인공지능)를 통해 수집·생성된 자료</strong>입니다.
           역사적 사실과 다르거나 불정확한 내용이 포함될 수 있으며, 학문적·공식적 자료로 사용하기 전에
           반드시 아래 참조 기관의 공식 자료를 통해 확인하시기 바랍니다.
