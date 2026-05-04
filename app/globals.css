@@ -66,4 +66,10 @@
   .native-app main > *:first-child .pt-20 {
     padding-top: 0.75rem;
   }
+
+  /* Tighten last section's bottom padding when site footer is hidden */
+  .native-app main > *:last-child.py-20,
+  .native-app main > *:last-child.py-12 {
+    padding-bottom: 0.75rem;
+  }
 }
