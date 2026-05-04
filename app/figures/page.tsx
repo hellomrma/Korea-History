@@ -9,8 +9,10 @@ export const metadata = {
 }
 
 export default function FiguresPage() {
-  const figures = getAllFigures()
-  const eras = getAllEras().sort((a, b) => a.order - b.order)
+  const figures = getAllFigures().filter((f) => f.era !== 'modern')
+  const eras = getAllEras()
+    .filter((e) => e.slug !== 'modern')
+    .sort((a, b) => a.order - b.order)
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-20">
