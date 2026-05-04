@@ -64,6 +64,6 @@
   .native-app main > *:first-child.py-20,
   .native-app main > *:first-child.py-12,
   .native-app main > *:first-child .pt-20 {
-    padding-top: 2rem;
+    padding-top: 0.75rem;
   }
 }
