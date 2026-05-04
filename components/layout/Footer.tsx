@@ -12,7 +12,7 @@ export default function Footer() {
             이 사이트의 콘텐츠는 <strong className="text-text">AI를 통해 수집·생성된 자료</strong>로
             정확성을 보장하지 않습니다. 자세한 내용은{' '}
             <Link href="/about" className="underline hover:text-point">
-              사이트 소개
+              K-History Explorer 소개
             </Link>
             를 참고해 주세요.
           </span>

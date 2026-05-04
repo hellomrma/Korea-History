@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '사이트 소개',
-  description: 'K-History Explorer — 사이트 소개와 참조 자료',
+  title: 'K-History Explorer 소개',
+  description: 'K-History Explorer 소개와 참조 자료',
 }
 
 const REFERENCES = [
@@ -25,7 +25,7 @@ export default function AboutPage() {
     <div className="max-w-3xl mx-auto px-6 py-20">
       <p className="text-[11px] uppercase tracking-[0.22em] text-subtle mb-3">About</p>
       <h1 className="text-3xl md:text-4xl font-semibold text-text tracking-tight mb-12">
-        사이트 소개
+        K-History Explorer 소개
       </h1>
 
       <section className="border-t border-border pt-8 mb-12">
