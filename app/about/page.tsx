@@ -81,10 +81,6 @@ export default function AboutPage() {
           ))}
         </ul>
       </section>
-
-      <p className="border-t border-border pt-8 text-xs text-subtle text-center">
-        © {new Date().getFullYear()} 5000년의 시간여행: 한국사. All rights reserved.
-      </p>
     </div>
   )
 }
