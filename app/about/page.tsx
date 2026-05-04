@@ -33,7 +33,7 @@ export default function AboutPage() {
           K-History Explorer
         </h2>
         <p className="text-sm text-muted leading-relaxed">
-          고조선부터 현대까지, 5000년 한국의 이야기를 모든 세대와 함께합니다.
+          고조선부터 20세기 중반까지, 한국사의 이야기를 모든 세대와 함께합니다.
         </p>
       </section>
 

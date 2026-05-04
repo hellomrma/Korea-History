@@ -72,4 +72,8 @@
   .native-app main > *:last-child.py-12 {
     padding-bottom: 0.75rem;
   }
+
+  /* Prevent main from flex-growing beyond content in native WebView */
+  .native-app body { min-height: 0; }
+  .native-app main { flex: 0 0 auto; }
 }
