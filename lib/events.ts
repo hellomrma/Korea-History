@@ -14,8 +14,16 @@ const overrides: Record<Locale, Record<string, EventTranslation>> = {
 function applyLocale(event: HistoryEvent, locale: Locale): HistoryEvent {
   if (locale === defaultLocale) return event
   const tr = overrides[locale]?.[event.id]
-  if (!tr) return event
-  return { ...event, ...tr }
+  // For non-default locales, only show long-form fields when explicitly translated
+  // — otherwise the modal would render Korean prose alongside English.
+  return {
+    ...event,
+    title: tr?.title ?? event.title,
+    summary: tr?.summary ?? event.summary,
+    background: tr?.background,
+    process: tr?.process,
+    significance: tr?.significance,
+  }
 }
 
 export function getAllEvents(locale: Locale = defaultLocale): HistoryEvent[] {
