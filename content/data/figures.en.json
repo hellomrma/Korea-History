@@ -1,0 +1,362 @@
+{
+  "dangun": {
+    "name": "Dangun Wanggeom",
+    "role": "Founding ancestor",
+    "tags": ["Gojoseon", "Founding", "Hongik Ingan"]
+  },
+  "wiman": {
+    "name": "Wiman",
+    "role": "King",
+    "tags": ["Wiman Joseon", "Gojoseon", "Migrant"]
+  },
+  "jumong": {
+    "name": "Jumong (King Dongmyeong)",
+    "role": "Founding ancestor",
+    "tags": ["Founding of Goguryeo", "King Dongmyeong", "Three Kingdoms"]
+  },
+  "onjo": {
+    "name": "King Onjo",
+    "role": "Founding ancestor",
+    "tags": ["Founding of Baekje", "Wiryeseong", "Three Kingdoms"]
+  },
+  "bak-hyeokgeose": {
+    "name": "Bak Hyeokgeose",
+    "role": "Founding ancestor",
+    "tags": ["Founding of Silla", "Gyeongju", "Three Kingdoms"]
+  },
+  "gwanggaeto": {
+    "name": "King Gwanggaeto the Great",
+    "role": "King",
+    "tags": ["Goguryeo", "Conquest", "Territory"]
+  },
+  "jangsu": {
+    "name": "King Jangsu",
+    "role": "King",
+    "tags": ["Goguryeo", "Southern advance policy", "Gwanggaeto Stele"]
+  },
+  "eulji-mundeok": {
+    "name": "Eulji Mundeok",
+    "role": "General",
+    "tags": ["Battle of Salsu", "Goguryeo", "Sui dynasty"]
+  },
+  "yeon-gaesomun": {
+    "name": "Yeon Gaesomun",
+    "role": "Military leader & statesman",
+    "tags": ["Goguryeo", "Daemangniji", "Tang dynasty"]
+  },
+  "queen-seondeok": {
+    "name": "Queen Seondeok",
+    "role": "Queen",
+    "tags": ["Silla", "First queen", "Cheomseongdae"]
+  },
+  "kim-yushin": {
+    "name": "Kim Yushin",
+    "role": "General",
+    "tags": ["Three Kingdoms unification", "Silla", "Silla–Tang alliance"]
+  },
+  "kim-chunchoo": {
+    "name": "King Muyeol (Kim Chunchu)",
+    "role": "King",
+    "tags": ["Silla", "Three Kingdoms unification", "Silla–Tang alliance"]
+  },
+  "gyebaek": {
+    "name": "Gyebaek",
+    "role": "General",
+    "tags": ["Baekje", "Battle of Hwangsanbeol", "Loyalty"]
+  },
+  "uijawang": {
+    "name": "King Uija",
+    "role": "King",
+    "tags": ["Baekje", "Fall of Baekje", "Haedong Jeungja"]
+  },
+  "wonhyo": {
+    "name": "Wonhyo",
+    "role": "Monk & scholar",
+    "tags": ["Buddhism", "Hwajaeng thought", "Unified Silla"]
+  },
+  "jang-bogo": {
+    "name": "Jang Bogo",
+    "role": "Merchant & soldier",
+    "tags": ["Cheonghaejin", "Maritime trade", "Unified Silla"]
+  },
+  "choe-chiwon": {
+    "name": "Choe Chiwon",
+    "role": "Scholar & writer",
+    "tags": ["Study in Tang", "Gyewon Pilgyeong", "Unified Silla"]
+  },
+  "daejoyeong": {
+    "name": "Dae Joyeong",
+    "role": "Founding ancestor",
+    "tags": ["Founding of Balhae", "Goguryeo refugees", "Haedong Seongguk"]
+  },
+  "wang-geon": {
+    "name": "Wang Geon",
+    "role": "King",
+    "tags": ["Founding of Goryeo", "Later Three Kingdoms"]
+  },
+  "seo-hui": {
+    "name": "Seo Hui",
+    "role": "Civil official & diplomat",
+    "tags": ["Diplomatic negotiation", "Khitan", "Six garrisons east of the Yalu"]
+  },
+  "gang-gamchan": {
+    "name": "Gang Gamchan",
+    "role": "General",
+    "tags": ["Battle of Gwiju", "Khitan", "Goryeo"]
+  },
+  "choe-chungheon": {
+    "name": "Choe Chungheon",
+    "role": "Military strongman",
+    "tags": ["Military regime", "Goryeo", "Gyojeong Dogam"]
+  },
+  "gongminwang": {
+    "name": "King Gongmin",
+    "role": "King",
+    "tags": ["Anti-Yuan reforms", "Goryeo", "Princess Noguk"]
+  },
+  "mun-ikjeom": {
+    "name": "Mun Ikjeom",
+    "role": "Civil official & inventor",
+    "tags": ["Cotton", "Goryeo", "Yuan dynasty"]
+  },
+  "choe-museon": {
+    "name": "Choe Museon",
+    "role": "Inventor & general",
+    "tags": ["Gunpowder", "Battle of Jinpo", "Goryeo"]
+  },
+  "ilyeon": {
+    "name": "Ilyeon",
+    "role": "Monk & scholar",
+    "tags": ["Samguk Yusa", "Goryeo", "Buddhism"]
+  },
+  "jeong-mongju": {
+    "name": "Jeong Mongju",
+    "role": "Civil official & scholar",
+    "tags": ["Loyal subject of Goryeo", "Neo-Confucianism", "Seonjukgyo"]
+  },
+  "taejo-joseon": {
+    "name": "Taejo Yi Seong-gye",
+    "role": "King & founder",
+    "tags": ["Founding of Joseon", "Wihwa-do retreat", "Move to Hanyang"]
+  },
+  "jeong-dojeon": {
+    "name": "Jeong Dojeon",
+    "role": "Civil official & scholar",
+    "tags": ["Designer of Joseon", "Neo-Confucianism", "Gyeongbokgung"]
+  },
+  "taejong": {
+    "name": "Taejong Yi Bang-won",
+    "role": "King",
+    "tags": ["Strife of the Princes", "Joseon", "Royal authority"]
+  },
+  "hwang-hui": {
+    "name": "Hwang Hui",
+    "role": "Civil official",
+    "tags": ["Cheongbaengni", "Sejong", "Prime minister"]
+  },
+  "sejong": {
+    "name": "King Sejong the Great",
+    "role": "King",
+    "tags": ["Hangeul", "Science", "Music", "Hunminjeongeum"]
+  },
+  "jang-yeong-sil": {
+    "name": "Jang Yeong-sil",
+    "role": "Scientist",
+    "tags": ["Angbu sundial", "Rain gauge", "Jagyeongnu"]
+  },
+  "kim-jongseo": {
+    "name": "Kim Jongseo",
+    "role": "Civil official & general",
+    "tags": ["Yukjin frontier", "Joseon", "Gyeyu Coup"]
+  },
+  "sejo": {
+    "name": "Sejo",
+    "role": "King",
+    "tags": ["Gyeyu Coup", "Royal authority", "Gyeongguk Daejeon"]
+  },
+  "seongjong": {
+    "name": "Seongjong",
+    "role": "King",
+    "tags": ["Gyeongguk Daejeon", "Joseon's heyday", "Hongmungwan"]
+  },
+  "yeonsangun": {
+    "name": "Yeonsangun",
+    "role": "King",
+    "tags": ["Muo Literati Purge", "Gapja Literati Purge", "Tyrant"]
+  },
+  "shin-saimdang": {
+    "name": "Shin Saimdang",
+    "role": "Artist & scholar",
+    "tags": ["Art", "Calligraphy", "Women"]
+  },
+  "yi-hwang": {
+    "name": "Yi Hwang (Toegye)",
+    "role": "Scholar",
+    "tags": ["Neo-Confucianism", "Toegye school", "Dosan Seowon"]
+  },
+  "yi-yi": {
+    "name": "Yi Yi (Yulgok)",
+    "role": "Scholar",
+    "tags": ["Neo-Confucianism", "Yulgok school", "Dongho Mundap"]
+  },
+  "seonjoo": {
+    "name": "Seonjo",
+    "role": "King",
+    "tags": ["Imjin War", "Joseon", "Factional politics"]
+  },
+  "gwon-yul": {
+    "name": "Gwon Yul",
+    "role": "General",
+    "tags": ["Battle of Haengju", "Imjin War", "Joseon"]
+  },
+  "gwak-jaeu": {
+    "name": "Gwak Jae-u",
+    "role": "Righteous army leader",
+    "tags": ["Imjin War", "Red Robe General", "Righteous army"]
+  },
+  "heo-jun": {
+    "name": "Heo Jun",
+    "role": "Royal physician & scholar",
+    "tags": ["Donguibogam", "Medicine", "Joseon"]
+  },
+  "yisunshin": {
+    "name": "Yi Sun-sin",
+    "role": "Admiral",
+    "tags": ["Imjin War", "Turtle ship", "Myeongnyang"]
+  },
+  "gwanghaegun": {
+    "name": "Gwanghaegun",
+    "role": "King",
+    "tags": ["Neutral diplomacy", "Daedongbeop", "Injo Coup"]
+  },
+  "injo": {
+    "name": "Injo",
+    "role": "King",
+    "tags": ["Byeongja War", "Humiliation at Samjeondo", "Injo Coup"]
+  },
+  "yeongjo": {
+    "name": "Yeongjo",
+    "role": "King",
+    "tags": ["Tangpyeong policy", "Gyunyeokbeop", "Crown Prince Sado"]
+  },
+  "jeongjo": {
+    "name": "Jeongjo",
+    "role": "King",
+    "tags": ["Gyujanggak", "Hwaseong Fortress", "Patron of Silhak"]
+  },
+  "jeong-yakyong": {
+    "name": "Jeong Yak-yong (Dasan)",
+    "role": "Silhak scholar",
+    "tags": ["Silhak", "Mongmin Simseo", "Geojunggi"]
+  },
+  "hong-gyeongnae": {
+    "name": "Hong Gyeong-nae",
+    "role": "Rebel leader",
+    "tags": ["Hong Gyeong-nae rebellion", "Pyeongan Province", "Late Joseon"]
+  },
+  "kim-jeonghui": {
+    "name": "Kim Jeong-hui (Chusa)",
+    "role": "Scholar & artist",
+    "tags": ["Chusa style", "Epigraphy", "Sehando"]
+  },
+  "heungseon-daewongun": {
+    "name": "Heungseon Daewongun",
+    "role": "Statesman",
+    "tags": ["Isolationist policy", "Restoration of Gyeongbokgung", "Abolition of Seowon"]
+  },
+  "gojong": {
+    "name": "Gojong",
+    "role": "King & emperor",
+    "tags": ["Korean Empire", "Gwangmu Reform", "Eulsa Treaty"]
+  },
+  "empress-myeongseong": {
+    "name": "Empress Myeongseong",
+    "role": "Queen & empress",
+    "tags": ["Eulmi Incident", "Korean Empire", "Diplomacy"]
+  },
+  "jeon-bongjun": {
+    "name": "Jeon Bongjun",
+    "role": "Peasant leader",
+    "tags": ["Donghak Peasant Movement", "Gabo Peasant War", "General Nokdu"]
+  },
+  "ahn-junggeun": {
+    "name": "Ahn Jung-geun",
+    "role": "Independence activist",
+    "tags": ["Independence movement", "Ito Hirobumi", "Harbin"]
+  },
+  "son-byeonghi": {
+    "name": "Son Byeong-hui",
+    "role": "Independence activist & religious leader",
+    "tags": ["March 1st Movement", "Cheondogyo", "Declaration of Independence"]
+  },
+  "hong-beomdo": {
+    "name": "Hong Beom-do",
+    "role": "Independence activist & general",
+    "tags": ["Battle of Bongo-dong", "Independence army", "Hunter"]
+  },
+  "kim-jwajin": {
+    "name": "Kim Jwa-jin",
+    "role": "Independence activist & general",
+    "tags": ["Battle of Cheongsanri", "Independence army", "Bukro Gunjeongseo"]
+  },
+  "yu-gwansun": {
+    "name": "Yu Gwan-sun",
+    "role": "Independence activist",
+    "tags": ["March 1st Movement", "Independence movement", "Aunae market"]
+  },
+  "an-changho": {
+    "name": "An Chang-ho",
+    "role": "Independence activist & educator",
+    "tags": ["Heungsadan", "Provisional Government", "National enlightenment"]
+  },
+  "yi-bongchang": {
+    "name": "Yi Bong-chang",
+    "role": "Independence activist",
+    "tags": ["Korean Patriotic Corps", "Attentat", "Tokyo"]
+  },
+  "yun-bonggil": {
+    "name": "Yun Bong-gil",
+    "role": "Independence activist",
+    "tags": ["Korean Patriotic Corps", "Hongkou attentat", "Shanghai"]
+  },
+  "yun-dongjoo": {
+    "name": "Yun Dong-ju",
+    "role": "Poet",
+    "tags": ["Resistance poetry", "Sky, Wind, Stars and Poetry", "Fukuoka"]
+  },
+  "yi-yuksa": {
+    "name": "Yi Yuk-sa",
+    "role": "Poet & independence activist",
+    "tags": ["Resistance poetry", "Gwangya", "Cheongpodo"]
+  },
+  "kim-gu": {
+    "name": "Kim Gu",
+    "role": "Independence activist & politician",
+    "tags": ["Provisional Government", "Independence movement", "Korean Patriotic Corps"]
+  },
+  "yeo-unhyeong": {
+    "name": "Yeo Un-hyeong",
+    "role": "Politician & independence activist",
+    "tags": ["Committee for the Preparation of Korean Independence", "Liberation", "Left–Right coalition"]
+  },
+  "yi-seungman": {
+    "name": "Syngman Rhee",
+    "role": "Politician",
+    "tags": ["First president", "Founding of the Republic of Korea", "April 19 Revolution"]
+  },
+  "park-jeonghee": {
+    "name": "Park Chung-hee",
+    "role": "Politician",
+    "tags": ["Economic development", "Yushin regime", "May 16 coup"]
+  },
+  "jeon-taeil": {
+    "name": "Jeon Tae-il",
+    "role": "Labor activist",
+    "tags": ["Labor movement", "Self-immolation", "Labor Standards Act"]
+  },
+  "kim-daejung": {
+    "name": "Kim Dae-jung",
+    "role": "Politician",
+    "tags": ["Democratization movement", "Sunshine Policy", "Nobel Peace Prize"]
+  }
+}

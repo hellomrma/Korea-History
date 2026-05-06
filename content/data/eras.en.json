@@ -1,0 +1,62 @@
+{
+  "gojoseon": {
+    "name": "Gojoseon",
+    "summary": "The first nation founded by Dangun Wanggeom — the origin of the Korean people.",
+    "tags": ["Dangun", "Bronze Age", "Eight Article Code"]
+  },
+  "proto-three-kingdoms": {
+    "name": "Proto-Three Kingdoms",
+    "summary": "The transitional age when tribal confederacies grew into kingdoms.",
+    "tags": ["Buyeo", "Okjeo", "Dongye", "Samhan"]
+  },
+  "three-kingdoms": {
+    "name": "Three Kingdoms",
+    "summary": "Goguryeo, Baekje, and Silla contend for the Korean peninsula.",
+    "tags": ["Goguryeo", "Baekje", "Silla", "Gaya"]
+  },
+  "unified-silla": {
+    "name": "Unified Silla",
+    "summary": "Silla unified the peninsula and Buddhist culture flourished.",
+    "tags": ["Bulguksa", "Seokguram", "Hwarang"]
+  },
+  "balhae": {
+    "name": "Balhae",
+    "summary": "Founded by Goguryeo refugees, Balhae rose as the \"Prosperous Land of the East.\"",
+    "tags": ["Dae Joyeong", "Haedong Seongguk", "Goguryeo legacy"]
+  },
+  "goryeo": {
+    "name": "Goryeo",
+    "summary": "A Buddhist kingdom that produced the world's first metal movable type and the Tripitaka Koreana.",
+    "tags": ["Buddhism", "Tripitaka Koreana", "Movable type", "Goryeo celadon"]
+  },
+  "joseon": {
+    "name": "Joseon",
+    "summary": "Founded by Yi Seong-gye, a Confucian state of 500 years that created Hangeul.",
+    "tags": ["Confucianism", "Hangeul", "Civil service exam", "Imjin War"]
+  },
+  "daehan": {
+    "name": "Korean Empire",
+    "summary": "A brief, intense bid for an independent modern nation.",
+    "tags": ["Gojong", "Gwangmu Reform", "Independence"]
+  },
+  "japanese-rule": {
+    "name": "Japanese Colonial Period",
+    "summary": "35 years of Japanese rule and a relentless independence movement.",
+    "tags": ["March 1st Movement", "Independence", "Yu Gwan-sun", "Ahn Jung-geun"]
+  },
+  "liberation": {
+    "name": "Liberation & Division",
+    "summary": "The joy of liberation and the tragedy of national division.",
+    "tags": ["Liberation", "38th Parallel", "Military government", "Separate governments"]
+  },
+  "korean-war": {
+    "name": "Korean War",
+    "summary": "The nation's greatest tragedy — three years of war and an armistice.",
+    "tags": ["June 25", "Incheon Landing", "Armistice"]
+  },
+  "modern": {
+    "name": "Modern Korea",
+    "summary": "From ruins to miracle — democracy and the rise of modern Korea.",
+    "tags": ["Miracle on the Han", "Democratization", "K-Culture"]
+  }
+}

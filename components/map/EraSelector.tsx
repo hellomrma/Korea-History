@@ -1,16 +1,19 @@
 'use client'
 import type { Era } from '@/types'
+import { getDictionary, type Locale } from '@/lib/i18n'
 
 interface Props {
   eras: Era[]
   selectedSlug: string
   onChange: (slug: string) => void
+  locale: Locale
 }
 
-export default function EraSelector({ eras, selectedSlug, onChange }: Props) {
+export default function EraSelector({ eras, selectedSlug, onChange, locale }: Props) {
+  const dict = getDictionary(locale)
   const sorted = [...eras].sort((a, b) => a.order - b.order)
   return (
-    <div role="group" aria-label="시대 선택" className="flex gap-1.5 flex-wrap mb-8">
+    <div role="group" aria-label={dict.map.eraSelectorAria} className="flex gap-1.5 flex-wrap mb-8">
       {sorted.map((era) => {
         const active = selectedSlug === era.slug
         return (

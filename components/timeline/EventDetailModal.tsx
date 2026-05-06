@@ -2,12 +2,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import type { HistoryEvent } from '@/types'
-
-const importanceLabel: Record<string, string> = {
-  high: '핵심 사건',
-  medium: '주요 사건',
-  low: '참고 사건',
-}
+import { formatYear, getDictionary, type Locale } from '@/lib/i18n'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -22,14 +17,17 @@ export default function EventDetailModal({
   event,
   figureMap,
   onClose,
+  locale,
 }: {
   event: HistoryEvent
   figureMap: Record<string, string>
   onClose: () => void
+  locale: Locale
 }) {
-  const yearLabel = event.year < 0
-    ? `기원전 ${Math.abs(event.year)}년`
-    : `${event.year}년`
+  const dict = getDictionary(locale)
+  const yearLabel = formatYear(event.year, locale)
+  const categoryLabel = dict.timeline.categories[event.category] ?? event.category
+  const importanceLabel = dict.timeline.importance[event.importance] ?? dict.timeline.importance.low
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
@@ -60,17 +58,17 @@ export default function EventDetailModal({
             <button
               onClick={onClose}
               className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-subtle hover:text-text text-base z-10"
-              aria-label="닫기"
+              aria-label={dict.common.close}
             >
               ✕
             </button>
 
             <div className="flex items-center gap-2 flex-wrap pr-10">
               <span className="text-xs text-subtle border border-border px-2 py-0.5">
-                {event.category}
+                {categoryLabel}
               </span>
               <span className="text-xs text-subtle border border-border px-2 py-0.5">
-                {importanceLabel[event.importance] ?? '참고 사건'}
+                {importanceLabel}
               </span>
             </div>
 
@@ -84,19 +82,19 @@ export default function EventDetailModal({
               </h2>
             </div>
 
-            <Section title="개요">{event.summary}</Section>
-            {event.background && <Section title="배경 및 원인">{event.background}</Section>}
-            {event.process && <Section title="전개 과정">{event.process}</Section>}
-            {event.significance && <Section title="역사적 의의 및 영향">{event.significance}</Section>}
+            <Section title={dict.timeline.sections.summary}>{event.summary}</Section>
+            {event.background && <Section title={dict.timeline.sections.background}>{event.background}</Section>}
+            {event.process && <Section title={dict.timeline.sections.process}>{event.process}</Section>}
+            {event.significance && <Section title={dict.timeline.sections.significance}>{event.significance}</Section>}
 
             {event.figures.length > 0 && (
               <div className="border-t border-border pt-5">
-                <h3 className="text-[11px] uppercase tracking-[0.18em] text-subtle mb-3">관련 인물</h3>
+                <h3 className="text-[11px] uppercase tracking-[0.18em] text-subtle mb-3">{dict.timeline.sections.relatedFigures}</h3>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {event.figures.map((slug) => (
                     <Link
                       key={slug}
-                      href={`/figure/${slug}`}
+                      href={`/${locale}/figure/${slug}`}
                       onClick={onClose}
                       className="text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point"
                     >
@@ -115,7 +113,7 @@ export default function EventDetailModal({
             onClick={onClose}
             className="text-sm text-text border-b border-text pb-0.5 hover:text-point hover:border-point"
           >
-            닫기
+            {dict.common.close}
           </button>
         </div>
       </div>

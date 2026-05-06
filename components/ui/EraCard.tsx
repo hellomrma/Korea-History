@@ -1,18 +1,14 @@
 import Link from 'next/link'
 import type { Era } from '@/types'
+import { formatYear, getDictionary, type Locale } from '@/lib/i18n'
 
-export default function EraCard({ era }: { era: Era }) {
-  const startLabel = era.period.start < 0
-    ? `기원전 ${Math.abs(era.period.start)}년`
-    : `${era.period.start}년`
-  const endLabel = era.period.end === null
-    ? '현재'
-    : era.period.end < 0
-      ? `기원전 ${Math.abs(era.period.end)}년`
-      : `${era.period.end}년`
+export default function EraCard({ era, locale }: { era: Era; locale: Locale }) {
+  const dict = getDictionary(locale)
+  const startLabel = formatYear(era.period.start, locale)
+  const endLabel = era.period.end === null ? dict.common.present : formatYear(era.period.end, locale)
 
   return (
-    <Link href={`/era/${era.slug}`} className="group block border-t border-text pt-5">
+    <Link href={`/${locale}/era/${era.slug}`} className="group block border-t border-text pt-5">
       <p className="text-xs text-subtle tabular-nums mb-2">{startLabel} — {endLabel}</p>
       <h3 className="text-xl font-semibold text-text tracking-tight mb-3 group-hover:text-point">
         {era.name}

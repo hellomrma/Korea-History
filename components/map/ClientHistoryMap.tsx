@@ -1,24 +1,31 @@
 'use client'
 import dynamic from 'next/dynamic'
 import type { Era, HistoryEvent, Figure } from '@/types'
+import { getDictionary, type Locale } from '@/lib/i18n'
 
 const HistoryMap = dynamic(() => import('./HistoryMap'), {
   ssr: false,
-  loading: () => (
-    <div className="border border-border h-96 flex items-center justify-center text-muted">
-      지도를 불러오는 중...
-    </div>
-  ),
 })
 
 export default function ClientHistoryMap({
   eras,
   events,
   figures,
+  locale,
 }: {
   eras: Era[]
   events: HistoryEvent[]
   figures: Figure[]
+  locale: Locale
 }) {
-  return <HistoryMap eras={eras} events={events} figures={figures} />
+  const dict = getDictionary(locale)
+  return (
+    <HistoryMap
+      eras={eras}
+      events={events}
+      figures={figures}
+      locale={locale}
+      loadingLabel={dict.map.loading}
+    />
+  )
 }

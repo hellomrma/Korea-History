@@ -2,23 +2,19 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import { searchIndex, type SearchItem, type SearchItemType } from '@/lib/search'
-
-const TYPE_LABELS: Record<SearchItemType, string> = {
-  figure: '인물',
-  event: '사건',
-  era: '시대',
-}
+import { getDictionary, type Locale } from '@/lib/i18n'
 
 const TYPE_ORDER: SearchItemType[] = ['figure', 'event', 'era']
 
-export default function SearchPage({ items }: { items: SearchItem[] }) {
+export default function SearchPage({ items, locale }: { items: SearchItem[]; locale: Locale }) {
   const router = useRouter()
+  const dict = getDictionary(locale)
   const [query, setQuery] = useState('')
   const [activeIdx, setActiveIdx] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
 
-  const results = useMemo(() => searchIndex(items, query), [items, query])
+  const results = useMemo(() => searchIndex(items, query, 24, locale), [items, query, locale])
 
   const grouped = useMemo(() => {
     const map = new Map<SearchItemType, SearchItem[]>()
@@ -33,15 +29,10 @@ export default function SearchPage({ items }: { items: SearchItem[] }) {
     })
   }, [results])
 
-  useEffect(() => {
-    inputRef.current?.focus()
-  }, [])
-
+  useEffect(() => { inputRef.current?.focus() }, [])
   useEffect(() => { setActiveIdx(0) }, [results])
 
-  const navigate = (item: SearchItem) => {
-    router.push(item.href)
-  }
+  const navigate = (item: SearchItem) => router.push(item.href)
 
   const onInputKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
@@ -65,8 +56,8 @@ export default function SearchPage({ items }: { items: SearchItem[] }) {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
       <div className="mb-8">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-subtle mb-3">Search</p>
-        <h1 className="text-3xl font-semibold text-text tracking-tight">검색</h1>
+        <p className="text-[11px] uppercase tracking-[0.18em] text-subtle mb-3">{dict.search.kicker}</p>
+        <h1 className="text-3xl font-semibold text-text tracking-tight">{dict.search.title}</h1>
       </div>
 
       <div className="flex items-center gap-3 border-b border-border pb-4 mb-6">
@@ -77,40 +68,40 @@ export default function SearchPage({ items }: { items: SearchItem[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={onInputKey}
-          placeholder="인물·사건·시대 검색"
-          aria-label="검색어 입력"
+          placeholder={dict.search.placeholder}
+          aria-label={dict.search.placeholder}
           className="flex-1 bg-transparent text-text placeholder:text-subtle text-lg focus:outline-none"
         />
         {query && (
           <button
             type="button"
             onClick={() => { setQuery(''); inputRef.current?.focus() }}
-            aria-label="검색어 지우기"
+            aria-label={dict.common.close}
             className="text-xs text-subtle border border-border px-2 py-0.5 hover:text-text hover:border-text"
           >
-            지우기
+            ×
           </button>
         )}
       </div>
 
       {query.trim() === '' ? (
         <p className="text-sm text-subtle py-12 text-center">
-          인물 이름, 사건 제목, 시대명·태그 등을 입력하세요.
+          {dict.search.typeHint}
         </p>
       ) : results.length === 0 ? (
         <p className="text-sm text-subtle py-12 text-center">
-          &ldquo;{query}&rdquo;에 대한 결과가 없습니다.
+          {dict.search.noResults}
         </p>
       ) : (
         <>
           <p className="text-[11px] uppercase tracking-[0.18em] text-subtle mb-2 tabular-nums">
-            {results.length} 건
+            {results.length}
           </p>
           <ul ref={listRef}>
             {grouped.map(({ type, items: groupItems }) => (
               <li key={type}>
                 <p className="text-[11px] uppercase tracking-[0.18em] text-subtle pt-6 pb-2">
-                  {TYPE_LABELS[type]} · {groupItems.length}
+                  {dict.search.types[type] ?? type} · {groupItems.length}
                 </p>
                 <ul>
                   {groupItems.map((item) => {
@@ -144,7 +135,7 @@ export default function SearchPage({ items }: { items: SearchItem[] }) {
               </li>
             ))}
           </ul>
-          <p className="text-[11px] text-subtle pt-6">↑↓ 이동 · Enter 선택</p>
+          <p className="text-[11px] text-subtle pt-6">↑↓ · Enter</p>
         </>
       )}
     </div>

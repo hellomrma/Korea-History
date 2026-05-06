@@ -5,28 +5,31 @@ import TimelineFilter from './TimelineFilter'
 import TimelineCard from './TimelineCard'
 import EventDetailModal from './EventDetailModal'
 import type { HistoryEvent } from '@/types'
+import { getDictionary, type Locale } from '@/lib/i18n'
 
-type Category = HistoryEvent['category'] | '전체'
+const ALL = '__all__'
 
 export default function TimelineView({
   events,
   figureMap,
+  locale,
 }: {
   events: HistoryEvent[]
   figureMap: Record<string, string>
+  locale: Locale
 }) {
-  const [category, setCategory] = useState<Category>('전체')
+  const dict = getDictionary(locale)
+  const [category, setCategory] = useState<string>(ALL)
   const [selectedEvent, setSelectedEvent] = useState<HistoryEvent | null>(null)
   const searchParams = useSearchParams()
   const router = useRouter()
   const pathname = usePathname()
 
   const filtered = useMemo(() => {
-    if (category === '전체') return events
+    if (category === ALL) return events
     return events.filter((e) => e.category === category)
   }, [events, category])
 
-  // Sync modal with ?event= query param (e.g. from global search)
   const eventParam = searchParams.get('event')
   useEffect(() => {
     if (!eventParam) {
@@ -49,9 +52,8 @@ export default function TimelineView({
 
   return (
     <>
-      <TimelineFilter selected={category} onChange={setCategory} />
+      <TimelineFilter selected={category} onChange={setCategory} locale={locale} allValue={ALL} />
       <div className="relative">
-        {/* 중앙 세로선 */}
         <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" aria-hidden="true" />
         <div className="space-y-8 py-4">
           {filtered.map((event, idx) => (
@@ -60,12 +62,13 @@ export default function TimelineView({
               event={event}
               side={idx % 2 === 0 ? 'left' : 'right'}
               onClick={() => setSelectedEvent(event)}
+              locale={locale}
             />
           ))}
         </div>
       </div>
       {filtered.length === 0 && (
-        <p className="text-center text-muted py-16">해당 카테고리의 사건이 없습니다.</p>
+        <p className="text-center text-muted py-16">{dict.timeline.noEvents}</p>
       )}
 
       {selectedEvent && (
@@ -73,6 +76,7 @@ export default function TimelineView({
           event={selectedEvent}
           figureMap={figureMap}
           onClose={closeModal}
+          locale={locale}
         />
       )}
     </>

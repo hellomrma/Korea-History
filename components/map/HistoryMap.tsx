@@ -5,6 +5,7 @@ import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps
 import EraSelector from './EraSelector'
 import LocationMarker, { type MarkerData } from './LocationMarker'
 import type { Era, HistoryEvent, Figure } from '@/types'
+import { formatYear, getDictionary, type Locale } from '@/lib/i18n'
 
 const GEO_URL = '/data/korea-provinces.json'
 
@@ -126,11 +127,15 @@ export default function HistoryMap({
   eras,
   events,
   figures,
+  locale,
 }: {
   eras: Era[]
   events: HistoryEvent[]
   figures: Figure[]
+  locale: Locale
+  loadingLabel?: string
 }) {
+  const dict = getDictionary(locale)
   const [selectedEra, setSelectedEra] = useState('joseon')
   const [activeTab, setActiveTab] = useState<'events' | 'figures' | 'places'>('events')
 
@@ -149,7 +154,7 @@ export default function HistoryMap({
 
   return (
     <div>
-      <EraSelector eras={eras} selectedSlug={selectedEra} onChange={setSelectedEra} />
+      <EraSelector eras={eras} selectedSlug={selectedEra} onChange={setSelectedEra} locale={locale} />
 
       {currentEra && (
         <p className="text-sm text-muted mb-8 max-w-2xl leading-relaxed">
@@ -195,7 +200,7 @@ export default function HistoryMap({
               ))}
             </ComposableMap>
           </div>
-          <p className="text-xs text-subtle mt-3">마커를 클릭하면 설명이 나타납니다</p>
+          <p className="text-xs text-subtle mt-3">{dict.map.markerHint}</p>
         </div>
 
         {/* 사이드패널 */}
@@ -204,9 +209,9 @@ export default function HistoryMap({
           <div className="flex border-b border-border mb-6">
             {(
               [
-                { id: 'events', label: `사건 (${eraEvents.length})` },
-                { id: 'figures', label: `인물 (${eraFigures.length})` },
-                { id: 'places', label: `장소 (${markers.length})` },
+                { id: 'events', label: `${dict.map.tabs.events} (${eraEvents.length})` },
+                { id: 'figures', label: `${dict.map.tabs.figures} (${eraFigures.length})` },
+                { id: 'places', label: `${dict.map.tabs.places} (${markers.length})` },
               ] as const
             ).map((tab) => (
               <button
@@ -229,16 +234,17 @@ export default function HistoryMap({
           {activeTab === 'events' && (
             <div className="overflow-y-auto max-h-[500px] pr-1">
               {eraEvents.length === 0 ? (
-                <p className="text-subtle text-sm py-4">이 시대의 사건 데이터가 없습니다</p>
+                <p className="text-subtle text-sm py-4">{dict.map.noEvents}</p>
               ) : (
                 <div className="divide-y divide-border">
                   {eraEvents.map((ev) => {
-                    const yearLabel = ev.year < 0 ? `기원전 ${Math.abs(ev.year)}년` : `${ev.year}년`
+                    const yearLabel = formatYear(ev.year, locale)
+                    const categoryLabel = dict.timeline.categories[ev.category] ?? ev.category
                     return (
                       <div key={ev.id} className="py-4">
                         <div className="flex items-baseline gap-3 mb-1.5">
                           <span className="text-xs text-subtle border border-border px-1.5 py-0.5">
-                            {ev.category}
+                            {categoryLabel}
                           </span>
                           <p className="text-xs text-muted tabular-nums">{yearLabel}</p>
                         </div>
@@ -252,7 +258,7 @@ export default function HistoryMap({
                               return (
                                 <Link
                                   key={slug}
-                                  href={`/figure/${slug}`}
+                                  href={`/${locale}/figure/${slug}`}
                                   className="text-xs text-text border-b border-text pb-px hover:text-point hover:border-point"
                                 >
                                   {fig.name}
@@ -273,16 +279,16 @@ export default function HistoryMap({
           {activeTab === 'figures' && (
             <div className="overflow-y-auto max-h-[500px] pr-1">
               {eraFigures.length === 0 ? (
-                <p className="text-subtle text-sm py-4">이 시대의 인물 데이터가 없습니다</p>
+                <p className="text-subtle text-sm py-4">{dict.map.noFigures}</p>
               ) : (
                 <div className="divide-y divide-border">
                   {eraFigures.map((fig) => {
-                    const birthLabel = fig.birth === null ? '?' : (fig.birth < 0 ? `기원전 ${Math.abs(fig.birth)}` : `${fig.birth}`)
-                    const deathLabel = fig.death === null ? '미상' : (fig.death < 0 ? `기원전 ${Math.abs(fig.death)}` : `${fig.death}`)
+                    const birthLabel = formatYear(fig.birth, locale)
+                    const deathLabel = fig.death === null ? dict.common.unknown : formatYear(fig.death, locale)
                     return (
                       <Link
                         key={fig.slug}
-                        href={`/figure/${fig.slug}`}
+                        href={`/${locale}/figure/${fig.slug}`}
                         className="block py-4 group"
                       >
                         <p className="text-xs text-muted tabular-nums mb-1">{birthLabel}~{deathLabel}</p>
@@ -305,11 +311,11 @@ export default function HistoryMap({
           {activeTab === 'places' && (
             <div className="overflow-y-auto max-h-[500px] pr-1">
               {markers.length === 0 ? (
-                <p className="text-subtle text-sm py-4">이 시대의 장소 데이터가 없습니다</p>
+                <p className="text-subtle text-sm py-4">{dict.map.noPlaces}</p>
               ) : (
                 <div className="divide-y divide-border">
                   {markers.map((m) => {
-                    const typeLabel = { capital: '수도·왕도', battle: '전쟁·전투', site: '유적·유물' }[m.type]
+                    const typeLabel = dict.map.placeTypes[m.type] ?? m.type
                     return (
                       <div key={m.id} className="py-4">
                         <p className="text-xs text-subtle mb-1">{typeLabel}</p>
