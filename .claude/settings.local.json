@@ -8,7 +8,30 @@
       "Read(//tmp/**)",
       "Bash(rtk pnpm *)",
       "Bash(rtk git *)",
-      "Bash(grep -oE '\\\\{\"@context\":\"https://schema.org\",\"@type\":\"Person\"[^}]*\\\\}' D:/github/Korea-History/.next/server/app/figure/sejong.html)"
+      "Bash(grep -oE '\\\\{\"@context\":\"https://schema.org\",\"@type\":\"Person\"[^}]*\\\\}' D:/github/Korea-History/.next/server/app/figure/sejong.html)",
+      "Bash(Get-ChildItem -Path \"D:\\\\github\\\\Korea-History\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(npm view *)",
+      "Bash(git mv *)",
+      "Bash(cd D:/github/Korea-History && mkdir -p \"app/[locale]\" && git mv app/page.tsx \"app/[locale]/page.tsx\" && git mv app/about \"app/[locale]/about\" && git mv app/era \"app/[locale]/era\" && git mv app/figure \"app/[locale]/figure\" && git mv app/figures \"app/[locale]/figures\" && git mv app/map \"app/[locale]/map\" && git mv app/privacy \"app/[locale]/privacy\" && git mv app/search \"app/[locale]/search\" && git mv app/timeline \"app/[locale]/timeline\" && echo \"Done\" && ls \"app/[locale]\")",
+      "Bash(mv \"app/era/[slug]\" \"app/[locale]/era/[slug]\")",
+      "Bash(mv \"app/figure/[slug]\" \"app/[locale]/figure/[slug]\")",
+      "Bash(mv \"app/privacy/page.tsx\" \"app/[locale]/privacy/page.tsx\")",
+      "Bash(rmdir app/era app/figure app/privacy)",
+      "Bash(mkdir -p \"app/[locale]/era\" \"app/[locale]/figure\" \"app/[locale]/privacy\")",
+      "Bash(mv \"app/era/[slug]\" \"app/[locale]/era/\")",
+      "Bash(mv \"app/figure/[slug]\" \"app/[locale]/figure/\")",
+      "Bash(mv \"app/privacy/page.tsx\" \"app/[locale]/privacy/\")",
+      "Bash(xargs grep -l \"i18n\\\\|internationalization\\\\|\\\\\\\\[locale\\\\\\\\]\\\\|\\\\\\\\[lang\\\\\\\\]\")",
+      "Bash(npm run *)",
+      "Bash(python3 -c ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('content/data/events.en.json'\\)\\); print\\(len\\(d\\), 'events'\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('content/data/events.en.json', encoding='utf-8'\\)\\); print\\(len\\(d\\), 'events'\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('content/data/events.json', encoding='utf-8'\\)\\); print\\(len\\(d\\), 'events'\\); print\\('Keys:', list\\(d[0].keys\\(\\)\\)\\)\")"
     ]
   }
 }
